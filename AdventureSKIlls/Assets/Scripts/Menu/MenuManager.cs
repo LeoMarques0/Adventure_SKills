@@ -9,6 +9,9 @@ public class MenuManager : MonoBehaviour
 
     private Launcher launcher;
 
+    [SerializeField]
+    private Toggle isPublicToggle;
+
     #endregion
 
     #region Public Fields
@@ -45,6 +48,19 @@ public class MenuManager : MonoBehaviour
     {
         LoadScreen(true);
         launcher.CreateRoom();
+    }
+
+    public void ChangeMaxPlayers(bool plus)
+    {
+            if (plus && launcher.maxPlayers < 4)
+                launcher.maxPlayers++;
+            else if(!plus && launcher.maxPlayers > 2)
+                launcher.maxPlayers--;
+    }
+
+    public void TurnPublicOnOff()
+    {
+        launcher.isPublic = isPublicToggle.isOn;
     }
 
     public void QuickPlay()

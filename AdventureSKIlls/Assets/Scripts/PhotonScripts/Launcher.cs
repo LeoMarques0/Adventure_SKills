@@ -16,9 +16,13 @@ public class Launcher : MonoBehaviourPunCallbacks
 {
     #region Serialized Fields
     [SerializeField]
-    private byte maxPlayers = 4;
-    [SerializeField]
     private Text roomIDText;
+    [SerializeField]
+    private Text maxPlayersText;
+    #endregion
+    #region Public Fields
+    public byte maxPlayers = 4;
+    public bool isPublic;
     #endregion
     #region Private Fields
     ConnectAction connectAction = new ConnectAction();
@@ -36,11 +40,13 @@ public class Launcher : MonoBehaviourPunCallbacks
         PhotonNetwork.AutomaticallySyncScene = true;
 
         menu = GetComponent<MenuManager>();
+
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
     {
-        roomIDText.text = "ID: " + roomID;
+        maxPlayersText.text = maxPlayers.ToString();
     }
     #endregion
 
@@ -84,7 +90,6 @@ public class Launcher : MonoBehaviourPunCallbacks
         if (PhotonNetwork.IsConnected)
         {//Se está conectado entra em uma sala aleatóriamente
             ConnectToRoom();
-            PhotonNetwork.JoinRandomRoom();
         }
         else
         {//Não está conectado... cria conexão com o Photon Server
@@ -101,7 +106,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         switch (connectAction)
         {
             case ConnectAction.CREATE:
-                PhotonNetwork.CreateRoom(roomID, new RoomOptions { MaxPlayers = maxPlayers });
+                PhotonNetwork.CreateRoom(roomID, new RoomOptions { MaxPlayers = maxPlayers, IsVisible = isPublic });
                 break;
 
             case ConnectAction.FIND:
@@ -146,7 +151,11 @@ public class Launcher : MonoBehaviourPunCallbacks
     {
         Debug.Log("Conectado na Sala: " + PhotonNetwork.CurrentRoom);
         GameManager.singleton.playerIndex = PhotonNetwork.CurrentRoom.PlayerCount - 1;
-        menu.ExitMenu();
+        print("Did it");
+        if (PhotonNetwork.IsMasterClient)
+            PhotonNetwork.LoadLevel("Lobby");
+        else
+            FindObjectOfType<LobbyManager>().AssingCarousel();
     }
     #endregion
 }
