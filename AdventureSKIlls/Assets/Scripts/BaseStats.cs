@@ -25,6 +25,7 @@ public class BaseStats : MonoBehaviour
 
     public virtual void Die()
     {
+        StopAllCoroutines();
         state = BaseState.DYING;
         Destroy(gameObject);
     }

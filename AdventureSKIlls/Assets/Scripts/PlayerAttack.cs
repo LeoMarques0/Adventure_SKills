@@ -48,7 +48,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform != parent)
+        if(collision.transform != parent && (collision.gameObject.layer == 8 || collision.gameObject.layer == 11))
         {
             print(collision.name);
             collision.GetComponent<BaseStats>().TakeDamage(dmg);
