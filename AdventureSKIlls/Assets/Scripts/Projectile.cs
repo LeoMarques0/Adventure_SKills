@@ -24,7 +24,7 @@ public class Projectile : MonoBehaviour
         if (collision.transform != parent)
         {
             print(collision.name);
-            if(collision.gameObject.layer == 8 || collision.gameObject.layer == 11)
+            if(collision.gameObject.layer == 8 || (collision.gameObject.layer == 11 && parent.gameObject.layer != 11))
                 collision.GetComponent<BaseStats>().TakeDamage(dmg);
             Destroy(gameObject);
         }
