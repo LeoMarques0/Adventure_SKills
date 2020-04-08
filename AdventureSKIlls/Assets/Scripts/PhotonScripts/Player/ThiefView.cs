@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class ThiefView : PlayerView
+public class ThiefView : BaseView
 {
 
     Thief thiefMain;

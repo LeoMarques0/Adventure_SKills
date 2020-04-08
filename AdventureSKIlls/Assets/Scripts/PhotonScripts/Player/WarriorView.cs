@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 
-public class WarriorView : PlayerView
+public class WarriorView : BaseView
 {
 
     Warrior warriorMain;
