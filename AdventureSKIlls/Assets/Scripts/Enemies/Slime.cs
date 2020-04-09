@@ -49,7 +49,7 @@ public class Slime : BaseStats
         state = BaseState.HURT;
         gameObject.layer = 9;
         yield return new WaitForSeconds(1f);
-        gameObject.layer = 11;
+        gameObject.layer = 12;
         state = BaseState.STANDARD;
     }
 
