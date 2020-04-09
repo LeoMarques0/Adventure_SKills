@@ -104,8 +104,8 @@ MonoBehaviour:
   - {fileID: 8037932003591835197}
   - {fileID: 7999863491078235851}
   m_Bounds:
-    m_Center: {x: -0.000015497208, y: 0.0020403862, z: 0}
-    m_Extent: {x: 3.9450002, y: 2.557959, z: 0}
+    m_Center: {x: -0.00000023841858, y: 0.0020399094, z: 0}
+    m_Extent: {x: 3.944999, y: 2.5579596, z: 0}
   m_UseBatching: 1
 --- !u!1 &989269331108570447
 GameObject:
@@ -172,7 +172,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: b9d5c04d05a5351438cad1c536c0e36f, type: 2}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -484,7 +484,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 3571076549754483810}
   m_Bounds:
-    m_Center: {x: 0, y: 0.0019990206, z: 0}
+    m_Center: {x: 0.00000011920929, y: 0.0019996166, z: 0}
     m_Extent: {x: 1.0749999, y: 0.548, z: 0}
   m_UseBatching: 1
 --- !u!1 &5488371026374363945

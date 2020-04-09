@@ -89,4 +89,11 @@ public class Slime : BaseStats
         Gizmos.DrawWireCube(floorCheckPos, floorCheckSize);
         Gizmos.DrawWireCube(wallCheckPos, wallCheckSize);
     }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }

@@ -109,4 +109,11 @@ public class Player : BaseStats
         Gizmos.color = Color.green;
         Gizmos.DrawWireCube((Vector2)transform.position + groundOffset, groundCheckSize);
     }
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Espinhos"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
