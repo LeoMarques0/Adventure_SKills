@@ -200,8 +200,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d03bd75a238ea4e4ea2c74fdda3b194f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 10
   state: 0
+  drops:
+  - {fileID: 3378320294638726545, guid: 530cc0360cac7db4c95bb835c4ced459, type: 3}
+  - {fileID: 3378320294638726545, guid: 530cc0360cac7db4c95bb835c4ced459, type: 3}
+  - {fileID: 3378320294638726545, guid: 530cc0360cac7db4c95bb835c4ced459, type: 3}
   spd: 3
   wallCheckOffset: {x: 1.15, y: 0}
   wallCheckSize: {x: 0.1, y: 1}
