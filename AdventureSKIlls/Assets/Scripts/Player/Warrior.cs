@@ -29,7 +29,9 @@ public class Warrior : Player
     {
         if (Input.GetButton("Ability") && isGrounded)
         {
+            
             isShielding = true;
+            animator.SetBool("Defending", isShielding);
 
             gameObject.layer = 9;
             shield.SetActive(true);
@@ -42,7 +44,7 @@ public class Warrior : Player
         else
         {
             isShielding = false;
-
+            animator.SetBool("Defending", isShielding);
             gameObject.layer = 8;
             shield.SetActive(false);
 
