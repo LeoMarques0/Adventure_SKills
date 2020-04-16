@@ -8,12 +8,12 @@ public class PlayerProjectile : MonoBehaviour
     public float delay;
     public Animator anim;
 
-    BaseStats player;
+    public BaseStats player;
 
     private void Start()
     {
         anim = transform.root.GetComponent<Animator>();
-        player = transform.root.GetComponent<BaseStats>();
+        //player = transform.root.GetComponent<BaseStats>();
     }
 
     // Update is called once per frame

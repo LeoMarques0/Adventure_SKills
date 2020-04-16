@@ -10,6 +10,7 @@ public class PlayerAttack : MonoBehaviour
     Transform parent;
     BaseStats player;
     Animator anim;
+    public AudioSource hit;
 
     bool canAttack;
 
@@ -19,7 +20,7 @@ public class PlayerAttack : MonoBehaviour
         parent = transform.parent;
         anim = transform.root.GetComponent<Animator>();
         player = transform.root.GetComponent<BaseStats>();
-
+        hit = GetComponent<AudioSource>();
         canAttack = true;
     }
 
@@ -51,6 +52,7 @@ public class PlayerAttack : MonoBehaviour
         {
             print(collision.name);
             collision.GetComponent<BaseStats>().TakeDamage(dmg);
+            hit.Play();
         }
     }
 }
