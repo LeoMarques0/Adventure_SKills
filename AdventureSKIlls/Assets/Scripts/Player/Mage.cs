@@ -20,15 +20,19 @@ public class Mage : Player
         if (Input.GetButtonDown("Ability") && canHeal && health < 100)
         {
             health += healAmount;
+            animator.SetBool("Curing", canHeal);
             StartCoroutine(HealDelay());
+            
+
         }
     }
 
     IEnumerator HealDelay()
     {
         canHeal = false;
-
+        animator.SetBool("Curing", canHeal);
         yield return new WaitForSeconds(abilityDelay);
+
 
         canHeal = true;
     }

@@ -18,6 +18,8 @@ public class Player : BaseStats
     public Vector2 groundOffset, groundCheckSize;
     public LayerMask checkMask;
 
+    public Animator animator;
+
     [HideInInspector]
     public bool isGrounded, isJumping;
 
@@ -36,6 +38,7 @@ public class Player : BaseStats
     // Update is called once per frame
     public virtual void Update()
     {
+        animator.SetFloat("Speed",Mathf.Abs(hor));
         switch(state)
         {
             case BaseState.STANDARD:
@@ -89,9 +92,14 @@ public class Player : BaseStats
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * fallMultiplier * Time.deltaTime;
             isJumping = false;
+            animator.SetBool("IsJumping?", false);
         }
         else if(rb.velocity.y > .5f)
+        {
             isJumping = true;
+            animator.SetBool("IsJumping?", true);
+        }
+
     }
 
     public virtual void CollisionsCheck()
