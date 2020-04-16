@@ -8,8 +8,8 @@ public class PlayerAttack : MonoBehaviour
     public int dmg;
 
     Transform parent;
-    Collider2D col;
-    SpriteRenderer sr;
+    BaseStats player;
+    Animator anim;
 
     bool canAttack;
 
@@ -17,8 +17,8 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     {
         parent = transform.parent;
-        col = GetComponent<Collider2D>();
-        sr = GetComponent<SpriteRenderer>();
+        anim = transform.root.GetComponent<Animator>();
+        player = transform.root.GetComponent<BaseStats>();
 
         canAttack = true;
     }
@@ -26,25 +26,23 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Attack") && canAttack)
+        if (Input.GetButtonDown("Attack") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
- 
-            StartCoroutine(AttackTime());
+            StartCoroutine(Attack());
         }
+        else
+            anim.SetBool("Attacking?", false);
+
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") && player.state == BaseState.ATTACKING)
+            player.state = BaseState.STANDARD;
 
     }
 
-    IEnumerator AttackTime()
+    IEnumerator Attack()
     {
-        col.enabled = true;
-        sr.enabled = true;
-        canAttack = false;
-
-        yield return new WaitForSeconds(.5f);
-
-        col.enabled = false;
-        sr.enabled = false;
-        canAttack = true;
+        anim.SetBool("Attacking?", true);
+        yield return new WaitForSeconds(.05f);
+        player.state = BaseState.ATTACKING;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

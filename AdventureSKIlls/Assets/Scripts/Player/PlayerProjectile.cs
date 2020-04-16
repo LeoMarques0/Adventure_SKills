@@ -6,31 +6,38 @@ public class PlayerProjectile : MonoBehaviour
 {
     public GameObject projectile;
     public float delay;
-    public Animator animator;
+    public Animator anim;
 
-    bool canAttack = true;
-    bool attack;
+    BaseStats player;
+
+    private void Start()
+    {
+        anim = transform.root.GetComponent<Animator>();
+        player = transform.root.GetComponent<BaseStats>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Attack") && canAttack)
+        if (Input.GetButtonDown("Attack") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
-            attack=true;
-            animator.SetBool("Attacking?", attack);
-            Projectile newShot = Instantiate(projectile, transform.position, transform.parent.rotation).GetComponent<Projectile>();
-            newShot.parent = transform.parent;
-
-            StartCoroutine(ShotDelay());
+            StartCoroutine(Attack());
         }
+        else if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") && player.state == BaseState.ATTACKING)
+            player.state = BaseState.STANDARD;
     }
 
-    IEnumerator ShotDelay()
+    IEnumerator Attack()
     {
-        canAttack = false;
-        attack = false;
-        animator.SetBool("Attacking?", attack);
-        yield return new WaitForSeconds(delay);
-        canAttack = true;
+        anim.SetBool("Attacking?", true);
+        yield return new WaitForSeconds(.2f);
+        player.state = BaseState.ATTACKING;
+    }
+
+    public void Shoot()
+    {
+        Projectile newShot = Instantiate(projectile, transform.position, transform.parent.rotation).GetComponent<Projectile>();
+        newShot.parent = transform.root;
+        anim.SetBool("Attacking?", false);
     }
 }

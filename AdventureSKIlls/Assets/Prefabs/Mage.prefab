@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214815914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.75, y: -0.15, z: 0}
+  m_LocalPosition: {x: 1.195, y: 1.187, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7434527139518149755}
@@ -46,6 +46,7 @@ MonoBehaviour:
   projectile: {fileID: 7392010170546076334, guid: 9cded2aed1901004eaae333f67683e29,
     type: 3}
   delay: 0.5
+  anim: {fileID: 0}
 --- !u!1 &200079274401816181
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,7 +58,7 @@ GameObject:
   - component: {fileID: 3521818925512700345}
   - component: {fileID: 7879788156572623094}
   - component: {fileID: 1589900765622684101}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leg_R_Full
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,8 +146,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 5875762343268255303}
   m_Bounds:
-    m_Center: {x: 0.000424847, y: -0.0008174479, z: 0}
-    m_Extent: {x: 0.15888503, y: 0.3291825, z: 0}
+    m_Center: {x: 0.000426203, y: -0.00081697106, z: 0}
+    m_Extent: {x: 0.15888524, y: 0.3291806, z: 0}
   m_UseBatching: 1
 --- !u!1 &254706136893572876
 GameObject:
@@ -159,7 +160,7 @@ GameObject:
   - component: {fileID: 722301424303466542}
   - component: {fileID: 2950204611380832025}
   - component: {fileID: 5696956525973063170}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,8 +249,8 @@ MonoBehaviour:
   - {fileID: 2260652290298981816}
   - {fileID: 6456011954369178503}
   m_Bounds:
-    m_Center: {x: -0.0140764415, y: -0.11493671, z: 0}
-    m_Extent: {x: 0.354155, y: 0.6484703, z: 0}
+    m_Center: {x: -0.014075309, y: -0.099069715, z: 0}
+    m_Extent: {x: 0.354155, y: 0.6643373, z: 0}
   m_UseBatching: 1
 --- !u!1 &321077830602274996
 GameObject:
@@ -262,7 +263,7 @@ GameObject:
   - component: {fileID: 5756514065922540980}
   - component: {fileID: 3936299868038325308}
   - component: {fileID: 8891310226502353415}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Eye_R_Color
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,7 +322,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 17
+  m_SortingOrder: 11
   m_Sprite: {fileID: 5234578205289331777, guid: c13633eb4b2f5e549b221087b3b90497,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -350,8 +351,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 3097785573719085921}
   m_Bounds:
-    m_Center: {x: 0.35393336, y: 0.06546737, z: 0}
-    m_Extent: {x: 0.10979, y: 0.13229248, z: 0}
+    m_Center: {x: -0.00009985268, y: 0.00007015467, z: 0}
+    m_Extent: {x: 0.09485003, y: 0.13183, z: 0}
   m_UseBatching: 1
 --- !u!1 &370260498796269556
 GameObject:
@@ -364,7 +365,7 @@ GameObject:
   - component: {fileID: 8131692218080912958}
   - component: {fileID: 2090710121896127239}
   - component: {fileID: 277618762590569479}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pupil_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,7 +424,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 18
+  m_SortingOrder: 12
   m_Sprite: {fileID: 8299246631920014454, guid: c13633eb4b2f5e549b221087b3b90497,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -452,8 +453,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 3097785573719085921}
   m_Bounds:
-    m_Center: {x: 0.36211023, y: 0.058756985, z: 0}
-    m_Extent: {x: 0.059269935, y: 0.10301301, z: 0}
+    m_Center: {x: 0.000000063329935, y: 0.00000023841858, z: 0}
+    m_Extent: {x: 0.034994975, y: 0.10500002, z: 0}
   m_UseBatching: 1
 --- !u!1 &604020840241475634
 GameObject:
@@ -466,7 +467,7 @@ GameObject:
   - component: {fileID: 1532134652726564290}
   - component: {fileID: 5190218321824466460}
   - component: {fileID: 6978377054542178302}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pupil_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -525,7 +526,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 15
+  m_SortingOrder: 12
   m_Sprite: {fileID: 706961381299572775, guid: c13633eb4b2f5e549b221087b3b90497, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -553,8 +554,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 3097785573719085921}
   m_Bounds:
-    m_Center: {x: 0.33812532, y: -0.08329541, z: 0}
-    m_Extent: {x: 0.059269935, y: 0.104203455, z: 0}
+    m_Center: {x: 0.00000018253922, y: 0.00000011920929, z: 0}
+    m_Extent: {x: 0.034994975, y: 0.10500002, z: 0}
   m_UseBatching: 1
 --- !u!1 &807158417291049903
 GameObject:
@@ -567,7 +568,7 @@ GameObject:
   - component: {fileID: 5127664447864127101}
   - component: {fileID: 8693386259190383219}
   - component: {fileID: 3384897748592494483}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hand_L_Full
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -626,7 +627,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 13
   m_Sprite: {fileID: 9064514439249659503, guid: c13633eb4b2f5e549b221087b3b90497,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -655,8 +656,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 769841989098445316}
   m_Bounds:
-    m_Center: {x: -0.08628151, y: 0.0027404875, z: 0}
-    m_Extent: {x: 0.13120753, y: 0.14810126, z: 0}
+    m_Center: {x: 0.000060655177, y: 0.00002360344, z: 0}
+    m_Extent: {x: 0.114549935, y: 0.1499697, z: 0}
   m_UseBatching: 1
 --- !u!1 &1268867409367696486
 GameObject:
@@ -667,7 +668,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2448550050724941452}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftLegEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -681,13 +682,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268867409367696486}
-  m_LocalRotation: {x: -0, y: -0, z: -0.0021089234, w: 0.9999978}
+  m_LocalRotation: {x: -0, y: -0, z: -0.0020715187, w: 0.9999979}
   m_LocalPosition: {x: 0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1360602436692936395}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.24200001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.23700002}
 --- !u!1 &1691340145381765962
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,7 +698,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8436850568837451363}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftLegSolver_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -727,7 +728,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8717414036476406684}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightArmSolver_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -757,7 +758,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8921522087073687899}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hand_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -787,7 +788,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8700455842973391814}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightLegEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -801,13 +802,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2501841857013065442}
-  m_LocalRotation: {x: -0, y: -0, z: -0.0000013075766, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.000017423179, w: 1}
   m_LocalPosition: {x: 0.5, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5175492887437208477}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.002}
 --- !u!1 &2596345512957198412
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,7 +819,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5779941968961280585}
   - component: {fileID: 1058467471034655540}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftArmSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -882,7 +883,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3884251846344688531}
   - component: {fileID: 2621472722268383459}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftLegSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -947,7 +948,7 @@ GameObject:
   - component: {fileID: 1870778531040135138}
   - component: {fileID: 5247872094473053375}
   - component: {fileID: 4215476068142472862}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Foot_L_Full
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1036,8 +1037,8 @@ MonoBehaviour:
   - {fileID: 8763845934768335575}
   - {fileID: 6818815094893460042}
   m_Bounds:
-    m_Center: {x: 0.00071296096, y: -0.0003517717, z: 0}
-    m_Extent: {x: 0.23750609, y: 0.09534694, z: 0}
+    m_Center: {x: 0.000699684, y: -0.00034569204, z: 0}
+    m_Extent: {x: 0.237506, y: 0.09534045, z: 0}
   m_UseBatching: 1
 --- !u!1 &2952429430013243846
 GameObject:
@@ -1048,7 +1049,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1626284157898622704}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightLegSolver_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1078,7 +1079,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8387571218328166164}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LowerArm_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1110,7 +1111,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8797528569326796083}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftArmSolver_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1142,7 +1143,7 @@ GameObject:
   - component: {fileID: 3350293612323485820}
   - component: {fileID: 2211923993748773427}
   - component: {fileID: 5377541316749396382}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hand_R_Full
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1230,8 +1231,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8921522087073687899}
   m_Bounds:
-    m_Center: {x: -0.007801123, y: 0.034822553, z: 0}
-    m_Extent: {x: 0.122254916, y: 0.15533066, z: 0}
+    m_Center: {x: -0.004148513, y: -0.00045618415, z: 0}
+    m_Extent: {x: 0.117945395, y: 0.15058388, z: 0}
   m_UseBatching: 1
 --- !u!1 &3265163935603862472
 GameObject:
@@ -1242,7 +1243,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6456011954369178503}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1275,7 +1276,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3993399995700419946}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Foot_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1306,7 +1307,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2258273768294351173}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UpperArm_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1320,7 +1321,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3411972895157456538}
-  m_LocalRotation: {x: 0, y: 0, z: -0.9809996, w: 0.19400986}
+  m_LocalRotation: {x: 0, y: 0, z: -0.9810023, w: 0.19399627}
   m_LocalPosition: {x: 0.3490126, y: -0.05826897, z: 0}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_Children:
@@ -1337,7 +1338,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6818815094893460042}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Toes_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1369,7 +1370,7 @@ GameObject:
   - component: {fileID: 7249519266331592986}
   - component: {fileID: 8661678514377124964}
   - component: {fileID: 3170476699561411265}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Foot_R_Full
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1458,8 +1459,8 @@ MonoBehaviour:
   - {fileID: 3993399995700419946}
   - {fileID: 4790063273952163414}
   m_Bounds:
-    m_Center: {x: 0.0000035762787, y: 0.0000025480986, z: 0}
-    m_Extent: {x: 0.23749956, y: 0.094997674, z: 0}
+    m_Center: {x: 0.000039622188, y: -0.00000035762787, z: 0}
+    m_Extent: {x: 0.23750007, y: 0.09499982, z: 0}
   m_UseBatching: 1
 --- !u!1 &3795704898124277391
 GameObject:
@@ -1471,7 +1472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6561334105756313836}
   - component: {fileID: 5681450528795220589}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightArmSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1535,7 +1536,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2260652290298981816}
   - component: {fileID: 3427081561529272717}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1590,7 +1591,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4790063273952163414}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Toes_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1620,7 +1621,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1360602436692936395}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LowerLeg_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1634,7 +1635,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4014277208123587185}
-  m_LocalRotation: {x: 0, y: 0, z: 0.002183049, w: 0.9999976}
+  m_LocalRotation: {x: 0, y: 0, z: 0.0021055008, w: 0.99999785}
   m_LocalPosition: {x: 0.46426192, y: 0.00000009647104, z: 0}
   m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 1}
   m_Children:
@@ -1652,7 +1653,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6174559501199755023}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UpperArm_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1666,7 +1667,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4026712719597674224}
-  m_LocalRotation: {x: 0, y: 0, z: 0.9881745, w: 0.15333353}
+  m_LocalRotation: {x: 0, y: 0, z: 0.9881768, w: 0.15331912}
   m_LocalPosition: {x: 0.34142414, y: 0.050884124, z: 0}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_Children:
@@ -1683,7 +1684,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3694007027051659185}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1698,7 +1699,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4202939895935764477}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: -0.575, z: 0}
+  m_LocalPosition: {x: 0, y: -0.619, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 730729416679285183}
@@ -1733,7 +1734,7 @@ GameObject:
   - component: {fileID: 4062742877805260093}
   - component: {fileID: 3677628828145911212}
   - component: {fileID: 7253099291091922169}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arm_R_Full
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1822,8 +1823,8 @@ MonoBehaviour:
   - {fileID: 3643582106054279463}
   - {fileID: 6174559501199755023}
   m_Bounds:
-    m_Center: {x: 0.06823625, y: -0.041537702, z: 0}
-    m_Extent: {x: 0.2461032, y: 0.51603645, z: 0}
+    m_Center: {x: -0.015504867, y: -0.05139184, z: 0}
+    m_Extent: {x: 0.18884104, y: 0.5328571, z: 0}
   m_UseBatching: 1
 --- !u!1 &5199789700879853188
 GameObject:
@@ -1834,7 +1835,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3097785573719085921}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1866,7 +1867,7 @@ GameObject:
   - component: {fileID: 730729416679285183}
   - component: {fileID: 2858279897111672128}
   - component: {fileID: 9132892561116038317}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arm_L_Full
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1925,7 +1926,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 13
   m_Sprite: {fileID: -5550503038780239180, guid: d04c37babc660f1499041227f6f4963d,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1955,8 +1956,8 @@ MonoBehaviour:
   - {fileID: 8387571218328166164}
   - {fileID: 2258273768294351173}
   m_Bounds:
-    m_Center: {x: 0.12703243, y: -0.04176891, z: 0}
-    m_Extent: {x: 0.19559613, y: 0.47675526, z: 0}
+    m_Center: {x: 0.010494053, y: -0.052235365, z: 0}
+    m_Extent: {x: 0.1880635, y: 0.5325024, z: 0}
   m_UseBatching: 1
 --- !u!1 &5292026479500201124
 GameObject:
@@ -1969,7 +1970,7 @@ GameObject:
   - component: {fileID: 1493887063509539621}
   - component: {fileID: 3953630892383600791}
   - component: {fileID: 1784719002669422990}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LowerLeg_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2057,8 +2058,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 5175492887437208477}
   m_Bounds:
-    m_Center: {x: 0.0000010952353, y: -0.0007516444, z: 0}
-    m_Extent: {x: 0.093309924, y: 0.29924744, z: 0}
+    m_Center: {x: 0.000017940998, y: -0.00075379014, z: 0}
+    m_Extent: {x: 0.093309835, y: 0.299247, z: 0}
   m_UseBatching: 1
 --- !u!1 &5353083272547587785
 GameObject:
@@ -2069,7 +2070,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5175492887437208477}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LowerLeg_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2101,7 +2102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 769841989098445316}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hand_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2132,7 +2133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5516127269938174156}
   - component: {fileID: 2826501809710121696}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightLegSolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2197,7 +2198,7 @@ GameObject:
   - component: {fileID: 682949602146528707}
   - component: {fileID: 5423719596331225654}
   - component: {fileID: 8877208068860254111}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leg_L_Full
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2285,8 +2286,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 2104516292815183710}
   m_Bounds:
-    m_Center: {x: -0.000045254827, y: 0.000538975, z: 0}
-    m_Extent: {x: 0.16769874, y: 0.3382672, z: 0}
+    m_Center: {x: -0.00004477799, y: 0.0005387068, z: 0}
+    m_Extent: {x: 0.16769524, y: 0.33826444, z: 0}
   m_UseBatching: 1
 --- !u!1 &5770611882623041841
 GameObject:
@@ -2297,7 +2298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5875762343268255303}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UpperLeg_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2311,7 +2312,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5770611882623041841}
-  m_LocalRotation: {x: 0, y: 0, z: -0.9991777, w: 0.040546294}
+  m_LocalRotation: {x: 0, y: 0, z: -0.99917704, w: 0.0405624}
   m_LocalPosition: {x: 0.046913315, y: 0.043054543, z: 0}
   m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 1}
   m_Children:
@@ -2328,7 +2329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8763845934768335575}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Foot_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2359,7 +2360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2104516292815183710}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UpperLeg_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2373,7 +2374,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6860254555983672681}
-  m_LocalRotation: {x: 0, y: 0, z: -0.99429965, w: 0.10662206}
+  m_LocalRotation: {x: 0, y: 0, z: -0.99429536, w: 0.106661975}
   m_LocalPosition: {x: 0.06772062, y: -0.10813229, z: 0}
   m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 1}
   m_Children:
@@ -2390,7 +2391,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 652065903637876367}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightArmEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2404,13 +2405,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7258106080778206519}
-  m_LocalRotation: {x: -0, y: -0, z: 0.009844979, w: 0.9999516}
+  m_LocalRotation: {x: -0, y: -0, z: 0.00985709, w: 0.9999515}
   m_LocalPosition: {x: 0.49, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3643582106054279463}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.128}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -358.87}
 --- !u!1 &7434527139016127793
 GameObject:
   m_ObjectHideFlags: 0
@@ -2421,7 +2422,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7434527139016127792}
   - component: {fileID: 7434527139016127795}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2592,6 +2593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 50
   state: 0
+  drops: []
   spd: 1000
   maxSpd: 10
   jumpHeight: 4
@@ -2600,15 +2602,17 @@ MonoBehaviour:
   gravity: 0
   instantSpeed: 1
   groundOffset: {x: 0, y: -0.5}
-  groundCheckSize: {x: 0.9, y: 0.05}
+  groundCheckSize: {x: 0.55, y: 0.05}
   checkMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 16385
   isGrounded: 0
   isJumping: 0
   rb: {fileID: 0}
+  anim: {fileID: 0}
   abilityDelay: 10
   healAmount: 25
+  magic: {fileID: 1214815916}
 --- !u!114 &1085494304857071359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2651,7 +2655,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7434527140078475737}
   - component: {fileID: 7434527140078475736}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2733,7 +2737,7 @@ GameObject:
   - component: {fileID: 1524025044793252860}
   - component: {fileID: 6642413293547577835}
   - component: {fileID: 8030180113585983369}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LowerLeg_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2820,8 +2824,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 1360602436692936395}
   m_Bounds:
-    m_Center: {x: -0.0018116161, y: -0.00068733096, z: 0}
-    m_Extent: {x: 0.093608305, y: 0.2918387, z: 0}
+    m_Center: {x: -0.0017746761, y: -0.0006855428, z: 0}
+    m_Extent: {x: 0.09360582, y: 0.29183927, z: 0}
   m_UseBatching: 1
 --- !u!1 &7970352069841877029
 GameObject:
@@ -2832,7 +2836,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3643582106054279463}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LowerArm_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2846,7 +2850,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7970352069841877029}
-  m_LocalRotation: {x: 0, y: 0, z: -0.011018204, w: 0.9999393}
+  m_LocalRotation: {x: 0, y: 0, z: -0.0110449, w: 0.999939}
   m_LocalPosition: {x: 0.3942503, y: -0.00000014724344, z: 0}
   m_LocalScale: {x: 0.9999996, y: 0.9999996, z: 1}
   m_Children:
@@ -2866,7 +2870,7 @@ GameObject:
   - component: {fileID: 7791560440304596091}
   - component: {fileID: 8488258312077570185}
   - component: {fileID: 6691100162326843991}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2925,7 +2929,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 13
+  m_SortingOrder: 11
   m_Sprite: {fileID: 214118713356872939, guid: c13633eb4b2f5e549b221087b3b90497, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2953,8 +2957,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 3097785573719085921}
   m_Bounds:
-    m_Center: {x: 0.2414631, y: -0.22817132, z: 0}
-    m_Extent: {x: 0.095956616, y: 0.031348936, z: 0}
+    m_Center: {x: 0.012500092, y: -0.16320503, z: 0}
+    m_Extent: {x: 0.097500026, y: 0.02786, z: 0}
   m_UseBatching: 1
 --- !u!1 &8430490264775251624
 GameObject:
@@ -2967,7 +2971,7 @@ GameObject:
   - component: {fileID: 4517760946964318445}
   - component: {fileID: 4707556290771944495}
   - component: {fileID: 7431390759606176827}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head_Full
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3026,7 +3030,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 12
+  m_SortingOrder: 10
   m_Sprite: {fileID: 8830773140684516283, guid: d04c37babc660f1499041227f6f4963d,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3055,8 +3059,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 3097785573719085921}
   m_Bounds:
-    m_Center: {x: 0.38041943, y: -0.09879762, z: 0}
-    m_Extent: {x: 0.6199224, y: 0.5705645, z: 0}
+    m_Center: {x: 0.04937148, y: 0.011857808, z: 0}
+    m_Extent: {x: 0.59712005, y: 0.56481314, z: 0}
   m_UseBatching: 1
 --- !u!1 &8443451401939103216
 GameObject:
@@ -3067,7 +3071,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4220507512363034338}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftArmEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3081,13 +3085,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8443451401939103216}
-  m_LocalRotation: {x: -0, y: -0, z: -0.0000019688157, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.000011874361, w: 1}
   m_LocalPosition: {x: 0.465, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8387571218328166164}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1799.999}
 --- !u!1 &9109842224466745765
 GameObject:
   m_ObjectHideFlags: 0
@@ -3099,7 +3103,7 @@ GameObject:
   - component: {fileID: 812915455484890893}
   - component: {fileID: 2347701709293448921}
   - component: {fileID: 1331641642262967666}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Eye_L_Color
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3158,7 +3162,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 14
+  m_SortingOrder: 11
   m_Sprite: {fileID: 8924032355696392893, guid: c13633eb4b2f5e549b221087b3b90497,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3187,6 +3191,6 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 3097785573719085921}
   m_Bounds:
-    m_Center: {x: 0.33555418, y: -0.09868842, z: 0}
-    m_Extent: {x: 0.1596322, y: 0.15394908, z: 0}
+    m_Center: {x: 0.00018511713, y: 0.000054970384, z: 0}
+    m_Extent: {x: 0.15207005, y: 0.14213005, z: 0}
   m_UseBatching: 1

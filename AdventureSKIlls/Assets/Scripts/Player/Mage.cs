@@ -7,33 +7,40 @@ public class Mage : Player
     public float abilityDelay;
     public int healAmount;
 
+    public PlayerProjectile magic;
+
     bool canHeal = true;
 
     public override void Update()
     {
         base.Update();
-        Heal();
+        CallHeal();
     }
 
-    void Heal()
+    void CallHeal()
     {
         if (Input.GetButtonDown("Ability") && canHeal && health < 100)
-        {
-            health += healAmount;
-            animator.SetBool("Curing", canHeal);
-            StartCoroutine(HealDelay());
-            
-
+        {            
+            anim.SetBool("useAbility", true);            
         }
+    }
+
+    public void Heal()
+    {
+        health += healAmount;
+        StartCoroutine(HealDelay());
     }
 
     IEnumerator HealDelay()
     {
         canHeal = false;
-        animator.SetBool("Curing", canHeal);
+        anim.SetBool("useAbility", canHeal);
         yield return new WaitForSeconds(abilityDelay);
-
-
         canHeal = true;
+    }
+
+    public void CallShot()
+    {
+        magic.Shoot();
     }
 }

@@ -213,7 +213,7 @@ MonoBehaviour:
   floorCheckSize: {x: 0.85, y: 0.1}
   checkMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 49153
   floorAhead: 0
   wallAhead: 0
 --- !u!1 &1898793245275917685

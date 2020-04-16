@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 2559204021237203283}
   - component: {fileID: 8204855198646239212}
   - component: {fileID: 9198586775888897425}
+  - component: {fileID: 5384772370308080534}
   m_Layer: 8
   m_Name: Mage
   m_TagString: Player
@@ -384,8 +385,10 @@ MonoBehaviour:
   isGrounded: 0
   isJumping: 0
   rb: {fileID: 0}
+  anim: {fileID: 0}
   abilityDelay: 10
   healAmount: 25
+  magic: {fileID: 0}
 --- !u!114 &9113591700434866779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,6 +441,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 7715621433452325473}
   - {fileID: 2559204021237203283}
+  - {fileID: 5384772370308080534}
   - {fileID: 8204855198646239212}
   viewIdField: 0
   InstantiationId: 0
@@ -503,6 +507,39 @@ MonoBehaviour:
   - {fileID: 1604749345785362648}
   - {fileID: 9198586775888897425}
   photonView: {fileID: 0}
+--- !u!114 &5384772370308080534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604749345785362649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PositionModel:
+    SynchronizeEnabled: 0
+    TeleportEnabled: 1
+    TeleportIfDistanceGreaterThan: 3
+    InterpolateOption: 2
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 1
+    ExtrapolateOption: 0
+    ExtrapolateSpeed: 1
+    ExtrapolateIncludingRoundTripTime: 1
+    ExtrapolateNumberOfStoredPositions: 1
+  m_RotationModel:
+    SynchronizeEnabled: 1
+    InterpolateOption: 0
+    InterpolateRotateTowardsSpeed: 180
+    InterpolateLerpSpeed: 5
+  m_ScaleModel:
+    SynchronizeEnabled: 0
+    InterpolateOption: 0
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 0
 --- !u!1 &1604749346386475413
 GameObject:
   m_ObjectHideFlags: 0
@@ -2669,6 +2706,7 @@ MonoBehaviour:
   projectile: {fileID: 7392010170546076334, guid: 9cded2aed1901004eaae333f67683e29,
     type: 3}
   delay: 0.5
+  anim: {fileID: 0}
 --- !u!1 &8278018458941000616
 GameObject:
   m_ObjectHideFlags: 0
