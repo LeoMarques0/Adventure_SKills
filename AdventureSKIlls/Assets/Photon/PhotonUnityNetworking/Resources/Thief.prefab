@@ -237,6 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   state: 0
+  drops: []
   spd: 1000
   maxSpd: 10
   jumpHeight: 4

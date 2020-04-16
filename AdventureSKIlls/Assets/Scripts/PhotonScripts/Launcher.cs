@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum ConnectAction
 {
@@ -46,7 +47,8 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     private void Update()
     {
-        maxPlayersText.text = maxPlayers.ToString();
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+            maxPlayersText.text = maxPlayers.ToString();
     }
     #endregion
 

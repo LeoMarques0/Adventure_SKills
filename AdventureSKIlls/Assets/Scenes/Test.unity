@@ -2582,11 +2582,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   players:
+  - {fileID: 4833992266627196604, guid: 7d6e0899c6c1ceb4da5f14ea84e48ac2, type: 3}
+  - {fileID: 1604749345785362649, guid: d9f37e81d078f4042bd05e047eb5c37a, type: 3}
   - {fileID: 839545430168826486, guid: c1e9cc4ff0ec2284f8804b7161cd3607, type: 3}
   - {fileID: 4375755609645675460, guid: 15d9fea66341bd14185ae957a56e7823, type: 3}
-  - {fileID: 2904835236000834360, guid: 7d6e0899c6c1ceb4da5f14ea84e48ac2, type: 3}
-  - {fileID: 2486818015250581124, guid: d9f37e81d078f4042bd05e047eb5c37a, type: 3}
+  playerCharacterIndex: 0
   playerIndex: 0
+  currentPlayer: {fileID: 0}
 --- !u!1 &1304050954
 GameObject:
   m_ObjectHideFlags: 0

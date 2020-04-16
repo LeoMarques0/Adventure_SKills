@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager singleton;
 
     public GameObject[] players;
+    public int playerCharacterIndex;
 
     public int playerIndex;
 

@@ -19,6 +19,7 @@ public class Carousel : LayoutGroup
     #endregion
 
     #region Public Fields
+    public Button[] arrowsBtns = new Button[2];
     public float columnIndex = 0;
     public int targetIndex = 0;
 

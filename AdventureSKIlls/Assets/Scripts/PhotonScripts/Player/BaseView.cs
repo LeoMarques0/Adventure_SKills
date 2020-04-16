@@ -19,7 +19,7 @@ public class BaseView : MonoBehaviour, IPunObservable
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void StoreTransform2D()
+    public void StoreTransform2D(bool getPos, bool getRot)
     {
         stringsToJson.Add(transform.position.x);
         stringsToJson.Add(transform.position.y);
@@ -30,8 +30,6 @@ public class BaseView : MonoBehaviour, IPunObservable
     public void UpdateTransform2D(float[] floatsReceived)
     {
         transform.position = new Vector2(floatsReceived[0], floatsReceived[1]);
-        transform.eulerAngles = new Vector2(0, floatsReceived[2]);
-
         transform.eulerAngles = new Vector2(0, floatsReceived[2]);
     }
 

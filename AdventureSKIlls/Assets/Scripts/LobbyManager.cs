@@ -22,6 +22,7 @@ public class LobbyManager : MonoBehaviour
     void Start()
     {
         photonView = GetComponent<PhotonView>();
+        readyButton.onClick.AddListener(ChooseClass);
         if (PhotonNetwork.IsMasterClient)
         {
             AssingCarousel();
@@ -40,8 +41,7 @@ public class LobbyManager : MonoBehaviour
 
             if(Input.GetKeyDown(KeyCode.Return))
             {
-                isChoosingClass = false;
-                GameManager.singleton.ChangeClass(players[myCarousel.targetIndex].name, myCarousel.transform.position);
+                ChooseClass();
             }
         }
         else if(GameManager.singleton.currentPlayer != null)
@@ -52,6 +52,9 @@ public class LobbyManager : MonoBehaviour
                 {
                     isChoosingClass = true;
                     GameManager.singleton.DeleteClass();
+
+                    readyButton.onClick.RemoveAllListeners();
+                    readyButton.onClick.AddListener(ChooseClass);
                 }
                 else
                     CallReadyUp();
@@ -72,12 +75,28 @@ public class LobbyManager : MonoBehaviour
         }
     }
 
+    void ChooseClass()
+    {
+        isChoosingClass = false;
+        GameManager.singleton.ChangeClass(players[myCarousel.targetIndex].name, myCarousel.transform.position);
+        GameManager.singleton.playerCharacterIndex = myCarousel.targetIndex;
+        readyButton.onClick.RemoveAllListeners();
+        readyButton.onClick.AddListener(CallReadyUp);
+    }
+
     public void AssingCarousel()
     {
         for (int x = 0; x < carousels.Length; x++)
         {
             if (x == GameManager.singleton.playerIndex)
                 myCarousel = carousels[x];
+            else
+            {
+                foreach(Button btn in carousels[x].arrowsBtns)
+                {
+                    btn.interactable = false;
+                }
+            }
         }
         myCarousel = carousels[GameManager.singleton.playerIndex];
         players = GameManager.singleton.players;
@@ -132,6 +151,6 @@ public class LobbyManager : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
         if (PhotonNetwork.IsMasterClient)
-            PhotonNetwork.LoadLevel("Level");
+            PhotonNetwork.LoadLevel("TestScene");
     }
 }
