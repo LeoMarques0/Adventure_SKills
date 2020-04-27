@@ -1,26 +1,81 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
 {
+    private Camera mainCam;
+    private Canvas canvas;
+    [SerializeField]
+    private Text nameText;
+    [SerializeField]
+    private Slider healthSlider;
+    private Transform playerTransform;
+    private Vector2 healthPos;
 
-    public Transform healthBar;
-    Vector3 healthBarScale;
+    [SerializeField]
+    private float heightOffset;
+    [SerializeField]
+    private Vector2 healthOffset = new Vector2(0, 5);
 
-    Player main;
+    BaseStats main;
 
     // Start is called before the first frame update
     void Start()
     {
-        main = GetComponent<Player>();
+        mainCam = Camera.main;
+
+        canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+        transform.SetParent(canvas.transform);
     }
 
     // Update is called once per frame
     void Update()
     {
-        healthBarScale = healthBar.localScale;
-        healthBarScale.x = main.health / 100;
-        healthBar.localScale = healthBarScale;
+        if(main == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        healthSlider.value = main.health;
+    }
+
+    private void LateUpdate()
+    {
+        healthPos = playerTransform.position;
+        healthPos.y += heightOffset;
+
+        if (canvas.renderMode == RenderMode.ScreenSpaceCamera)
+        {
+            transform.position = healthPos + healthOffset;
+        }
+        else if(canvas.renderMode == RenderMode.ScreenSpaceOverlay)
+        {
+            if (mainCam == null)
+                mainCam = FindObjectOfType<Camera>();
+            transform.position = (Vector2)mainCam.WorldToScreenPoint(healthPos) + healthOffset;
+        }
+    }
+
+    public void SetParent(Transform _main, PhotonView _mainNetwork)
+    {
+
+        if (_mainNetwork != null && _main.tag == "Player")
+        {
+            playerTransform = _mainNetwork.transform;
+            nameText.text = _mainNetwork.Owner.NickName;
+        }
+        else
+        {
+            playerTransform = _main;
+            nameText.text = "";
+        }
+
+        main = _main.GetComponent<BaseStats>();
+        mainCam = FindObjectOfType<Camera>();
+
+        healthSlider.maxValue = main.health;
     }
 }

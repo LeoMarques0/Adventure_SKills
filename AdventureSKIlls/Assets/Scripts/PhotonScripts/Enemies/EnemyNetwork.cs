@@ -9,7 +9,7 @@ public class EnemyNetwork : MonoBehaviour
     public MonoBehaviour[] scritpsToIgnore;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         if(!PhotonNetwork.IsMasterClient)
         {

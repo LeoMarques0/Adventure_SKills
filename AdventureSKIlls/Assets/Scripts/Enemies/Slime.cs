@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class Slime : BaseStats
 {
@@ -19,8 +20,10 @@ public class Slime : BaseStats
     int hor;
 
     // Start is called before the first frame update
-    void Start()
+    public override void Awake()
     {
+        base.Awake();
+
         rb = GetComponent<Rigidbody2D>();
 
         hor = Random.Range(0, 2);
@@ -77,6 +80,12 @@ public class Slime : BaseStats
         base.TakeDamage(damageTaken);
     }
 
+    public override void Die()
+    {
+        base.Die();
+        Destroy(gameObject);
+    }
+
     private void OnDrawGizmosSelected()
     {
         hor = transform.eulerAngles.y == 0 ? 1 : -1;
@@ -88,12 +97,5 @@ public class Slime : BaseStats
 
         Gizmos.DrawWireCube(floorCheckPos, floorCheckSize);
         Gizmos.DrawWireCube(wallCheckPos, wallCheckSize);
-    }
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            Destroy(gameObject);
-        }
     }
 }

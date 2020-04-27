@@ -5,7 +5,9 @@ using UnityEngine;
 public class Player : BaseStats
 {
     int hor;
-    Collider2D currentGround;  
+
+    Collider2D currentGround;
+    PlayerAttack attacks;
 
     public float spd, maxSpd;
 
@@ -26,11 +28,11 @@ public class Player : BaseStats
     [HideInInspector]
     public Animator anim;
 
-    // Start is called before the first frame update
     public virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        attacks = transform.GetComponentInChildren<PlayerAttack>();
 
         gravity = Physics2D.gravity.y * rb.gravityScale;
         jumpForce = Mathf.Sqrt(-2 * gravity * jumpHeight);
@@ -39,7 +41,6 @@ public class Player : BaseStats
     // Update is called once per frame
     public virtual void Update()
     {
-        anim.SetFloat("Speed", Mathf.Abs(hor));
         switch(state)
         {
             case BaseState.STANDARD:
@@ -65,6 +66,9 @@ public class Player : BaseStats
         CollisionsCheck();
 
         health = Mathf.Clamp(health, 0, 100);
+
+        anim.SetFloat("Speed", Mathf.Abs(hor));
+        anim.SetBool("IsGrounded", isGrounded);
     }
 
     void Walk()
@@ -102,14 +106,13 @@ public class Player : BaseStats
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * fallMultiplier * Time.deltaTime;
             isJumping = false;
-            anim.SetBool("IsJumping?", false);
         }
         else if(rb.velocity.y > .5f)
         {
             isJumping = true;
-            anim.SetBool("IsJumping?", true);
         }
 
+        anim.SetFloat("YSpeed", rb.velocity.y);
 
     }
 
@@ -123,16 +126,37 @@ public class Player : BaseStats
         isGrounded = currentGround;
     }
 
+    public override void Die()
+    {
+        base.Die();
+        rb.velocity = new Vector2(0, rb.velocity.y);
+        anim.Play("Dying");
+    }
+
+    public void EndAttack()
+    {
+        attacks.EndAttack();
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireCube((Vector2)transform.position + groundOffset, groundCheckSize);
     }
+
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Espinhos"))
         {
-            Destroy(gameObject);
+            TakeDamage(100);
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.layer == 12)
+        {
+            TakeDamage(20);
         }
     }
 }

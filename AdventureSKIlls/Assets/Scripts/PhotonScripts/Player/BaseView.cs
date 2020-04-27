@@ -19,6 +19,12 @@ public class BaseView : MonoBehaviour, IPunObservable
         rb = GetComponent<Rigidbody2D>();
     }
 
+    private void Update()
+    {
+        if (baseStats.health <= 0)
+            baseStats.Die();
+    }
+
     public void StoreTransform2D(bool getPos, bool getRot)
     {
         stringsToJson.Add(transform.position.x);
