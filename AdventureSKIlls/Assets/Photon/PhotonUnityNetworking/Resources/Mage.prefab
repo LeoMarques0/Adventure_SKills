@@ -257,7 +257,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1571880558991667603}
-  m_LocalRotation: {x: -0, y: -0, z: 0.009867183, w: 0.9999513}
+  m_LocalRotation: {x: -0, y: -0, z: 0.009867185, w: 0.9999513}
   m_LocalPosition: {x: 0.49, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -555,13 +555,16 @@ MonoBehaviour:
     Name: Speed
   - Type: 4
     SynchronizeType: 1
-    Name: IsJumping?
-  - Type: 4
-    SynchronizeType: 1
-    Name: Attacking?
-  - Type: 4
-    SynchronizeType: 1
     Name: useAbility
+  - Type: 1
+    SynchronizeType: 0
+    Name: YSpeed
+  - Type: 4
+    SynchronizeType: 0
+    Name: IsGrounded
+  - Type: 3
+    SynchronizeType: 0
+    Name: AttackIndex
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
@@ -790,7 +793,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2303002930469418113}
-  m_LocalRotation: {x: 0, y: 0, z: -0.011066676, w: 0.9999388}
+  m_LocalRotation: {x: 0, y: 0, z: -0.011066678, w: 0.9999388}
   m_LocalPosition: {x: 0.3942503, y: -0.00000014724344, z: 0}
   m_LocalScale: {x: 0.9999996, y: 0.9999996, z: 1}
   m_Children:
@@ -992,8 +995,8 @@ MonoBehaviour:
   - {fileID: 4897966491367673219}
   - {fileID: 2655427417374395307}
   m_Bounds:
-    m_Center: {x: -0.015504569, y: -0.051392555, z: 0}
-    m_Extent: {x: 0.18884137, y: 0.5328579, z: 0}
+    m_Center: {x: -0.015504584, y: -0.051392555, z: 0}
+    m_Extent: {x: 0.18884134, y: 0.5328579, z: 0}
   m_UseBatching: 1
 --- !u!1 &4042128031370395648
 GameObject:
@@ -1736,7 +1739,7 @@ Transform:
   m_GameObject: {fileID: 5082393467695649364}
   m_LocalRotation: {x: 0, y: 0, z: 0.98817855, w: 0.15330757}
   m_LocalPosition: {x: 0.34142414, y: 0.050884124, z: 0}
-  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 1}
   m_Children:
   - {fileID: 4897966491367673219}
   m_Father: {fileID: 2950373044481222435}
@@ -2198,7 +2201,7 @@ Transform:
   m_GameObject: {fileID: 6502698816546747625}
   m_LocalRotation: {x: 0, y: 0, z: -0.011986535, w: 0.9999282}
   m_LocalPosition: {x: 0.4043841, y: -0.000000016578992, z: 0}
-  m_LocalScale: {x: 0.99999964, y: 0.99999964, z: 1}
+  m_LocalScale: {x: 0.99999964, y: 0.9999996, z: 1}
   m_Children:
   - {fileID: 8918973590914586272}
   - {fileID: 5475190999668845126}
@@ -2337,8 +2340,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 767324004389053951}
   m_Bounds:
-    m_Center: {x: -0.0041543692, y: -0.00045627356, z: 0}
-    m_Extent: {x: 0.117945865, y: 0.15058455, z: 0}
+    m_Center: {x: -0.0041543692, y: -0.00045625865, z: 0}
+    m_Extent: {x: 0.11794584, y: 0.15058455, z: 0}
   m_UseBatching: 1
 --- !u!1 &6787007417465324094
 GameObject:
@@ -2365,7 +2368,7 @@ Transform:
   m_GameObject: {fileID: 6787007417465324094}
   m_LocalRotation: {x: 0, y: 0, z: -0.9810086, w: 0.19396459}
   m_LocalPosition: {x: 0.3490126, y: -0.05826897, z: 0}
-  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 1}
   m_Children:
   - {fileID: 364558032150254512}
   m_Father: {fileID: 2950373044481222435}
@@ -2517,7 +2520,7 @@ Transform:
   m_GameObject: {fileID: 7836166588476301773}
   m_LocalRotation: {x: 0, y: 0, z: 0.24357562, w: 0.96988195}
   m_LocalPosition: {x: 0.48765337, y: -0.00000053993523, z: 0}
-  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4897966491367673219}
   m_RootOrder: 0
@@ -2547,7 +2550,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8172212586016789006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.75, y: -0.15, z: 0}
+  m_LocalPosition: {x: 1.942, y: 1.111, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1604749345785362655}
@@ -2565,10 +2568,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2432131e04444bf409bf3e5551cd1585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hit: {fileID: 0}
+  anim: {fileID: 0}
+  dmg: 5
   projectile: {fileID: 7392010170546076334, guid: 9cded2aed1901004eaae333f67683e29,
     type: 3}
-  delay: 0.5
-  anim: {fileID: 0}
+  maxProjectiles: 3
   player: {fileID: 1604749345785362648}
 --- !u!1 &8278018458941000616
 GameObject:
@@ -3179,6 +3184,6 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8918973590914586272}
   m_Bounds:
-    m_Center: {x: -0.000005207956, y: 0.00000526011, z: 0}
-    m_Extent: {x: 0.11454983, y: 0.14996889, z: 0}
+    m_Center: {x: -0.0000052005053, y: 0.0000052452087, z: 0}
+    m_Extent: {x: 0.114549816, y: 0.14996889, z: 0}
   m_UseBatching: 1

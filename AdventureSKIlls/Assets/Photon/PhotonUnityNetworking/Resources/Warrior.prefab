@@ -927,8 +927,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f647527f865321043ab0ab4c5601cfc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 5
   hit: {fileID: 0}
+  anim: {fileID: 0}
+  dmg: 5
 --- !u!82 &2556142895752407792
 AudioSource:
   m_ObjectHideFlags: 0

@@ -2,45 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerProjectile : MonoBehaviour
+public class PlayerProjectile : PlayerAttack
 {
     public GameObject projectile;
-    public float delay;
-    public Animator anim;
+    public int maxProjectiles;
 
     public BaseStats player;
 
-    private void Start()
-    {
-        anim = player.GetComponent<Animator>();
-        //player = transform.root.GetComponent<BaseStats>();
-    }
+    List<Projectile> newShots = new List<Projectile>();
 
-    // Update is called once per frame
-    void Update()
+    public override void AttackInput()
     {
-        if (Input.GetButtonDown("Attack") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        if (Input.GetButtonDown("Attack") && newShots.Count < maxProjectiles)
         {
-            StartCoroutine(Attack());
+            StopAllCoroutines();
+            StartCoroutine(AttackDelay());
         }
-        else if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") && player.state == BaseState.ATTACKING)
-            player.state = BaseState.STANDARD;
-    }
 
-    IEnumerator Attack()
-    {
-        anim.SetBool("Attacking?", true);
-        yield return new WaitForSeconds(.2f);
-        player.state = BaseState.ATTACKING;
+        for(int x = 0; x < newShots.Count; x++)
+        {
+            if (newShots[x] == null)
+            {
+                newShots.Remove(newShots[x]);
+                x--;
+            }
+        }
     }
 
     public void Shoot()
     {
-        Projectile newShot = Instantiate(projectile, transform.position, transform.parent.rotation).GetComponent<Projectile>();
-        newShot.parent = player.transform;
-        ParticleSystem.MainModule mainModule = newShot.transform.GetChild(0).GetComponent<ParticleSystem>().main;
+        newShots.Add(Instantiate(projectile, transform.position, transform.parent.rotation).GetComponent<Projectile>());
+        newShots[newShots.Count - 1].parent = player.transform;
+        ParticleSystem.MainModule mainModule = newShots[newShots.Count - 1].transform.GetChild(0).GetComponent<ParticleSystem>().main;
         mainModule.startRotationY = player.transform.localEulerAngles.y * Mathf.Deg2Rad;
-        newShot.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
-        anim.SetBool("Attacking?", false);
+        newShots[newShots.Count - 1].transform.GetChild(0).GetComponent<ParticleSystem>().Play();
     }
 }
