@@ -9,7 +9,7 @@ public class StageManager : MonoBehaviour
     public Transform[] playersSpawns;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         int classIndex = GameManager.singleton.playerCharacterIndex;
         PhotonNetwork.Instantiate(GameManager.singleton.players[classIndex].name, playersSpawns[classIndex].position, Quaternion.identity);

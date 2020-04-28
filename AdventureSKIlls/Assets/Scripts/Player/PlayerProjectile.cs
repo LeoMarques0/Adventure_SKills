@@ -12,7 +12,7 @@ public class PlayerProjectile : MonoBehaviour
 
     private void Start()
     {
-        anim = transform.root.GetComponent<Animator>();
+        anim = player.GetComponent<Animator>();
         //player = transform.root.GetComponent<BaseStats>();
     }
 
@@ -37,7 +37,10 @@ public class PlayerProjectile : MonoBehaviour
     public void Shoot()
     {
         Projectile newShot = Instantiate(projectile, transform.position, transform.parent.rotation).GetComponent<Projectile>();
-        newShot.parent = transform.root;
+        newShot.parent = player.transform;
+        ParticleSystem.MainModule mainModule = newShot.transform.GetChild(0).GetComponent<ParticleSystem>().main;
+        mainModule.startRotationY = player.transform.localEulerAngles.y * Mathf.Deg2Rad;
+        newShot.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
         anim.SetBool("Attacking?", false);
     }
 }

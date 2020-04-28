@@ -151,6 +151,6 @@ public class LobbyManager : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
         if (PhotonNetwork.IsMasterClient)
-            PhotonNetwork.LoadLevel("TestScene");
+            PhotonNetwork.LoadLevel("Level");
     }
 }

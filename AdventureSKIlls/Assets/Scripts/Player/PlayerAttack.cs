@@ -12,7 +12,8 @@ public class PlayerAttack : MonoBehaviour
     Animator anim;
     public AudioSource hit;
 
-    bool canAttack;
+    bool canAttack, isAttacking;
+    int attackIndex = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -27,30 +28,47 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Attack") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        if(Input.GetButtonDown("Attack"))
         {
-            StartCoroutine(Attack());
+            StopAllCoroutines();
+            StartCoroutine(AttackDelay());
         }
-        else
-            anim.SetBool("Attacking?", false);
 
-        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") && player.state == BaseState.ATTACKING)
+        if (isAttacking && canAttack)
+        {
+            attackIndex = attackIndex == 1 ? 2 : 1;
+            canAttack = false;
+            player.state = BaseState.ATTACKING;
+        }
+
+        if (canAttack && !isAttacking && 
+        !(anim.GetCurrentAnimatorStateInfo(0).IsName("Attack0") || anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1")))
+        {
+            StopAllCoroutines();
+            attackIndex = 0;
             player.state = BaseState.STANDARD;
+        }
+
+        anim.SetInteger("AttackIndex", attackIndex);
 
     }
 
-    IEnumerator Attack()
+    IEnumerator AttackDelay()
     {
-        anim.SetBool("Attacking?", true);
-        yield return new WaitForSeconds(.05f);
-        player.state = BaseState.ATTACKING;
+        isAttacking = true;
+        yield return new WaitForSeconds(0.05f);
+        isAttacking = false;
+    }
+
+    public void EndAttack()
+    {
+        canAttack = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.transform != parent && (collision.gameObject.layer == 8 || collision.gameObject.layer == 12))
         {
-            print(collision.name);
             collision.GetComponent<BaseStats>().TakeDamage(dmg);
             hit.Play();
         }

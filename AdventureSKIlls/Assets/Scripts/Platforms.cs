@@ -6,17 +6,17 @@ using Photon.Pun;
 public class Platforms : MonoBehaviour
 {
 
-    Player[] players;
+    PlayerNetworking[] players;
     GameObject myPlayer;
 
     private void Start()
     {
-        players = FindObjectsOfType<Player>();
+        players = FindObjectsOfType<PlayerNetworking>();
         if (players.Length > 1)
         {
-            foreach (Player player in players)
+            foreach (PlayerNetworking player in players)
             {
-                if (GameManager.singleton.currentPlayer == player.gameObject)
+                if (player.photonView.IsMine)
                 {
                     myPlayer = player.gameObject;
                     break;

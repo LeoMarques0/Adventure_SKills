@@ -8,6 +8,8 @@ public class Mage : Player
     public int healAmount;
 
     public PlayerProjectile magic;
+    public LayerMask ableToHeal;
+    public Vector2 healOffset, healArea;
 
     bool canHeal = true;
 
@@ -19,7 +21,7 @@ public class Mage : Player
 
     void CallHeal()
     {
-        if (Input.GetButtonDown("Ability") && canHeal && health < 100)
+        if (Input.GetButtonDown("Ability") && canHeal)
         {            
             anim.SetBool("useAbility", true);            
         }
@@ -27,7 +29,11 @@ public class Mage : Player
 
     public void Heal()
     {
-        health += healAmount;
+        Collider2D[] characters = Physics2D.OverlapBoxAll((Vector2)transform.position + healOffset, healArea, 0, ableToHeal);
+        for(int x = 0; x < characters.Length; x++)
+        {
+            characters[x].GetComponent<BaseStats>().health += healAmount;
+        }
         StartCoroutine(HealDelay());
     }
 
@@ -42,5 +48,10 @@ public class Mage : Player
     public void CallShot()
     {
         magic.Shoot();
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireCube((Vector2)transform.position + healOffset, healArea);
     }
 }

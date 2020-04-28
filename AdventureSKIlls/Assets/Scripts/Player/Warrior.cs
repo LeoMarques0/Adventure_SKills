@@ -17,7 +17,7 @@ public class Warrior : Player
         base.Start();
 
         shieldScale = shield.transform.localScale.x;
-        x = 1 - minimumShieldSize;
+        x = 1 - minimumShieldSize;        
     }
 
     public override void Update()
