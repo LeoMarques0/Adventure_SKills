@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 0
     y: 43.2
     width: 1536
@@ -24,6 +25,18 @@ MonoBehaviour:
   m_MinSize: {x: 875, y: 492}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
+=======
+    x: 1
+    y: 51
+    width: 958
+    height: 988
+  m_ShowMode: 4
+  m_Title: 
+  m_RootView: {fileID: 2}
+  m_MinSize: {x: 875, y: 542}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_Maximized: 0
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -44,9 +57,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1536
     height: 781
   m_MinSize: {x: 875, y: 492}
+=======
+    width: 958
+    height: 988
+  m_MinSize: {x: 875, y: 300}
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -65,7 +84,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1536
+=======
+    width: 958
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -86,8 +109,13 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 761
     width: 1536
+=======
+    y: 968
+    width: 958
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -109,12 +137,22 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
+<<<<<<< HEAD
     width: 1536
     height: 731
   m_MinSize: {x: 677, y: 442}
   m_MaxSize: {x: 12002, y: 8042}
   vertical: 0
   controlID: 24061
+=======
+<<<<<<<< HEAD:AdventureSKIlls/Library/CurrentLayout-default.dwlt
+    width: 958
+    height: 938
+  m_MinSize: {x: 678, y: 492}
+  m_MaxSize: {x: 12003, y: 14042}
+  vertical: 0
+  controlID: 134
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -134,12 +172,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1536
     height: 731
   m_MinSize: {x: 677, y: 442}
   m_MaxSize: {x: 12002, y: 8042}
   vertical: 1
   controlID: 24062
+=======
+    width: 958
+    height: 938
+  m_MinSize: {x: 678, y: 492}
+  m_MaxSize: {x: 12003, y: 14042}
+  vertical: 1
+  controlID: 135
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -160,12 +207,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1536
     height: 460
   m_MinSize: {x: 677, y: 221}
   m_MaxSize: {x: 12002, y: 4021}
   vertical: 0
   controlID: 24063
+=======
+    width: 958
+    height: 585
+  m_MinSize: {x: 678, y: 221}
+  m_MaxSize: {x: 12003, y: 4021}
+  vertical: 0
+  controlID: 136
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -183,6 +239,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 298
     height: 460
   m_MinSize: {x: 201, y: 221}
@@ -190,6 +247,15 @@ MonoBehaviour:
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
+=======
+    width: 200
+    height: 585
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 13}
+  m_Panes:
+  - {fileID: 13}
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &9
@@ -207,6 +273,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 298
     y: 0
     width: 864
@@ -219,6 +286,21 @@ MonoBehaviour:
   - {fileID: 17}
   - {fileID: 18}
   m_Selected: 0
+=======
+    x: 200
+    y: 0
+    width: 431
+    height: 585
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 14}
+  m_Panes:
+  - {fileID: 12}
+  - {fileID: 14}
+  - {fileID: 15}
+  - {fileID: 16}
+  m_Selected: 1
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
   m_LastSelected: 0
 --- !u!114 &10
 MonoBehaviour:
@@ -235,6 +317,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1162
     y: 0
     width: 374
@@ -247,6 +330,20 @@ MonoBehaviour:
   - {fileID: 20}
   - {fileID: 21}
   - {fileID: 22}
+=======
+    x: 631
+    y: 0
+    width: 327
+    height: 585
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 17}
+  m_Panes:
+  - {fileID: 17}
+  - {fileID: 18}
+  - {fileID: 19}
+  - {fileID: 20}
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
   m_Selected: 0
   m_LastSelected: 3
 --- !u!114 &11
@@ -258,6 +355,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
+<<<<<<< HEAD
   m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -285,11 +383,16 @@ MonoBehaviour:
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: ConsoleWindow
+=======
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: ProjectBrowser
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 0
     width: 1049
     height: 271
@@ -329,6 +432,30 @@ MonoBehaviour:
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &14
+=======
+    y: 585
+    width: 958
+    height: 353
+  m_MinSize: {x: 230, y: 271}
+  m_MaxSize: {x: 10000, y: 10021}
+  m_ActualView: {fileID: 21}
+  m_Panes:
+  - {fileID: 21}
+  - {fileID: 22}
+  - {fileID: 23}
+  m_Selected: 0
+  m_LastSelected: 2
+--- !u!114 &12
+========
+    width: 1536
+    height: 731
+  m_MinSize: {x: 677, y: 442}
+  m_MaxSize: {x: 12002, y: 8042}
+  vertical: 0
+  controlID: 23898
+--- !u!114 &2
+>>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d:AdventureSKIlls/Library/CurrentMaximizeLayout.dwlt
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -344,15 +471,26 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Game
+<<<<<<< HEAD
     m_Image: {fileID: 257045534191678443, guid: 0000000000000000d000000000000000,
+=======
+    m_Image: {fileID: -2087823869225018852, guid: 0000000000000000d000000000000000,
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1048.8
     y: 533.60004
     width: 486
     height: 250
+=======
+    x: 248
+    y: 73
+    width: 1014
+    height: 570
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewsNames: []
   m_SerializedViewsValues: []
@@ -360,11 +498,19 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
+<<<<<<< HEAD
   m_TargetSize: {x: 407, y: 229}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
   m_MaximizeOnPlay: 1
+=======
+  m_TargetSize: {x: 976, y: 549}
+  m_TextureFilterMode: 0
+  m_TextureHideFlags: 61
+  m_RenderIMGUI: 1
+  m_MaximizeOnPlay: 0
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
   m_VSyncEnabled: 0
   m_Gizmos: 0
   m_Stats: 0
@@ -374,10 +520,17 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
+<<<<<<< HEAD
     m_HBaseRangeMin: -162.8
     m_HBaseRangeMax: 162.8
     m_VBaseRangeMin: -91.6
     m_VBaseRangeMax: 91.6
+=======
+    m_HBaseRangeMin: -488
+    m_HBaseRangeMax: 488
+    m_VBaseRangeMin: -274.5
+    m_VBaseRangeMax: 274.5
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -386,7 +539,11 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
+<<<<<<< HEAD
     m_EnableMouseInput: 1
+=======
+    m_EnableMouseInput: 0
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -395,16 +552,24 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
+<<<<<<< HEAD
       width: 486
       height: 229
     m_Scale: {x: 1, y: 1}
     m_Translation: {x: 243, y: 114.5}
+=======
+      width: 1014
+      height: 549
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 507, y: 274.5}
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
       x: -243
       y: -114.5
       width: 486
@@ -412,12 +577,106 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 607.5, y: 312.5}
+=======
+      x: -507
+      y: -274.5
+      width: 1014
+      height: 549
+    m_MinimalGUI: 1
+  m_defaultScale: 1
+  m_LastWindowPixelSize: {x: 1014, y: 570}
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &15
+=======
+<<<<<<<< HEAD:AdventureSKIlls/Library/CurrentLayout-default.dwlt
+--- !u!114 &13
+========
+--- !u!114 &3
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 4}
+  - {fileID: 16}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1536
+    height: 731
+  m_MinSize: {x: 677, y: 442}
+  m_MaxSize: {x: 12002, y: 8042}
+  vertical: 1
+  controlID: 23899
+--- !u!114 &4
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 5}
+  - {fileID: 7}
+  - {fileID: 11}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1536
+    height: 460
+  m_MinSize: {x: 677, y: 221}
+  m_MaxSize: {x: 12002, y: 4021}
+  vertical: 0
+  controlID: 23900
+--- !u!114 &5
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 298
+    height: 460
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 6}
+  m_Panes:
+  - {fileID: 6}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &6
+>>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d:AdventureSKIlls/Library/CurrentMaximizeLayout.dwlt
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -433,22 +692,43 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Hierarchy
+<<<<<<< HEAD
     m_Image: {fileID: -9000905672528348964, guid: 0000000000000000d000000000000000,
+=======
+    m_Image: {fileID: -590624980919486359, guid: 0000000000000000d000000000000000,
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 0
     y: 73.6
     width: 297
     height: 439
+=======
+    x: 1
+    y: 81
+    width: 199
+    height: 564
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
       m_SelectedIDs: d03a0000
       m_LastClickedID: 0
       m_ExpandedIDs: dc49fcffbc5dfcff665efcffe066fcff7a6dfcff247dfcff0e8afcff9099fcff66acfcfff8bbfcff6addfcff78ecfcff5c13fdffc222fdff3069fdff3270fdfff270fdff6871fdff1272fdff0a73fdff4e74fdff9c74fdffca74fdff3875fdff8e75fdff7279fdff50a3fdff88b2fdffe0e3fdff4ae4fdffcae4fdff4ee5fdffd426feff9e33feffd642feff205efeff6c5ffeffe06efeff8e7afeff1881feffc8a4feff60abfeff20bbfeff76bbfeff72cafeff46e7feff9ce7fefff8e8fefff8f7feffda07ffff7c0bffff981affff1228ffffb42affff102cffff2e3bffffae60ffff0c64ffff6669ffffc26affffcc7bffffc6b0ffff20b7ffffecc8ffff92cbffffaecdffff4ce3ffffd2e3ffffbaeaffffc2ebffffdaf2ffff1ef4ffff2c620000366200006c6200006463000070640000de64000066680000866800008e6800009c680000b6680000946900001a750000f0860000589c0000daac0000fabe000092cf000098010100741201003e1d01001e3e0100b240010014410100a8410100fe41010070500100645101001e61010012620100bc7a0100f87a0100ec7b0100a68c0100389f01004e9f01007ca2010074a30100
+=======
+      m_SelectedIDs: b03a0000
+      m_LastClickedID: 0
+<<<<<<<< HEAD:AdventureSKIlls/Library/CurrentLayout-default.dwlt
+      m_ExpandedIDs: e882ffff869cffff88b6ffff3abeffff50c2ffff98dbffff80dcffff04ddfffff8ecffff62fbffff646b0000a26b00009c6c0000fc9b00001c9c0000249c0000329c00004c9c00002a9d0000a09f0000b09f00001aa000001ea00000
+========
+      m_ExpandedIDs: dc49fcffbc5dfcff665efcffe066fcff7a6dfcff247dfcff0e8afcff9099fcff66acfcfff8bbfcff6addfcff78ecfcff5c13fdffc222fdff3069fdff3270fdfff270fdff6871fdff1272fdff0a73fdff4e74fdff9c74fdffca74fdff3875fdff8e75fdff7279fdff50a3fdff88b2fdffe0e3fdff4ae4fdffcae4fdff4ee5fdffd426feff9e33feffd642feff205efeff6c5ffeffe06efeff8e7afeff1881feffc8a4feff60abfeff20bbfeff76bbfeff72cafeff46e7feff9ce7fefff8e8fefff8f7feffda07ffff7c0bffff981affff1228ffffb42affff102cffff2e3bffffae60ffff0c64ffff6669ffffc26affffcc7bffffc6b0ffff20b7ffffecc8ffff92cbffffaecdffff4ce3ffffd2e3ffffbaeaffffc2ebffffdaf2ffff1ef4ffff2c620000366200006c6200006463000070640000de64000066680000866800008e6800009c680000b6680000946900001a750000f0860000589c0000daac0000fabe000092cf000098010100741201003e1d01001e3e0100b240010014410100a8410100fe41010070500100645101001e61010012620100bc7a0100f87a0100ec7b0100a68c0100389f01004e9f01007ca2010074a30100
+>>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d:AdventureSKIlls/Library/CurrentMaximizeLayout.dwlt
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -472,7 +752,43 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 0c5e59e482e2c4a4f9db0c790a9b1610
+<<<<<<< HEAD
 --- !u!114 &16
+=======
+<<<<<<<< HEAD:AdventureSKIlls/Library/CurrentLayout-default.dwlt
+--- !u!114 &14
+========
+--- !u!114 &7
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: SceneView
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 298
+    y: 0
+    width: 864
+    height: 460
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 8}
+  m_Panes:
+  - {fileID: 8}
+  - {fileID: 9}
+  - {fileID: 10}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &8
+>>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d:AdventureSKIlls/Library/CurrentMaximizeLayout.dwlt
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -488,15 +804,26 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Scene
+<<<<<<< HEAD
     m_Image: {fileID: -131512000283675692, guid: 0000000000000000d000000000000000,
+=======
+    m_Image: {fileID: 2318424515335265636, guid: 0000000000000000d000000000000000,
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 298.4
     y: 73.6
     width: 862
     height: 439
+=======
+    x: 201
+    y: 81
+    width: 429
+    height: 564
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
   m_WindowGUID: c5d2acfb04a50c544ab12252a575ca9f
@@ -508,9 +835,21 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 99.04008, y: -3.4954183, z: 176.34306}
     speed: 2
     m_Value: {x: 99.04008, y: -3.4954183, z: 176.34306}
+=======
+<<<<<<<< HEAD:AdventureSKIlls/Library/CurrentLayout-default.dwlt
+    m_Target: {x: -5.2393584, y: 1.1031237, z: -79.20385}
+    speed: 2
+    m_Value: {x: -5.2393584, y: 1.1031237, z: -79.20385}
+========
+    m_Target: {x: 99.04008, y: -3.4954183, z: 176.34306}
+    speed: 2
+    m_Value: {x: 99.04008, y: -3.4954183, z: 176.34306}
+>>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d:AdventureSKIlls/Library/CurrentMaximizeLayout.dwlt
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -560,9 +899,21 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
     m_Target: 110.98207
     speed: 2
     m_Value: 110.98207
+=======
+<<<<<<<< HEAD:AdventureSKIlls/Library/CurrentLayout-default.dwlt
+    m_Target: 28.910376
+    speed: 2
+    m_Value: 28.910376
+========
+    m_Target: 110.98207
+    speed: 2
+    m_Value: 110.98207
+>>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d:AdventureSKIlls/Library/CurrentMaximizeLayout.dwlt
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -587,7 +938,11 @@ MonoBehaviour:
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
+<<<<<<< HEAD
 --- !u!114 &17
+=======
+--- !u!114 &15
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -603,19 +958,31 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Animator
+<<<<<<< HEAD
     m_Image: {fileID: -6973158847631862895, guid: 0000000000000000d000000000000000,
+=======
+    m_Image: {fileID: 663490763026382308, guid: 0000000000000000d000000000000000,
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 298.4
     y: 73.6
     width: 862
     height: 439
+=======
+    x: 314.4
+    y: 73.6
+    width: 846
+    height: 435
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
   m_ViewDataDictionary: {fileID: 0}
   m_ViewTransforms:
     m_KeySerializationHelper:
     - {fileID: -2579430630831953921, guid: 02e46b8a13c27e646a010e1767e4bc62, type: 2}
+<<<<<<< HEAD
     - {fileID: 1279177242714091146, guid: 02e46b8a13c27e646a010e1767e4bc62, type: 2}
     m_ValueSerializationHelper:
     - e00: 0.9070162
@@ -642,6 +1009,17 @@ MonoBehaviour:
       e11: 0.9278938
       e12: 0
       e13: 116.87788
+=======
+    m_ValueSerializationHelper:
+    - e00: 0.6918787
+      e01: 0
+      e02: 0
+      e03: -83.979294
+      e10: 0
+      e11: 0.6918787
+      e12: 0
+      e13: -97.89436
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
       e20: 0
       e21: 0
       e22: 1
@@ -657,9 +1035,12 @@ MonoBehaviour:
   - m_Target: {fileID: -2579430630831953921, guid: 02e46b8a13c27e646a010e1767e4bc62,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
+<<<<<<< HEAD
   - m_Target: {fileID: 1279177242714091146, guid: 02e46b8a13c27e646a010e1767e4bc62,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
+=======
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
   blendTreeGraph: {fileID: 0}
@@ -668,10 +1049,17 @@ MonoBehaviour:
   m_MiniTool: 0
   m_LockTracker:
     m_IsLocked: 0
+<<<<<<< HEAD
   m_CurrentEditor: 1
   m_LayerEditor:
     m_SelectedLayerIndex: 0
 --- !u!114 &18
+=======
+  m_CurrentEditor: 0
+  m_LayerEditor:
+    m_SelectedLayerIndex: 0
+--- !u!114 &16
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -687,17 +1075,63 @@ MonoBehaviour:
   m_MaxSize: {x: 2048, y: 2048}
   m_TitleContent:
     m_Text: Asset Store
+<<<<<<< HEAD
     m_Image: {fileID: -4391848389275900105, guid: 0000000000000000d000000000000000,
+=======
+    m_Image: {fileID: 357073275683767465, guid: 0000000000000000d000000000000000,
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 447.2
     y: 73.6
     width: 713
     height: 435
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &19
+=======
+    x: 392
+    y: 73
+    width: 1058
+    height: 570
+  m_ViewDataDictionary: {fileID: 0}
+<<<<<<<< HEAD:AdventureSKIlls/Library/CurrentLayout-default.dwlt
+--- !u!114 &17
+========
+--- !u!114 &11
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: InspectorWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 1162
+    y: 0
+    width: 374
+    height: 460
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 12}
+  m_Panes:
+  - {fileID: 12}
+  - {fileID: 13}
+  - {fileID: 14}
+  - {fileID: 15}
+  m_Selected: 0
+  m_LastSelected: 3
+--- !u!114 &12
+>>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d:AdventureSKIlls/Library/CurrentMaximizeLayout.dwlt
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -713,15 +1147,26 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Inspector
+<<<<<<< HEAD
     m_Image: {fileID: 8356117983803934776, guid: 0000000000000000d000000000000000,
+=======
+    m_Image: {fileID: -6905738622615590433, guid: 0000000000000000d000000000000000,
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1162.4
     y: 73.6
     width: 373
     height: 439
+=======
+    x: 632
+    y: 81
+    width: 326
+    height: 564
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
   m_ViewDataDictionary: {fileID: 0}
   m_OpenAddComponentMenu: 0
   m_ObjectsLockedBeforeSerialization: []
@@ -733,9 +1178,15 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
+<<<<<<< HEAD
   m_LastInspectedObjectInstanceID: -1
   m_LastVerticalScrollValue: 0
 --- !u!114 &20
+=======
+  m_LastInspectedObjectInstanceID: 15056
+  m_LastVerticalScrollValue: 0
+--- !u!114 &18
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -766,7 +1217,11 @@ MonoBehaviour:
   - https://public-cdn.cloud.unity3d.com/editor/production/cloud/hub
   m_RegisteredViewInstances:
   - {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &21
+=======
+--- !u!114 &19
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -782,7 +1237,11 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Lighting
+<<<<<<< HEAD
     m_Image: {fileID: 4345591932164060902, guid: 0000000000000000d000000000000000,
+=======
+    m_Image: {fileID: 8394858894532624064, guid: 0000000000000000d000000000000000,
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
       type: 0}
     m_Tooltip: 
   m_Pos:
@@ -792,7 +1251,11 @@ MonoBehaviour:
     width: 373
     height: 434
   m_ViewDataDictionary: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &22
+=======
+--- !u!114 &20
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -823,7 +1286,68 @@ MonoBehaviour:
     m_PrefName: Preview_TilemapBrushInspector
   m_Palette: {fileID: 1781698788226525493, guid: 96a452e14451e124593e2e4bb4480f10,
     type: 3}
+<<<<<<< HEAD
 --- !u!114 &23
+=======
+<<<<<<<< HEAD:AdventureSKIlls/Library/CurrentLayout-default.dwlt
+--- !u!114 &21
+========
+--- !u!114 &16
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 17}
+  - {fileID: 21}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 460
+    width: 1536
+    height: 271
+  m_MinSize: {x: 302, y: 221}
+  m_MaxSize: {x: 8002, y: 4021}
+  vertical: 0
+  controlID: 23825
+--- !u!114 &17
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: ConsoleWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1049
+    height: 271
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 19}
+  m_Panes:
+  - {fileID: 18}
+  - {fileID: 19}
+  - {fileID: 20}
+  m_Selected: 1
+  m_LastSelected: 0
+--- !u!114 &18
+>>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d:AdventureSKIlls/Library/CurrentMaximizeLayout.dwlt
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -839,15 +1363,26 @@ MonoBehaviour:
   m_MaxSize: {x: 10000, y: 10000}
   m_TitleContent:
     m_Text: Project
+<<<<<<< HEAD
     m_Image: {fileID: -2032128904892744680, guid: 0000000000000000d000000000000000,
+=======
+    m_Image: {fileID: -7501376956915960154, guid: 0000000000000000d000000000000000,
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 0
     y: 533.60004
     width: 1048
     height: 250
+=======
+    x: 1
+    y: 666
+    width: 958
+    height: 332
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -868,14 +1403,31 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scripts
   m_LastFoldersGridSize: -1
+<<<<<<< HEAD
   m_LastProjectPath: C:\Users\leopm\Documents\GitHub\Adventure_SKills\AdventureSKIlls
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+=======
+  m_LastProjectPath: C:\Users\User\Documents\UnityGitProjects\Adventure_SKills\AdventureSKIlls
+  m_LockTracker:
+    m_IsLocked: 0
+  m_FolderTreeState:
+<<<<<<<< HEAD:AdventureSKIlls/Library/CurrentLayout-default.dwlt
+    scrollPos: {x: 0, y: 265}
+    m_SelectedIDs: f64c0000
+    m_LastClickedID: 19702
+    m_ExpandedIDs: 000000007a430000324c00004c4c00000a4d0000104d000000ca9a3b
+========
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
     scrollPos: {x: 0, y: 354}
     m_SelectedIDs: e2480000
     m_LastClickedID: 18658
     m_ExpandedIDs: 00000000b2440000e0470000e2470000e4470000e6470000e8470000e248000000ca9a3b
+<<<<<<< HEAD
+=======
+>>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d:AdventureSKIlls/Library/CurrentMaximizeLayout.dwlt
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -891,7 +1443,11 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
+<<<<<<< HEAD
       m_ClientGUIView: {fileID: 12}
+=======
+      m_ClientGUIView: {fileID: 11}
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -903,7 +1459,15 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000b2440000e0470000e2470000e4470000e6470000e8470000e248000000ca9a3b
+=======
+<<<<<<<< HEAD:AdventureSKIlls/Library/CurrentLayout-default.dwlt
+    m_ExpandedIDs: 000000007a430000
+========
+    m_ExpandedIDs: 00000000b2440000e0470000e2470000e4470000e6470000e8470000e248000000ca9a3b
+>>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d:AdventureSKIlls/Library/CurrentMaximizeLayout.dwlt
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -931,7 +1495,11 @@ MonoBehaviour:
     m_SelectedInstanceIDs: d03a0000
     m_LastClickedInstanceID: 15056
     m_HadKeyboardFocusLastEvent: 1
+<<<<<<< HEAD
     m_ExpandedInstanceIDs: c6230000783f0000
+=======
+    m_ExpandedInstanceIDs: c6230000783f000034a000001e690000dca10000e4a1000026a70000
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -947,7 +1515,11 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
+<<<<<<< HEAD
       m_ClientGUIView: {fileID: 10}
+=======
+      m_ClientGUIView: {fileID: 11}
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -958,8 +1530,13 @@ MonoBehaviour:
     m_ScrollPosition: {x: 0, y: 4}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
+<<<<<<< HEAD
   m_DirectoriesAreaWidth: 115
 --- !u!114 &24
+=======
+  m_DirectoriesAreaWidth: 146
+--- !u!114 &22
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -975,17 +1552,29 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Console
+<<<<<<< HEAD
     m_Image: {fileID: -3303252850963283158, guid: 0000000000000000d000000000000000,
+=======
+    m_Image: {fileID: 111653112392082826, guid: 0000000000000000d000000000000000,
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 533.60004
     width: 1048
     height: 250
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &25
+=======
+    y: 664
+    width: 1305
+    height: 335
+  m_ViewDataDictionary: {fileID: 0}
+--- !u!114 &23
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1001,12 +1590,17 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Animation
+<<<<<<< HEAD
     m_Image: {fileID: -8967370667835289719, guid: 0000000000000000d000000000000000,
+=======
+    m_Image: {fileID: 1561878555887300916, guid: 0000000000000000d000000000000000,
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
       type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 533.60004
     width: 1048
     height: 250
@@ -1014,3 +1608,42 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_LastSelectedObjectID: 90636
+=======
+    y: 664
+    width: 1279
+    height: 335
+  m_ViewDataDictionary: {fileID: 0}
+  m_LockTracker:
+    m_IsLocked: 0
+<<<<<<<< HEAD:AdventureSKIlls/Library/CurrentLayout-default.dwlt
+  m_LastSelectedObjectID: 17940
+========
+  m_LastSelectedObjectID: 90636
+--- !u!114 &21
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: GameView
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 1049
+    y: 0
+    width: 487
+    height: 271
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 2}
+  m_Panes:
+  - {fileID: 2}
+  m_Selected: 0
+  m_LastSelected: 0
+>>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d:AdventureSKIlls/Library/CurrentMaximizeLayout.dwlt
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d

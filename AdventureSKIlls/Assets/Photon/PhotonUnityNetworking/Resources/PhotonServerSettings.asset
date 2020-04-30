@@ -40,5 +40,9 @@ MonoBehaviour:
   - StartAnimation
   - StartChangeColumn
   DisableAutoOpenWizard: 1
+<<<<<<< HEAD
   ShowSettings: 0
+=======
+  ShowSettings: 1
+>>>>>>> 5b7917e36f0452ea2a921bb989cc1b8060e7ac3d
   DevRegionSetOnce: 1
