@@ -132,7 +132,6 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public override void OnDisconnected(DisconnectCause cause)
     {
-        menu.LoadScreen(true);
         Debug.LogWarning("Desconectado. Causa: " + cause);
     }
 

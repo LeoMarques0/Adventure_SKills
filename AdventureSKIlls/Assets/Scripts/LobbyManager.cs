@@ -140,7 +140,7 @@ public class LobbyManager : MonoBehaviour
         if (myCarousel.ready)
             readyButtonText.text = "CANCEL";
         else
-            readyButtonText.text = "READY";
+            readyButtonText.text = "GO";
     }
 
     IEnumerator ReadyCountDown()
