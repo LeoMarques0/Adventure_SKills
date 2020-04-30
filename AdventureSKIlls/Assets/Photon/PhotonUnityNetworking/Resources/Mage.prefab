@@ -557,13 +557,13 @@ MonoBehaviour:
     SynchronizeType: 1
     Name: useAbility
   - Type: 1
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: YSpeed
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: IsGrounded
   - Type: 3
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: AttackIndex
   m_SynchronizeLayers:
   - SynchronizeType: 0
