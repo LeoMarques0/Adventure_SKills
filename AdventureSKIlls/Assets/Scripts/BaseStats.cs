@@ -11,7 +11,7 @@ public enum BaseState
     HURT,
     DYING
 }
-public class BaseStats : MonoBehaviour
+public class BaseStats : MonoBehaviourPun
 {
 
     [SerializeField]

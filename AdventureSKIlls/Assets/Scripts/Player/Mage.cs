@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -46,6 +47,15 @@ public class Mage : Player
     }
 
     public void CallShot()
+    {
+        if (PhotonNetwork.IsConnected && photonView.IsMine)
+            photonView.RPC("CallShotRPC", RpcTarget.AllViaServer);
+        else
+            magic.Shoot();
+    }
+
+    [PunRPC]
+    public void CallShotRPC()
     {
         magic.Shoot();
     }

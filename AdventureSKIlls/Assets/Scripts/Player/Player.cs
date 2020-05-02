@@ -91,7 +91,7 @@ public class Player : BaseStats
         }
 
         if(hor != 0)
-            transform.eulerAngles = Vector3.up * (hor == 1 ? 1 : 180);
+            transform.eulerAngles = Vector3.up * (hor == 1 ? 0 : 180);
     }
 
     public virtual void Jump()
