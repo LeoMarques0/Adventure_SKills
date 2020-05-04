@@ -75,20 +75,7 @@ public class Player : BaseStats
     {
         hor = Mathf.RoundToInt(Input.GetAxisRaw("Horizontal"));
 
-        if(instantSpeed)
-            rb.velocity = new Vector2(maxSpd * hor, rb.velocity.y);
-        else
-        {
-            if ((hor > 0 && rb.velocity.x < 0) || (hor < 0 && rb.velocity.x > 0))
-                rb.AddForce(Vector2.right * hor * spd * 5 * Time.deltaTime);
-            else
-                rb.AddForce(Vector2.right * hor * spd * Time.deltaTime);
-
-            rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxSpd, maxSpd), rb.velocity.y);
-
-            if (hor == 0)
-                rb.velocity = Vector2.Lerp(rb.velocity, new Vector2(0, rb.velocity.y), 8 * Time.deltaTime);
-        }
+        rb.velocity = new Vector2(maxSpd * hor, rb.velocity.y);
 
         if(hor != 0)
             transform.eulerAngles = Vector3.up * (hor == 1 ? 0 : 180);

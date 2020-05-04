@@ -11040,7 +11040,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!19719996 &299621792
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -14644,7 +14644,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1454305704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.02778, y: 1, z: -6.7541103}
+  m_LocalPosition: {x: 9.054879, y: 1, z: -6.7541103}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -18769,6 +18769,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthUI: {fileID: 6359717114156181365, guid: 61a6460f8500b6b48ac2f9169bfc2a7a,
     type: 3}
+  online: 0
+  maxHealth: 100
   health: 0
   state: 0
   drops: []

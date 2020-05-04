@@ -2456,7 +2456,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 5
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -2610,6 +2610,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be08b84799618947abeee6710bc96d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stringToSend: 
+  stringReceived: 
   lerpTransformTime: 10
   lerpRotationTime: 0
   stringsToJson: []

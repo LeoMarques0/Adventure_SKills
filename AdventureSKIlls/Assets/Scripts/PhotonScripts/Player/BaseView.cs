@@ -18,8 +18,8 @@ public class BaseView : MonoBehaviour, IPunObservable
     private float lastXPosReceived, lastYPosReceived;
     private float lastYRotReceived;
 
-    private string stringToSend = "";
-    private string stringReceived;
+    public string stringToSend = "";
+    public string stringReceived;
 
     [SerializeField]
     private float lerpTransformTime;
@@ -51,6 +51,10 @@ public class BaseView : MonoBehaviour, IPunObservable
         lastXPosReceived = transform.position.x;
         lastYPosReceived = transform.position.y;
         lastYRotReceived = transform.eulerAngles.y;
+
+        transform.position = new Vector2(lastXPosSent, lastYPosSent);
+        transform.eulerAngles = new Vector2(transform.eulerAngles.x, lastYRotSent);
+        baseStats.health = lastHealthSent;
     }
 
     private void Update()
