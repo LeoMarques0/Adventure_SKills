@@ -5,6 +5,27 @@ using UnityEngine;
 
 public class BaseView : MonoBehaviour, IPunObservable
 {
+
+    const string healthKey = "HE";
+    const string xPosKey = "XP", yPosKey = "YP";
+    const string yRotKey = "YR";
+
+    private float lastHealthSent;
+    private float lastXPosSent, lastYPosSent;
+    private float lastYRotSent;
+
+    private float lastHealthReceived;
+    private float lastXPosReceived, lastYPosReceived;
+    private float lastYRotReceived;
+
+    private string stringToSend = "";
+    private string stringReceived;
+
+    [SerializeField]
+    private float lerpTransformTime;
+    [SerializeField]
+    private float lerpRotationTime;
+
     BaseStats baseStats;
     Rigidbody2D rb;
 
@@ -19,58 +40,199 @@ public class BaseView : MonoBehaviour, IPunObservable
         rb = GetComponent<Rigidbody2D>();
     }
 
+    private void Start()
+    {
+        lastHealthSent = baseStats.health;
+        lastXPosSent = transform.position.x;
+        lastYPosSent = transform.position.y;
+        lastYRotSent = transform.eulerAngles.y;
+
+        lastHealthReceived = baseStats.maxHealth;
+        lastXPosReceived = transform.position.x;
+        lastYPosReceived = transform.position.y;
+        lastYRotReceived = transform.eulerAngles.y;
+    }
+
     private void Update()
     {
         if (baseStats.health <= 0)
             baseStats.Die();
+
+        if(!baseStats.photonView.IsMine)
+            UpdatePlayer();
     }
 
-    public void StoreTransform2D(bool getPos, bool getRot)
+    #region SerializePosition
+    public void StorePosition()
     {
-        stringsToJson.Add(transform.position.x);
-        stringsToJson.Add(transform.position.y);
-
-        stringsToJson.Add(transform.eulerAngles.y);
+        if (transform.position.x != lastXPosSent)
+        {
+            stringToSend += xPosKey + transform.position.x + ";";
+            lastXPosSent = transform.position.x;
+        }
+        if (transform.position.y != lastYPosSent)
+        {
+            stringToSend += yPosKey + transform.position.y + ";";
+            lastYPosSent = transform.position.y;
+        }
     }
 
-    public void UpdateTransform2D(float[] floatsReceived)
+    public void ReadPosition()
     {
-        transform.position = new Vector2(floatsReceived[0], floatsReceived[1]);
-        transform.eulerAngles = new Vector2(0, floatsReceived[2]);
+        if(stringReceived.Contains(xPosKey))
+        {
+            int xPosIndex = stringReceived.IndexOf(xPosKey);
+            string xNewPos = "";
+
+            for(int x = xPosIndex + xPosKey.Length; x < stringReceived.Length; x++)
+            {
+                if (stringReceived[x] != ';')
+                    xNewPos += stringReceived[x];
+                else
+                    break;
+            }
+
+            lastXPosReceived = float.Parse(xNewPos);
+        }
+
+        if (stringReceived.Contains(yPosKey))
+        {
+            int yPosIndex = stringReceived.IndexOf(yPosKey);
+            string yNewPos = "";
+
+            for (int x = yPosIndex + yPosKey.Length; x < stringReceived.Length; x++)
+            {
+                if (stringReceived[x] != ';')
+                    yNewPos += stringReceived[x];
+                else
+                    break;
+            }
+
+            lastYPosReceived = float.Parse(yNewPos);
+        }
     }
 
-    public void StoreVelocity2D()
+    public void UpdatePosition()
     {
-        stringsToJson.Add(rb.velocity.x);
-        stringsToJson.Add(rb.velocity.y);
-    }
+        float xPos = transform.position.x;
+        float yPos = transform.position.y;
 
-    public void UpdateVelocity2D(float[] floatsReceived)
+        if (transform.position.x != lastXPosReceived)
+        {
+            xPos = lastXPosReceived;
+
+        }
+
+        if (transform.position.y != lastYPosReceived)
+        {
+
+            yPos = lastYPosReceived;
+
+        }
+
+        transform.position = Vector2.MoveTowards(transform.position, new Vector2(xPos, yPos), lerpTransformTime);
+    }
+    #endregion
+    #region SerializeRotation
+    public void StoreRotation()
     {
-        rb.velocity = new Vector2(floatsReceived[3], floatsReceived[4]);
+        if (transform.eulerAngles.y != lastYPosSent)
+        {
+            stringToSend += yRotKey + transform.eulerAngles.y + ";";
+            lastYRotSent = transform.eulerAngles.y;
+        }
     }
 
+    public void ReadRotation()
+    {
+        if (stringReceived.Contains(yRotKey))
+        {
+            int yRotIndex = stringReceived.IndexOf(yRotKey);
+            string yNewRot = "";
+
+            for (int x = yRotIndex + yRotKey.Length; x < stringReceived.Length; x++)
+            {
+                if (stringReceived[x] != ';')
+                    yNewRot += stringReceived[x];
+                else
+                    break;
+            }
+
+            lastYRotReceived = float.Parse(yNewRot);
+        }
+    }
+
+    public void UpdateRotation()
+    {
+        float yRot = transform.eulerAngles.y;
+        if (transform.eulerAngles.y != lastYRotReceived)
+        {
+            if (lerpTransformTime == 0)
+                yRot = lastYRotReceived;
+            else
+                yRot = Mathf.Lerp(yRot, lastYRotReceived, lerpTransformTime);
+        }
+
+        transform.eulerAngles = new Vector2(transform.eulerAngles.x, yRot);
+    }
+    #endregion
+    #region SerializeHealth
     public void StoreHealth()
     {
-        stringsToJson.Add(baseStats.health);
+        if (baseStats.health != lastHealthSent)
+        {
+            stringToSend += healthKey + baseStats.health + ";";
+            lastHealthSent = baseStats.health;
+        }
     }
 
-    public void UpdateHealth(float[] floatsReceived)
+    public void ReadHealth()
     {
-        baseStats.health = floatsReceived[0];
+        if (stringReceived.Contains(healthKey))
+        {
+            int healthIndex = stringReceived.IndexOf(healthKey);
+            string newHealth = "";
+
+            for (int x = healthIndex + healthKey.Length; x < stringReceived.Length; x++)
+            {
+                if (stringReceived[x] != ';')
+                    newHealth += stringReceived[x];
+                else
+                    break;
+            }
+
+            lastHealthReceived = float.Parse(newHealth);
+        }
     }
 
+    public void UpdateHealth()
+    {
+        if(baseStats.health != lastHealthReceived)
+            baseStats.health = lastHealthReceived;
+    }
+    #endregion
+    #region SerializeManager
     public virtual void PrepareToSerialize()
     {
-        stringsToJson = new List<float>();
-
         StoreHealth();
+        StorePosition();
+        StoreRotation();
     }
 
-    public virtual void UpdatePlayer(float[] floatsReceived)
+    public virtual void ReadString()
     {
-        UpdateHealth(floatsReceived);
+        ReadHealth();
+        ReadPosition();
+        ReadRotation();
     }
+
+    public virtual void UpdatePlayer()
+    {
+        UpdateHealth();
+        UpdatePosition();
+        UpdateRotation();
+    }
+    #endregion
 
     public virtual void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
@@ -78,17 +240,16 @@ public class BaseView : MonoBehaviour, IPunObservable
         {
             PrepareToSerialize();
 
-            serializedString = JsonUtil.CollectionToJsonString(stringsToJson, "PlayerKey");
+            serializedString = stringToSend;
+            stringToSend = "";
 
-            stream.Serialize(ref serializedString);
+            stream.SendNext(serializedString);
         }
-        else if(stream.IsReading)
+        else
         {
-            stream.Serialize(ref serializedString);
+            stringReceived = (string)stream.ReceiveNext();
 
-            float[] floatsReceived = JsonUtil.JsonStringToArray(serializedString, "PlayerKey", str => float.Parse(str));
-
-            UpdatePlayer(floatsReceived);
+            ReadString();
         }
     }
 }

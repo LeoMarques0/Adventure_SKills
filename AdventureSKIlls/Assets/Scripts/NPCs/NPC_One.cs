@@ -8,7 +8,6 @@ public class NPC_One : BaseStats
 
     Animator anim;
     Vector2 openGatePos;
-    PhotonView photonView;
 
     public Transform gate;
     public Vector2 whereToOpenGate;
@@ -17,11 +16,11 @@ public class NPC_One : BaseStats
     void Start()
     {
         anim = GetComponent<Animator>();
-        photonView = GetComponent<PhotonView>();
         if (health != 0)
             health = 0;
 
         openGatePos = (Vector2)gate.position + whereToOpenGate;
+        health = 0;
     }
 
     // Update is called once per frame

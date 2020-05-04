@@ -39,6 +39,7 @@ public class PlayerUI : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        print(main.name + ": " + main.health);
         healthSlider.value = main.health;
     }
 
@@ -76,6 +77,6 @@ public class PlayerUI : MonoBehaviour
         main = _main.GetComponent<BaseStats>();
         mainCam = FindObjectOfType<Camera>();
 
-        healthSlider.maxValue = main.health;
+        healthSlider.maxValue = main.maxHealth;
     }
 }

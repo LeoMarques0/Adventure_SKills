@@ -8,8 +8,7 @@ public class Carousel : LayoutGroup
 {
 
     #region Serialized Fields
-    [SerializeField]
-    [Range(0, 5)]
+    [SerializeField, Range(0, 5)]
     private float smoothness;
     #endregion
 

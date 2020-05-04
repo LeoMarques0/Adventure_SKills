@@ -875,10 +875,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1123596777624804920}
-  - component: {fileID: 1123596777624804921}
   - component: {fileID: 1123596777624804926}
   - component: {fileID: 2556142895752407792}
-  m_Layer: 8
+  - component: {fileID: 2200578404102050676}
+  m_Layer: 10
   m_Name: Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -899,22 +899,6 @@ Transform:
   m_Father: {fileID: 4264449879833204151}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &1123596777624804921
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1123596777624804923}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
-  m_Direction: 0
 --- !u!114 &1123596777624804926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -929,6 +913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hit: {fileID: 0}
   anim: {fileID: 0}
+  player: {fileID: 4264449879833204146}
   dmg: 5
 --- !u!82 &2556142895752407792
 AudioSource:
@@ -940,7 +925,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7e7f3e028aa807b4ba57f05cc3ca8e84, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5fed0373cac9068438c47b0e33144fb9, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1026,6 +1011,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!58 &2200578404102050676
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123596777624804923}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1230055906367556696
 GameObject:
   m_ObjectHideFlags: 0
@@ -2409,9 +2410,7 @@ GameObject:
   - component: {fileID: 4264449879833204146}
   - component: {fileID: 1123596777549467468}
   - component: {fileID: 1249251082815783570}
-  - component: {fileID: 2695375725564228767}
   - component: {fileID: 3627695950160591796}
-  - component: {fileID: 1487278481935536737}
   - component: {fileID: 5666458757774618636}
   - component: {fileID: 4996773424876733092}
   - component: {fileID: -7993904675490693938}
@@ -2501,6 +2500,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthUI: {fileID: 6359717114156181365, guid: 61a6460f8500b6b48ac2f9169bfc2a7a,
     type: 3}
+  online: 0
+  maxHealth: 100
   health: 100
   state: 0
   drops: []
@@ -2559,29 +2560,11 @@ MonoBehaviour:
   Synchronization: 1
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 2695375725564228767}
-  - {fileID: 3627695950160591796}
-  - {fileID: 1487278481935536737}
   - {fileID: -7993904675490693938}
   - {fileID: 5666458757774618636}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &2695375725564228767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4264449879833204173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 0
-  m_SynchronizeScale: 0
 --- !u!114 &3627695950160591796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2589,18 +2572,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4264449879833204173}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_PositionModel:
-    SynchronizeEnabled: 0
+    SynchronizeEnabled: 1
     TeleportEnabled: 1
     TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 2
+    InterpolateOption: 3
     InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 1
+    InterpolateLerpSpeed: 10
     ExtrapolateOption: 0
     ExtrapolateSpeed: 1
     ExtrapolateIncludingRoundTripTime: 1
@@ -2615,22 +2598,6 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
---- !u!114 &1487278481935536737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4264449879833204173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e7cb724808c322458aa4d15f5035fa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
-  m_TeleportIfDistanceGreaterThan: 3
 --- !u!114 &5666458757774618636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2643,6 +2610,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be08b84799618947abeee6710bc96d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lerpTransformTime: 10
+  lerpRotationTime: 0
   stringsToJson: []
   serializedString: 
 --- !u!114 &4996773424876733092
@@ -3475,7 +3444,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2572547679484256372}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -28800.096}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -28080.096}
 --- !u!1 &7130007406216898032
 GameObject:
   m_ObjectHideFlags: 0

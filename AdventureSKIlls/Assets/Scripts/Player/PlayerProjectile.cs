@@ -8,8 +8,6 @@ public class PlayerProjectile : PlayerAttack
     public GameObject projectile;
     public int maxProjectiles;
 
-    public BaseStats player;
-
     List<Projectile> newShots = new List<Projectile>();
 
     public override void AttackInput()

@@ -13255,8 +13255,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1844281697
+  m_SortingLayer: -1
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: fc1ce792b88f7304487387a029a77505, type: 3}
   m_Color: {r: 0.4433962, g: 0.3117235, b: 0.21960661, a: 1}
@@ -13946,8 +13946,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1844281697
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fc1ce792b88f7304487387a029a77505, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
@@ -14644,7 +14644,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1454305704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.27778, y: 1, z: -6.7541103}
+  m_LocalPosition: {x: 9.02778, y: 1, z: -6.7541103}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -17220,8 +17220,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1844281697
+  m_SortingLayer: -1
   m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: e370b03f59214b343a02efce9ce51b03, type: 3}
   m_Color: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 1}
@@ -18174,7 +18174,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2015522648194231335}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2653149691254959142
 Transform:
   m_ObjectHideFlags: 0
@@ -18663,7 +18663,7 @@ Animator:
   m_GameObject: {fileID: 4253411788363969479}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 49384affc55b75248b3eafebeb7eb302, type: 2}
+  m_Controller: {fileID: 9100000, guid: b99c08f7e4cb5b74889abdfa5aaad0b8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -19343,7 +19343,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7978974367693112989}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -2878.87}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -3238.87}
 --- !u!4 &6147918700787690105
 Transform:
   m_ObjectHideFlags: 0

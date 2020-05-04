@@ -9,12 +9,14 @@ public class Projectile : MonoBehaviour
     public float dmg, spd;
 
     Rigidbody2D rb;
+    BaseStats main;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
         rb.velocity = new Vector2(spd, 0) * transform.right;
+        main = parent.GetComponent<BaseStats>();
 
         Destroy(gameObject, 5);
     }
@@ -23,8 +25,18 @@ public class Projectile : MonoBehaviour
     {
         if (collision.transform != parent)
         {
-            print(collision.name);
-            if(collision.gameObject.layer == 8 || (collision.gameObject.layer == 12 && parent.gameObject.layer != 12))
+            if (main != null && main.online)
+            {
+                if(collision.gameObject.layer == 8)
+                {
+                    BaseStats colStats = collision.GetComponent<BaseStats>();
+                    if (colStats.photonView.IsMine)
+                        colStats.TakeDamage(dmg);
+                }
+                else if(collision.gameObject.layer == 12 && main.photonView.IsMine)
+                    collision.GetComponent<BaseStats>().TakeDamage(dmg);
+            }
+            else if (collision.gameObject.layer == 8 || (collision.gameObject.layer == 12 && parent.gameObject.layer != 12))
                 collision.GetComponent<BaseStats>().TakeDamage(dmg);
             Destroy(gameObject);
         }

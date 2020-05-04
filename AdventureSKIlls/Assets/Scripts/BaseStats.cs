@@ -17,7 +17,9 @@ public class BaseStats : MonoBehaviourPun
     [SerializeField]
     private GameObject healthUI;
 
-    [Range(0, 100)]
+    [HideInInspector]
+    public bool online;
+    public float maxHealth = 100;
     public float health = 100;
     public BaseState state = new BaseState();
     public GameObject[] drops;
@@ -34,10 +36,27 @@ public class BaseStats : MonoBehaviourPun
 
     public virtual void Awake()
     {
+        online = PhotonNetwork.IsConnected;
+        health = maxHealth;
         SetHealthUI();
     }
 
     public virtual void TakeDamage(float damageTaken)
+    {
+        if (!online || (online && photonView.IsMine))
+        {
+            health -= damageTaken;
+            if (health <= 0)
+                Die();
+        }
+        else if(online)
+        {
+            photonView.RPC("TakeDamageRPC", RpcTarget.AllBuffered, damageTaken);
+        }
+    }
+
+    [PunRPC]
+    public void TakeDamageRPC(float damageTaken)
     {
         health -= damageTaken;
         if (health <= 0)
@@ -66,7 +85,7 @@ public class BaseStats : MonoBehaviourPun
     {
         PlayerUI healthInstance = Instantiate(healthUI).GetComponent<PlayerUI>();
 
-        healthInstance.SetParent(transform, GetComponent<PhotonView>());
+        healthInstance.SetParent(transform, photonView);
     }
 
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)

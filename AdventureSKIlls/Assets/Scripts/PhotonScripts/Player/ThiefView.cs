@@ -36,9 +36,10 @@ public class ThiefView : BaseView
         }
     }
 
-    public override void UpdatePlayer(float[] floatsReceived)
+    /*
+    public override void UpdatePlayer()
     {
-        base.UpdatePlayer(floatsReceived);
+        base.UpdatePlayer();
 
         if (floatsReceived.Length > 5)
         {
@@ -73,4 +74,5 @@ public class ThiefView : BaseView
             UpdatePlayer(floatsReceived);            
         }
     }
+    */
 }

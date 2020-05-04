@@ -546,6 +546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthUI: {fileID: 6359717114156181365, guid: 61a6460f8500b6b48ac2f9169bfc2a7a,
     type: 3}
+  maxHealth: 10
   health: 10
   state: 0
   drops:
@@ -580,7 +581,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 19.801981
+  MinDistance: 19
   MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0

@@ -48,9 +48,9 @@ public class Mage : Player
 
     public void CallShot()
     {
-        if (PhotonNetwork.IsConnected && photonView.IsMine)
+        if (online && photonView.IsMine)
             photonView.RPC("CallShotRPC", RpcTarget.AllViaServer);
-        else
+        else if(!online)
             magic.Shoot();
     }
 

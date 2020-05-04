@@ -29,6 +29,7 @@ public class WarriorView : BaseView
         stringsToJson.Add(shieldTransform.localScale.y);
     }
 
+    /*
     public override void UpdatePlayer(float[] floatsReceived)
     {
         base.UpdatePlayer(floatsReceived);
@@ -42,9 +43,5 @@ public class WarriorView : BaseView
 
         shieldTransform.localScale = shieldScale;
     }
-
-    public override void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        base.OnPhotonSerializeView(stream, info);
-    }
+    */
 }

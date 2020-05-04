@@ -6,10 +6,11 @@ public class PlayerAttack : MonoBehaviour
 {
     public AudioSource hit;
     public Animator anim;
+    public BaseStats player;
     public int dmg;
 
     Transform parent;
-    BaseStats player;
+    
 
     bool canAttack, isAttacking;
     int attackIndex = 0;
@@ -19,7 +20,6 @@ public class PlayerAttack : MonoBehaviour
     {
         parent = transform.parent;
         anim = transform.root.GetComponent<Animator>();
-        player = transform.root.GetComponent<BaseStats>();
         hit = GetComponent<AudioSource>();
         canAttack = true;
     }
@@ -72,10 +72,30 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform != parent && (collision.gameObject.layer == 8 || collision.gameObject.layer == 12))
+        if (collision.transform != parent)
         {
-            collision.GetComponent<BaseStats>().TakeDamage(dmg);
-            hit.Play();
+            if (player.online)
+            {
+                if (collision.gameObject.layer == 8)
+                {
+                    BaseStats collisionStats = collision.GetComponent<BaseStats>();
+                    if (collisionStats.photonView.IsMine)
+                    {
+                        collisionStats.TakeDamage(dmg);
+                        hit.Play();
+                    }
+                }
+                else if (collision.gameObject.layer == 12 && player.photonView.IsMine)
+                {
+                    collision.GetComponent<BaseStats>().TakeDamage(dmg);
+                    hit.Play();
+                }
+            }
+            else if (collision.gameObject.layer == 8 || collision.gameObject.layer == 12)
+            {
+                collision.GetComponent<BaseStats>().TakeDamage(dmg);
+                hit.Play();
+            }
         }
     }
 }
