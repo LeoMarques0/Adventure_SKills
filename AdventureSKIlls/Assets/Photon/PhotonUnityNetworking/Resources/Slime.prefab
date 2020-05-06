@@ -111,7 +111,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 7be7f69ae1a199f47b707c5ac12cef1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -388,7 +388,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 7be7f69ae1a199f47b707c5ac12cef1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -546,11 +546,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthUI: {fileID: 6359717114156181365, guid: 61a6460f8500b6b48ac2f9169bfc2a7a,
     type: 3}
+  online: 0
   maxHealth: 10
   health: 10
   state: 0
   drops:
   - {fileID: 3378320294638726545, guid: 530cc0360cac7db4c95bb835c4ced459, type: 3}
+  sprites:
+  - {fileID: 6469317891898936388}
+  - {fileID: 8480659660716480439}
+  - {fileID: 1191899824224795654}
   spd: 3
   wallCheckOffset: {x: 1.15, y: 0}
   wallCheckSize: {x: 0.1, y: 1}
@@ -693,6 +698,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d5bff1077451854a87edc5acdd241e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stringToSend: 
+  stringReceived: 
+  lerpTransformTime: 0
+  lerpRotationTime: 0
   stringsToJson: []
   serializedString: 
 --- !u!114 &8050623464341195190
@@ -808,7 +817,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 7be7f69ae1a199f47b707c5ac12cef1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -16,6 +16,7 @@ public class BaseStats : MonoBehaviourPun
 
     [SerializeField]
     private GameObject healthUI;
+    private List<Material> materials = new List<Material>();
 
     [HideInInspector]
     public bool online;
@@ -23,6 +24,7 @@ public class BaseStats : MonoBehaviourPun
     public float health = 100;
     public BaseState state = new BaseState();
     public GameObject[] drops;
+    public SpriteRenderer[] sprites;
 
     private void OnEnable()
     {
@@ -39,6 +41,11 @@ public class BaseStats : MonoBehaviourPun
         online = PhotonNetwork.IsConnected;
         health = maxHealth;
         SetHealthUI();
+
+        foreach(SpriteRenderer sprite in sprites)
+        {
+            materials.Add(sprite.material);
+        }
     }
 
     public virtual void TakeDamage(float damageTaken)
@@ -86,6 +93,27 @@ public class BaseStats : MonoBehaviourPun
         PlayerUI healthInstance = Instantiate(healthUI).GetComponent<PlayerUI>();
 
         healthInstance.SetParent(transform, photonView);
+    }
+
+    public IEnumerator FlashSprite(float timeFlashing, int amountToFlash)
+    {
+        float timeEachFlash = timeFlashing / amountToFlash;
+        int flassTransparency = 1;
+
+        for(int x = 0; x < amountToFlash; x++)
+        {
+            foreach(Material m in materials)
+            {
+                m.SetFloat("_FlashTransparency", flassTransparency);
+            }
+            flassTransparency = flassTransparency == 1 ? 0 : 1;
+            yield return new WaitForSeconds(timeEachFlash);
+        }
+
+        foreach (Material m in materials)
+        {
+            m.SetFloat("_FlashTransparency", 0);
+        }
     }
 
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)

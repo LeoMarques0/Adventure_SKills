@@ -267,3 +267,4 @@ C:\Users\leopm\Documents\GitHub\Adventure_SKills\AdventureSKIlls\obj\Debug\Photo
 C:\Users\leopm\Documents\GitHub\Adventure_SKills\AdventureSKIlls\obj\Debug\PhotonUnityNetworking.Utilities.csproj.CopyComplete
 C:\Users\leopm\Documents\GitHub\Adventure_SKills\AdventureSKIlls\obj\Debug\PhotonUnityNetworking.Utilities.dll
 C:\Users\leopm\Documents\GitHub\Adventure_SKills\AdventureSKIlls\obj\Debug\PhotonUnityNetworking.Utilities.pdb
+C:\Users\leopm\Documents\GitHub\Adventure_SKills\AdventureSKIlls\Temp\bin\Debug\ICSharpCode.NRefactory.dll

@@ -265,3 +265,4 @@ C:\Users\leopm\Documents\GitHub\Adventure_SKills\AdventureSKIlls\obj\Debug\Photo
 C:\Users\leopm\Documents\GitHub\Adventure_SKills\AdventureSKIlls\obj\Debug\PhotonWebSocket.csproj.CopyComplete
 C:\Users\leopm\Documents\GitHub\Adventure_SKills\AdventureSKIlls\obj\Debug\PhotonWebSocket.dll
 C:\Users\leopm\Documents\GitHub\Adventure_SKills\AdventureSKIlls\obj\Debug\PhotonWebSocket.pdb
+C:\Users\leopm\Documents\GitHub\Adventure_SKills\AdventureSKIlls\Temp\bin\Debug\ICSharpCode.NRefactory.dll

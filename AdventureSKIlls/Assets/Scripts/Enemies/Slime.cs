@@ -76,6 +76,7 @@ public class Slime : BaseStats
     public override void TakeDamage(float damageTaken)
     {
         rb.velocity = Vector2.zero;
+        StartCoroutine(FlashSprite(.1f, 4));
         StartCoroutine(Hurt());
         base.TakeDamage(damageTaken);
     }

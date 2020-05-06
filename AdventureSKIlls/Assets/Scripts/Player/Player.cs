@@ -143,6 +143,7 @@ public class Player : BaseStats
     {
         if(collision.gameObject.layer == 12)
         {
+            StartCoroutine(FlashSprite(.5f, 20));
             TakeDamage(20);
         }
     }
