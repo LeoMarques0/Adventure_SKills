@@ -47,9 +47,9 @@ public class Shooter : BaseStats
         state = BaseState.STANDARD;
     }
 
-    public override void TakeDamage(float damageTaken)
+    public override void TakeDamage(float damageTaken, Collider2D col)
     {
         StartCoroutine(Hurt());
-        base.TakeDamage(damageTaken);
+        base.TakeDamage(damageTaken, col);
     }
 }

@@ -11,7 +11,7 @@ public class Spike : MonoBehaviour
     {
         print(collision.name);
         if (collision.gameObject.layer == 8 || collision.gameObject.layer == 12)
-            collision.GetComponent<BaseStats>().TakeDamage(dmg);
+            collision.GetComponent<BaseStats>().TakeDamage(dmg, GetComponent<Collider2D>());
         Destroy(gameObject);
     }
 }

@@ -18,7 +18,7 @@ public class Projectile : MonoBehaviour
         rb.velocity = new Vector2(spd, 0) * transform.right;
         main = parent.GetComponent<BaseStats>();
 
-        Destroy(gameObject, 5);
+        Destroy(gameObject, 2);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -31,13 +31,13 @@ public class Projectile : MonoBehaviour
                 {
                     BaseStats colStats = collision.GetComponent<BaseStats>();
                     if (colStats.photonView.IsMine)
-                        colStats.TakeDamage(dmg);
+                        colStats.TakeDamage(dmg, GetComponent<Collider2D>());
                 }
                 else if(collision.gameObject.layer == 12 && main.photonView.IsMine)
-                    collision.GetComponent<BaseStats>().TakeDamage(dmg);
+                    collision.GetComponent<BaseStats>().TakeDamage(dmg, GetComponent<Collider2D>());
             }
             else if (collision.gameObject.layer == 8 || (collision.gameObject.layer == 12 && parent.gameObject.layer != 12))
-                collision.GetComponent<BaseStats>().TakeDamage(dmg);
+                collision.GetComponent<BaseStats>().TakeDamage(dmg, GetComponent<Collider2D>());
             Destroy(gameObject);
         }
     }

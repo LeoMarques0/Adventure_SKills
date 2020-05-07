@@ -73,12 +73,22 @@ public class Slime : BaseStats
         }
     }
 
-    public override void TakeDamage(float damageTaken)
+    public override void TakeDamage(float damageTaken, Collider2D col)
     {
-        rb.velocity = Vector2.zero;
-        StartCoroutine(FlashSprite(.1f, 4));
+        rb.velocity = (transform.position - col.transform.position).normalized * 10;
+        StartCoroutine(FlashSprite(.1f, 1));
         StartCoroutine(Hurt());
-        base.TakeDamage(damageTaken);
+
+        if (!online)
+        {
+            health -= damageTaken;
+            if (health <= 0)
+                Die();
+        }
+        else
+        {
+            photonView.RPC("TakeDamageRPC", RpcTarget.AllBuffered, damageTaken);
+        }
     }
 
     public override void Die()

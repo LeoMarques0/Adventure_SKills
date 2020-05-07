@@ -48,18 +48,11 @@ public class BaseStats : MonoBehaviourPun
         }
     }
 
-    public virtual void TakeDamage(float damageTaken)
+    public virtual void TakeDamage(float damageTaken, Collider2D col)
     {
-        if (!online || (online && photonView.IsMine))
-        {
-            health -= damageTaken;
-            if (health <= 0)
-                Die();
-        }
-        else if(online)
-        {
-            photonView.RPC("TakeDamageRPC", RpcTarget.AllBuffered, damageTaken);
-        }
+        health -= damageTaken;
+        if (health <= 0)
+            Die();
     }
 
     [PunRPC]

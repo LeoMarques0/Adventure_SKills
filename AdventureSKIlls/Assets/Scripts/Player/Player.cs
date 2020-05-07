@@ -125,26 +125,34 @@ public class Player : BaseStats
         attacks.EndAttack();
     }
 
+    public override void TakeDamage(float damageTaken, Collider2D col)
+    {
+        StartCoroutine(Knockback(col));
+        base.TakeDamage(damageTaken, col);
+    }
+
+    IEnumerator Knockback(Collider2D col)
+    {
+        state = BaseState.HURT;
+        gameObject.layer = 9;
+        rb.velocity = (transform.position - col.transform.position).normalized * 10;
+        yield return new WaitForSeconds(.1f);
+        gameObject.layer = 8;
+        state = BaseState.STANDARD;
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireCube((Vector2)transform.position + groundOffset, groundCheckSize);
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Espinhos"))
-        {
-            TakeDamage(100);
-        }
-    }
-
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.layer == 12)
         {
-            StartCoroutine(FlashSprite(.5f, 20));
-            TakeDamage(20);
+            StartCoroutine(FlashSprite(.1f, 1));
+            TakeDamage(20, collision);
         }
     }
 }
