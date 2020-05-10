@@ -9,6 +9,7 @@ public class CameraManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        /*
         PlayerNetworking[] players = FindObjectsOfType<PlayerNetworking>();
         CinemachineVirtualCamera cam = GetComponent<CinemachineVirtualCamera>();
 
@@ -20,5 +21,18 @@ public class CameraManager : MonoBehaviour
                 cam.LookAt = player.transform;
             }
         }
+        */
+
+        PlayerNetworking[] players = FindObjectsOfType<PlayerNetworking>();
+        CameraController cam = GetComponent<CameraController>();
+
+        foreach (PlayerNetworking player in players)
+        {
+            if (player.photonView.IsMine)
+            {
+                cam.target = player.transform;
+            }
+        }
+
     }
 }

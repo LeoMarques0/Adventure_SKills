@@ -11,7 +11,7 @@ public class PlayerNetworking : MonoBehaviour
     public PhotonView photonView;
 
     // Start is called before the first frame update
-    public virtual void Start()
+    public virtual void Awake()
     {
         photonView = GetComponent<PhotonView>();
         if(!photonView.IsMine)
