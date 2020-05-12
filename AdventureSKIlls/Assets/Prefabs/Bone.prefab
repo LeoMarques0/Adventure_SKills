@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 536139264685697557}
   - component: {fileID: 536139264685697555}
   - component: {fileID: 5698670193898519154}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bone
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  dmg: 0
+  dmg: 10
   spd: 0
   xVel: 20
   yVel: 5
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 7389060292653481840}
   - component: {fileID: 108054398945876084}
   - component: {fileID: 9086906316511591402}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BoneParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
