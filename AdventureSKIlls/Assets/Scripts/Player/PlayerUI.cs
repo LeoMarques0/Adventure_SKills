@@ -62,19 +62,20 @@ public class PlayerUI : MonoBehaviour
 
     public void SetParent(Transform _main, PhotonView _mainNetwork)
     {
+        main = _main.GetComponent<BaseStats>();
 
         if (_mainNetwork != null && _main.tag == "Player")
         {
             playerTransform = _mainNetwork.transform;
-            nameText.text = _mainNetwork.Owner.NickName;
+            if(main.online)
+                nameText.text = _mainNetwork.Owner.NickName;
         }
         else
         {
             playerTransform = _main;
             nameText.text = "";
         }
-
-        main = _main.GetComponent<BaseStats>();
+        
         mainCam = FindObjectOfType<Camera>();
 
         healthSlider.maxValue = main.maxHealth;
