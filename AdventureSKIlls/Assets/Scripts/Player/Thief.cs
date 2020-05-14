@@ -7,9 +7,7 @@ public class Thief : Player
 
     float invisibilityBar = 100;
 
-    bool usingInvisibility;
-
-    public SpriteRenderer[] sprites;
+    public bool usingInvisibility;
 
     // Start is called before the first frame update
     public override void Start()

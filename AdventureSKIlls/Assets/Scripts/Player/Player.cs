@@ -128,6 +128,7 @@ public class Player : BaseStats
     public override void TakeDamage(float damageTaken, Collider2D col)
     {
         StartCoroutine(Knockback(col));
+        StartCoroutine(FlashSprite(.1f, 1));
         base.TakeDamage(damageTaken, col);
     }
 
@@ -150,8 +151,7 @@ public class Player : BaseStats
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.layer == 12)
-        {
-            StartCoroutine(FlashSprite(.1f, 1));
+        {            
             TakeDamage(20, collision);
         }
     }

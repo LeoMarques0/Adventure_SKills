@@ -1289,6 +1289,7 @@ MonoBehaviour:
     type: 3}
   shotPos: {fileID: 1168097885177966256}
   delay: 2
+  spd: 2
 --- !u!50 &4457758547721670870
 Rigidbody2D:
   serializedVersion: 4

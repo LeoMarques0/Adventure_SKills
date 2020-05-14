@@ -39,7 +39,6 @@ public class PlayerUI : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        print(main.name + ": " + main.health);
         healthSlider.value = main.health;
     }
 

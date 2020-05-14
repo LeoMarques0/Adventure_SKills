@@ -14,32 +14,64 @@ public class SkeletonShooter : BaseStats
     public Transform shotPos;
 
     public float delay;
+    public float spd;
 
     Animator anim;
     Collider2D hit;
+    Rigidbody2D rb;
     bool canAttack = true;
+    bool isSearching = false;
 
     public override void Awake()
     {
         base.Awake();
         anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        hit = Physics2D.OverlapBox((Vector2)transform.position + checkOffset, checkSize, 0, playerMask);
         switch (state)
         {
             case BaseState.STANDARD:
-                if (canAttack)
-                    anim.Play("Attack_Skeleton");
-
-                hit = Physics2D.OverlapBox((Vector2)transform.position + checkOffset, checkSize, 0, playerMask);
-
+               
                 if(hit != null && hit.tag == "Player")
                 {
                     int yRot = hit.transform.position.x - transform.position.x > 0 ? 0 : 180;
                     transform.eulerAngles = new Vector3(0, yRot, 0);
+                    state = BaseState.ATTACKING;
+                }
+
+                break;
+
+            case BaseState.ATTACKING:
+
+                if (hit != null)
+                {
+                    int yRot = hit.transform.position.x - transform.position.x > 0 ? 0 : 180;
+                    transform.eulerAngles = new Vector3(0, yRot, 0);
+
+                    if (canAttack)
+                        anim.Play("Attack_Skeleton");
+                    else
+                    {
+                        float hitDistance = Mathf.Abs(hit.transform.position.x - transform.position.x);
+                        if (hitDistance < 8 || (rb.velocity.x == 0 && hitDistance > 8 && hitDistance < 10))
+                            rb.velocity = new Vector2(-transform.right.x * spd, rb.velocity.y);
+                        else if (hitDistance > 12 || (rb.velocity.x == 0 && hitDistance > 10 && hitDistance < 12))
+                            rb.velocity = new Vector2(transform.right.x * spd, rb.velocity.y);
+                        else
+                            rb.velocity = new Vector2(0, rb.velocity.y);
+                    }
+
+                    if(isSearching)
+                        StopCoroutine("SearchPlayer");                 
+                }
+                else if(hit == null && !isSearching)
+                {
+                    StartCoroutine(SearchPlayer());
                 }
 
                 break;
@@ -59,6 +91,19 @@ public class SkeletonShooter : BaseStats
         canAttack = false;
         yield return new WaitForSeconds(delay);
         canAttack = true;
+    }
+
+    IEnumerator SearchPlayer()
+    {
+        isSearching = true;
+        for(int x = 0; x < 2; x++)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+            yield return new WaitForSeconds(.25f);
+            transform.eulerAngles = new Vector3(0, 180, 0);
+            yield return new WaitForSeconds(.25f);
+        }
+        state = BaseState.STANDARD;
     }
 
     IEnumerator Hurt()
