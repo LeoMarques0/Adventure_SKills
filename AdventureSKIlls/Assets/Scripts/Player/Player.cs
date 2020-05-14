@@ -28,8 +28,9 @@ public class Player : BaseStats
     [HideInInspector]
     public Animator anim;
 
-    public virtual void Start()
+    public override void Awake()
     {
+        base.Awake();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         attacks = transform.GetComponentInChildren<PlayerAttack>();

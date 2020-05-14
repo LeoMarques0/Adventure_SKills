@@ -29,7 +29,7 @@ public class Slime : BaseStats
         hor = Random.Range(0, 2);
         hor = hor == 1 ? 1 : -1;
         transform.right *= hor;
-    }
+    } 
 
     // Update is called once per frame
     void Update()

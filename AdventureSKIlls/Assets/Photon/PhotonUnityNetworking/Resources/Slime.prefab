@@ -681,7 +681,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 8050623464341195189}
-  - {fileID: 8050623464341195190}
   - {fileID: 8050623464341195191}
   viewIdField: 0
   InstantiationId: 0
@@ -700,7 +699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stringToSend: 
   stringReceived: 
-  lerpTransformTime: 0
+  lerpTransformTime: 5
   lerpRotationTime: 0
   stringsToJson: []
   serializedString: 

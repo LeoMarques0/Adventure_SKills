@@ -12,10 +12,8 @@ public class Warrior : Player
     float shieldHealth = 100, shieldScale;
     bool isShielding;
 
-    public override void Start()
+    void Start()
     {
-        base.Start();
-
         shieldScale = shield.transform.localScale.x;
         x = 1 - minimumShieldSize;        
     }
