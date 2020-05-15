@@ -174,7 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8030718720444102118}
   - component: {fileID: 1199888606774653647}
-  - component: {fileID: 9123148709717087760}
+  - component: {fileID: 2477061688792255329}
   m_Layer: 0
   m_Name: Stone Plataform
   m_TagString: Untagged
@@ -216,7 +216,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -0.5011673, y: -0.544754}
   m_SpriteTilingProperty:
@@ -231,18 +231,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.997665, y: 1.0435791}
   m_EdgeRadius: 0
---- !u!114 &9123148709717087760
-MonoBehaviour:
+--- !u!251 &2477061688792255329
+PlatformEffector2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1005506331354238240}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74fa4567ac7181147823edd87c8a68fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 10
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1083945746697714911
 GameObject:
   m_ObjectHideFlags: 0

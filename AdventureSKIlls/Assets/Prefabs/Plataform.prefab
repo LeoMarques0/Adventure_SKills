@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7155926543290296545}
   - component: {fileID: 7155926543290296547}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: GroundTileMap1_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,9 +90,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7155926543628437757}
-  - component: {fileID: 2396750331120977309}
-  - component: {fileID: 8379923019993377411}
-  m_Layer: 0
+  - component: {fileID: 908103069587955684}
+  - component: {fileID: 9127815752047556348}
+  m_Layer: 14
   m_Name: Plataform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,19 +116,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2396750331120977309
-MonoBehaviour:
+--- !u!251 &908103069587955684
+PlatformEffector2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7155926543628437506}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74fa4567ac7181147823edd87c8a68fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!61 &8379923019993377411
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 10
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
+--- !u!61 &9127815752047556348
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,9 +146,9 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.01966095, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -164,7 +171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7155926544877205949}
   - component: {fileID: 7155926544877205951}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: GroundTileMap1_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7155926545019132796}
   - component: {fileID: 7155926545019132798}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: FloatingFloor1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
