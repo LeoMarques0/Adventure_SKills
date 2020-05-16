@@ -137,7 +137,8 @@ public class Player : BaseStats
     {
         state = BaseState.HURT;
         gameObject.layer = 9;
-        rb.velocity = (transform.position - col.transform.position).normalized * 10;
+        Vector2 knockback = (transform.position - col.transform.position).normalized * 10;
+        rb.velocity = new Vector2(knockback.x, rb.velocity.y);
         yield return new WaitForSeconds(.1f);
         gameObject.layer = 8;
         state = BaseState.STANDARD;
