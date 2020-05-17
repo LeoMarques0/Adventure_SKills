@@ -11,6 +11,9 @@ public class Projectile : MonoBehaviour
     Rigidbody2D rb;
     BaseStats main;
 
+    [SerializeField]
+    bool rotatesWithVelocity = false;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -19,6 +22,12 @@ public class Projectile : MonoBehaviour
         main = parent.GetComponent<BaseStats>();
 
         Destroy(gameObject, 2);
+    }
+
+    private void Update()
+    {
+        if (rotatesWithVelocity)
+            transform.right = rb.velocity.normalized;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
