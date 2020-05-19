@@ -37,7 +37,7 @@ public class PlayerAttack : MonoBehaviour
         }
 
         if (!isAttacking && 
-        !(anim.GetCurrentAnimatorStateInfo(0).IsName("Attack0") || anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1")))
+        !(anim.GetCurrentAnimatorStateInfo(0).IsName("Attack0") && anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1")))
         {
             canAttack = true;
             StopAllCoroutines();

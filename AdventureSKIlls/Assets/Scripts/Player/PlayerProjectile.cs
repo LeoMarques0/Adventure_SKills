@@ -32,8 +32,11 @@ public class PlayerProjectile : PlayerAttack
     {
         newShots.Add(Instantiate(projectile, transform.position, transform.parent.rotation).GetComponent<Projectile>());
         newShots[newShots.Count - 1].parent = player.transform;
-        ParticleSystem.MainModule mainModule = newShots[newShots.Count - 1].transform.GetChild(0).GetComponent<ParticleSystem>().main;
-        mainModule.startRotationY = player.transform.localEulerAngles.y * Mathf.Deg2Rad;
-        newShots[newShots.Count - 1].transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+        if (newShots[newShots.Count - 1].transform.childCount > 0)
+        {
+            ParticleSystem.MainModule mainModule = newShots[newShots.Count - 1].transform.GetChild(0).GetComponent<ParticleSystem>().main;
+            mainModule.startRotationY = player.transform.localEulerAngles.y * Mathf.Deg2Rad;
+            newShots[newShots.Count - 1].transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+        }
     }
 }

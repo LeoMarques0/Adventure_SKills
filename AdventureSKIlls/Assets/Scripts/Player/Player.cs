@@ -8,6 +8,7 @@ public class Player : BaseStats
 
     Collider2D currentGround;
     PlayerAttack attacks;
+    Vector2 startScale;
 
     public float spd, maxSpd;
 
@@ -37,6 +38,8 @@ public class Player : BaseStats
 
         gravity = Physics2D.gravity.y * rb.gravityScale;
         jumpForce = Mathf.Sqrt(-2 * gravity * jumpHeight);
+
+        startScale = transform.lossyScale;
     }
 
     // Update is called once per frame

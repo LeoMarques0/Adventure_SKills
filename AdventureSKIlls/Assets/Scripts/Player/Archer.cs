@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Archer : Player
 {
 
+    public PlayerProjectile bow;
     bool hasDoubleJump;
 
     public override void Jump()
@@ -21,6 +23,20 @@ public class Archer : Player
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 
         hasDoubleJump = false;
+    }
+
+    public void CallShot()
+    {
+        if (online && photonView.IsMine)
+            photonView.RPC("CallShotRPC", RpcTarget.AllViaServer);
+        else if (!online)
+            bow.Shoot();
+    }
+
+    [PunRPC]
+    public void CallShotRPC()
+    {
+        bow.Shoot();
     }
 
     public override void CollisionsCheck()

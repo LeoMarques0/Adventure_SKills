@@ -69,7 +69,7 @@ public class Slime : BaseStats
         if (!floorAhead || wallAhead)
         {
             transform.right = -transform.right;
-            rb.velocity = Vector2.zero;
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
     }
 
