@@ -28,6 +28,7 @@ ScriptsOnlyBuild:
     - SkeletonProjectile
     - SkeletonShooter
     - Slime
+    - Spike
     - StageManager
     - StageObjectsManager
     - Thief
@@ -45,7 +46,6 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
     PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PunSceneSettings
     - ServerSettingsInspector
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
@@ -247,6 +247,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 16182}
     - Class: 114
       Script: {instanceID: 16286}
+    - Class: 114
+      Script: {instanceID: 16508}
     - Class: 114
       Script: {instanceID: 16570}
     - Class: 114
