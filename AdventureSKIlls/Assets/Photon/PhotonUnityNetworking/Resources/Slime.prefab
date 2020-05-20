@@ -698,7 +698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stringToSend: 
   stringReceived: 
-  lerpTransformTime: 7
+  lerpTransformTime: 5
   lerpRotationTime: 0
   stringsToJson: []
   serializedString: 

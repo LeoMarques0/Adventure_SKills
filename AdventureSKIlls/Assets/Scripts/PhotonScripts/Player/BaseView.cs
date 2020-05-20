@@ -134,7 +134,7 @@ public class BaseView : MonoBehaviour, IPunObservable
 
         }
 
-        transform.position = Vector2.MoveTowards(transform.position, new Vector2(xPos, yPos), lerpTransformTime);
+        transform.position = Vector2.MoveTowards(transform.position, new Vector2(xPos, yPos), lerpTransformTime * Time.deltaTime);
     }
     #endregion
     #region SerializeRotation

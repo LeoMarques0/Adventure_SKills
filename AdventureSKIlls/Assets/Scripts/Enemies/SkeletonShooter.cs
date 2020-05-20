@@ -44,6 +44,9 @@ public class SkeletonShooter : BaseStats
                     state = BaseState.ATTACKING;
                 }
 
+                rb.velocity = new Vector2(0, rb.velocity.y);
+                anim.SetBool("isAttacking", false);
+
                 break;
 
             case BaseState.ATTACKING:
@@ -54,9 +57,11 @@ public class SkeletonShooter : BaseStats
                     transform.eulerAngles = new Vector3(0, yRot, 0);
 
                     if (canAttack)
-                        anim.Play("Attack_Skeleton");
+                        anim.SetBool("isAttacking", true);
                     else
                     {
+                        anim.SetBool("isAttacking", false);
+
                         float hitDistance = Mathf.Abs(hit.transform.position.x - transform.position.x);
                         if (hitDistance < 8 || (rb.velocity.x == 0 && hitDistance > 8 && hitDistance < 10))
                             rb.velocity = new Vector2(-transform.right.x * spd, rb.velocity.y);
@@ -71,11 +76,14 @@ public class SkeletonShooter : BaseStats
                 }
                 else if(hit == null && !isSearching)
                 {
+                    anim.SetBool("isAttacking", false);
                     StartCoroutine(SearchPlayer());
                 }
 
                 break;
         }
+        anim.SetFloat("Speed", rb.velocity.x * transform.eulerAngles.y == 0 ? 1 : -1);
+
     }
 
     public void Shoot()
