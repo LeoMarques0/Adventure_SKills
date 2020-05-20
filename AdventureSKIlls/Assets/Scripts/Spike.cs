@@ -9,9 +9,9 @@ public class Spike : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print(collision.name);
-        if (collision.gameObject.layer == 8 || collision.gameObject.layer == 12)
-            collision.GetComponent<BaseStats>().TakeDamage(dmg, GetComponent<Collider2D>());
-        Destroy(gameObject);
+        if (collision.tag == "Player")
+        {
+            collision.GetComponent<BaseStats>().TakeDamage(dmg, collision);
+        }
     }
 }

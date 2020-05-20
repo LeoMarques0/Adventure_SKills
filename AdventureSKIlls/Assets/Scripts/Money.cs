@@ -22,8 +22,8 @@ public class Money : MonoBehaviour
             Player collidedWith = collision.GetComponent<Player>();
             if (collidedWith.photonView.IsMine)
             {
-                stageManager.CallUpdateCoin();
                 collision.GetComponent<Player>().coins++;
+                stageManager.CallUpdateCoin();
             }
             collect.Play();
             Destroy(transform.parent.gameObject, 5);
