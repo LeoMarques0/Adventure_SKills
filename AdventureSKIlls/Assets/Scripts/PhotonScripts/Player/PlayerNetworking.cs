@@ -20,5 +20,9 @@ public class PlayerNetworking : MonoBehaviour
                 script.enabled = false;
             }
         }
+        else
+        {
+            GameManager.singleton.currentPlayer = gameObject;
+        }
     }
 }

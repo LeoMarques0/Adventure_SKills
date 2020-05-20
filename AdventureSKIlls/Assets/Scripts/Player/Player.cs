@@ -29,6 +29,10 @@ public class Player : BaseStats
     [HideInInspector]
     public Animator anim;
 
+    [HideInInspector]
+    public int coins;
+    public Sprite playerIcon;
+
     public override void Awake()
     {
         base.Awake();

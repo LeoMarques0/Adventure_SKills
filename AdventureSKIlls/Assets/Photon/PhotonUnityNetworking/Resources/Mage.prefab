@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 9198586775888897425}
   - component: {fileID: 5384772370308080534}
   - component: {fileID: -4857077842935191564}
+  - component: {fileID: 2043495476403000978}
   m_Layer: 8
   m_Name: Mage
   m_TagString: Player
@@ -405,6 +406,8 @@ MonoBehaviour:
   isJumping: 0
   rb: {fileID: 0}
   anim: {fileID: 0}
+  coins: 0
+  playerIcon: {fileID: 21300000, guid: 545546e58de70f645b46d03c61943ce5, type: 3}
   abilityDelay: 10
   healAmount: 25
   magic: {fileID: 8172212586016789000}
@@ -452,6 +455,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: -4857077842935191564}
   - {fileID: 8204855198646239212}
+  - {fileID: 2043495476403000978}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -556,6 +560,22 @@ MonoBehaviour:
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
+--- !u!114 &2043495476403000978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604749345785362649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7cb724808c322458aa4d15f5035fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizeVelocity: 1
+  m_SynchronizeAngularVelocity: 0
+  m_TeleportEnabled: 0
+  m_TeleportIfDistanceGreaterThan: 3
 --- !u!1 &2211454108923894193
 GameObject:
   m_ObjectHideFlags: 0

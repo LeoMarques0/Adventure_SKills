@@ -17,9 +17,9 @@ public class Launcher : MonoBehaviourPunCallbacks
 {
     #region Serialized Fields
     [SerializeField]
-    private Text roomIDText;
+    private Text roomIDText = null;
     [SerializeField]
-    private Text maxPlayersText;
+    private Text maxPlayersText = null;
     #endregion
     #region Public Fields
     public byte maxPlayers = 4;
@@ -152,7 +152,6 @@ public class Launcher : MonoBehaviourPunCallbacks
     {
         Debug.Log("Conectado na Sala: " + PhotonNetwork.CurrentRoom);
         GameManager.singleton.playerIndex = PhotonNetwork.CurrentRoom.PlayerCount - 1;
-        print("Did it");
         if (PhotonNetwork.IsMasterClient)
             PhotonNetwork.LoadLevel("Lobby");
         else

@@ -540,6 +540,7 @@ GameObject:
   - component: {fileID: 2510561620571254492}
   - component: {fileID: 896051498798502227}
   - component: {fileID: 6654259490614522416}
+  - component: {fileID: -2897745023219369712}
   m_Layer: 8
   m_Name: Archer
   m_TagString: Player
@@ -636,6 +637,8 @@ MonoBehaviour:
   isJumping: 0
   rb: {fileID: 0}
   anim: {fileID: 0}
+  coins: 0
+  playerIcon: {fileID: 21300000, guid: 5854b419e2e746346ad123f06fb8a499, type: 3}
   bow: {fileID: 2097583343963218659}
 --- !u!50 &2510561620571254489
 Rigidbody2D:
@@ -704,6 +707,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 2510561620571254492}
   - {fileID: 896051498798502227}
+  - {fileID: -2897745023219369712}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -774,6 +778,22 @@ MonoBehaviour:
   - {fileID: 2510561620571254488}
   - {fileID: 6654259490614522416}
   photonView: {fileID: 0}
+--- !u!114 &-2897745023219369712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2510561620571254495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7cb724808c322458aa4d15f5035fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizeVelocity: 1
+  m_SynchronizeAngularVelocity: 0
+  m_TeleportEnabled: 0
+  m_TeleportIfDistanceGreaterThan: 3
 --- !u!1 &2510561620716358296
 GameObject:
   m_ObjectHideFlags: 0

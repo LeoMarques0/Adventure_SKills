@@ -2432,10 +2432,10 @@ GameObject:
   - component: {fileID: 4264449879833204146}
   - component: {fileID: 1123596777549467468}
   - component: {fileID: 1249251082815783570}
-  - component: {fileID: 3627695950160591796}
   - component: {fileID: 5666458757774618636}
   - component: {fileID: 4996773424876733092}
   - component: {fileID: -7993904675490693938}
+  - component: {fileID: 3788260024649370679}
   m_Layer: 8
   m_Name: Warrior
   m_TagString: Player
@@ -2566,6 +2566,8 @@ MonoBehaviour:
   isJumping: 0
   rb: {fileID: 0}
   anim: {fileID: 0}
+  coins: 0
+  playerIcon: {fileID: 21300000, guid: fb47ef574804cfb45bd728e0740ff496, type: 3}
   shield: {fileID: 4264449879550059069}
   minimumShieldSize: 0.1
 --- !u!95 &1123596777549467468
@@ -2607,42 +2609,10 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: -7993904675490693938}
   - {fileID: 5666458757774618636}
+  - {fileID: 3788260024649370679}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &3627695950160591796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4264449879833204173}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PositionModel:
-    SynchronizeEnabled: 1
-    TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 3
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 10
-    ExtrapolateOption: 0
-    ExtrapolateSpeed: 1
-    ExtrapolateIncludingRoundTripTime: 1
-    ExtrapolateNumberOfStoredPositions: 1
-  m_RotationModel:
-    SynchronizeEnabled: 1
-    InterpolateOption: 0
-    InterpolateRotateTowardsSpeed: 180
-    InterpolateLerpSpeed: 5
-  m_ScaleModel:
-    SynchronizeEnabled: 0
-    InterpolateOption: 0
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 0
 --- !u!114 &5666458757774618636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2657,7 +2627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stringToSend: 
   stringReceived: 
-  lerpTransformTime: 10
+  lerpTransformTime: 7
   lerpRotationTime: 0
   stringsToJson: []
   serializedString: 
@@ -2713,6 +2683,22 @@ MonoBehaviour:
     LayerIndex: 0
   - SynchronizeType: 0
     LayerIndex: 1
+--- !u!114 &3788260024649370679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4264449879833204173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7cb724808c322458aa4d15f5035fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizeVelocity: 1
+  m_SynchronizeAngularVelocity: 0
+  m_TeleportEnabled: 0
+  m_TeleportIfDistanceGreaterThan: 3
 --- !u!1 &4618949323025251510
 GameObject:
   m_ObjectHideFlags: 0

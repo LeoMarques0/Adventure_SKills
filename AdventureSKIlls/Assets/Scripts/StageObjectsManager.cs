@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class StageObjectsManager : MonoBehaviour
+public class StageObjectsManager : MonoBehaviourPun
 {
 
     public List<GameObject> objects;
@@ -13,12 +14,7 @@ public class StageObjectsManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        players = FindObjectsOfType<Player>();
-
-        foreach(Player p in players)
-        {
-            playersObj.Add(p.gameObject);
-        }
+        photonView.RPC("SearchPlayers", RpcTarget.AllBuffered);
     }
 
     // Update is called once per frame
@@ -44,5 +40,18 @@ public class StageObjectsManager : MonoBehaviour
             }
             objects[y].SetActive(setActive);
         }
+    }
+
+    [PunRPC]
+    void SearchPlayers()
+    {
+        players = FindObjectsOfType<Player>();
+
+        List<GameObject> currentPlayers = new List<GameObject>();
+        foreach (Player p in players)
+        {
+            currentPlayers.Add(p.gameObject);
+        }
+        playersObj = currentPlayers;
     }
 }
