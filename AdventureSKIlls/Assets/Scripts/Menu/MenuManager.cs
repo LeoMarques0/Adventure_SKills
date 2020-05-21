@@ -32,7 +32,8 @@ public class MenuManager : MonoBehaviour
     {
         launcher = GetComponent<Launcher>();
 
-        LoadScreen(false);
+        if(loadScreen != null && menuScreen != null)
+            LoadScreen(false);
     }
 
     public void ChangeMenu(string desiredMenu)
