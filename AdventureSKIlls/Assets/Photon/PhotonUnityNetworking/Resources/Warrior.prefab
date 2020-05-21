@@ -2436,6 +2436,7 @@ GameObject:
   - component: {fileID: 4996773424876733092}
   - component: {fileID: -7993904675490693938}
   - component: {fileID: 3788260024649370679}
+  - component: {fileID: 7491281559151431813}
   m_Layer: 8
   m_Name: Warrior
   m_TagString: Player
@@ -2610,6 +2611,7 @@ MonoBehaviour:
   - {fileID: -7993904675490693938}
   - {fileID: 5666458757774618636}
   - {fileID: 3788260024649370679}
+  - {fileID: 7491281559151431813}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -2631,6 +2633,8 @@ MonoBehaviour:
   lerpRotationTime: 0
   stringsToJson: []
   serializedString: 
+  sharePosition: 0
+  shareRotation: 1
 --- !u!114 &4996773424876733092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2678,6 +2682,9 @@ MonoBehaviour:
   - Type: 3
     SynchronizeType: 1
     Name: AttackIndex
+  - Type: 4
+    SynchronizeType: 0
+    Name: IsAttacking
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
@@ -2699,6 +2706,21 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 0
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
+--- !u!114 &7491281559151431813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4264449879833204173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 0
+  m_SynchronizeScale: 0
 --- !u!1 &4618949323025251510
 GameObject:
   m_ObjectHideFlags: 0

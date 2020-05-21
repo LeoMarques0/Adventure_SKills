@@ -8,6 +8,8 @@ public class StageManager : MonoBehaviourPun
 {
 
     public Transform[] playersSpawns;
+
+    public GameObject[] playersUI;
     public Image[] playersIcon;
     public Text[] playersCoins;
 
@@ -41,6 +43,7 @@ public class StageManager : MonoBehaviourPun
     [PunRPC]
     void SetUIIcon(int characterIndex, int index)
     {
+        playersUI[index].SetActive(true);
         playersIcon[index].sprite = GameManager.singleton.players[characterIndex].GetComponent<Player>().playerIcon;
     }
 }

@@ -541,6 +541,7 @@ GameObject:
   - component: {fileID: 896051498798502227}
   - component: {fileID: 6654259490614522416}
   - component: {fileID: -2897745023219369712}
+  - component: {fileID: 2292430945094148832}
   m_Layer: 8
   m_Name: Archer
   m_TagString: Player
@@ -708,6 +709,7 @@ MonoBehaviour:
   - {fileID: 2510561620571254492}
   - {fileID: 896051498798502227}
   - {fileID: -2897745023219369712}
+  - {fileID: 2292430945094148832}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -729,6 +731,8 @@ MonoBehaviour:
   lerpRotationTime: 0
   stringsToJson: []
   serializedString: 
+  sharePosition: 0
+  shareRotation: 1
 --- !u!114 &896051498798502227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -759,6 +763,9 @@ MonoBehaviour:
   - Type: 3
     SynchronizeType: 1
     Name: AttackIndex
+  - Type: 4
+    SynchronizeType: 0
+    Name: IsAttacking
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
@@ -794,6 +801,21 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 0
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
+--- !u!114 &2292430945094148832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2510561620571254495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 0
+  m_SynchronizeScale: 0
 --- !u!1 &2510561620716358296
 GameObject:
   m_ObjectHideFlags: 0

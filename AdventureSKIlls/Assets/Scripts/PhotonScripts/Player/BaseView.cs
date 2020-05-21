@@ -18,7 +18,9 @@ public class BaseView : MonoBehaviour, IPunObservable
     private float lastXPosReceived, lastYPosReceived;
     private float lastYRotReceived;
 
+    [HideInInspector]
     public string stringToSend = "";
+    [HideInInspector]
     public string stringReceived;
 
     [SerializeField]
@@ -33,6 +35,9 @@ public class BaseView : MonoBehaviour, IPunObservable
     public List<float> stringsToJson = new List<float>();
     [HideInInspector]
     public string serializedString;
+
+    public bool sharePosition;
+    public bool shareRotation;
 
     public virtual void Awake()
     {
@@ -219,22 +224,28 @@ public class BaseView : MonoBehaviour, IPunObservable
     public virtual void PrepareToSerialize()
     {
         StoreHealth();
-        StorePosition();
-        StoreRotation();
+        if(sharePosition)
+            StorePosition();
+        if(shareRotation)
+            StoreRotation();
     }
 
     public virtual void ReadString()
     {
         ReadHealth();
-        ReadPosition();
-        ReadRotation();
+        if(sharePosition)
+            ReadPosition();
+        if (shareRotation)
+            ReadRotation();
     }
 
     public virtual void UpdatePlayer()
     {
         UpdateHealth();
-        UpdatePosition();
-        UpdateRotation();
+        if(sharePosition)
+            UpdatePosition();
+        if (shareRotation)
+            UpdateRotation();
     }
     #endregion
 

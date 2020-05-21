@@ -77,6 +77,9 @@ public class Player : BaseStats
 
         anim.SetFloat("Speed", Mathf.Abs(hor));
         anim.SetBool("IsGrounded", isGrounded);
+
+        AnimatorStateInfo currentState = anim.GetCurrentAnimatorStateInfo(0);
+        anim.SetBool("IsAttacking", (currentState.IsName("Attack0") || currentState.IsName("Attack1") || currentState.IsName("AttackAir")));
     }
 
     void Walk()

@@ -46,8 +46,7 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
     PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PhotonRigidbody2DViewEditor
-    - Photon.Pun.PhotonViewInspector
+    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbody2DView
@@ -69,6 +68,7 @@ ScriptsOnlyBuild:
     - UnityEngine.Experimental.U2D.IK.LimbSolver2D
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
+    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
@@ -121,6 +121,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateMachineNode
     - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
@@ -225,6 +226,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13754}
     - Class: 114
+      Script: {instanceID: 13884}
+    - Class: 114
       Script: {instanceID: 13900}
     - Class: 114
       Script: {instanceID: 14146}
@@ -232,8 +235,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14518}
     - Class: 114
       Script: {instanceID: 14648}
-    - Class: 114
-      Script: {instanceID: 14742}
     - Class: 114
       Script: {instanceID: 14786}
     - Class: 114
@@ -322,6 +323,10 @@ ScriptsOnlyBuild:
     - Class: 66
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -688,6 +693,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13754}
     - Class: 114
+      Script: {instanceID: 13884}
+    - Class: 114
       Script: {instanceID: 14648}
     - Class: 114
       Script: {instanceID: 14786}
@@ -750,7 +757,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 8337dc270c8988b4a5ecd715bc757820
+      Hash: 78b3f3337c895083ee6b24cf5625b52b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BaseView
@@ -1338,7 +1345,7 @@ ScriptsOnlyBuild:
     className: OnClickRpc
   - hash:
       serializedVersion: 2
-      Hash: 8337dc270c8988b4a5ecd715bc757820
+      Hash: 78b3f3337c895083ee6b24cf5625b52b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: WarriorView
@@ -1650,7 +1657,7 @@ ScriptsOnlyBuild:
     className: ChatAppIdCheckerUI
   - hash:
       serializedVersion: 2
-      Hash: a50d7d350ce4ce4c4c249441848aa7ab
+      Hash: 2657f0bf31bc775c0b06fe81929f7b78
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: StageManager
@@ -2034,7 +2041,7 @@ ScriptsOnlyBuild:
     className: SpriteLibraryAsset
   - hash:
       serializedVersion: 2
-      Hash: 8337dc270c8988b4a5ecd715bc757820
+      Hash: 78b3f3337c895083ee6b24cf5625b52b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ThiefView

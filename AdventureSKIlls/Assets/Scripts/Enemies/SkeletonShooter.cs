@@ -77,13 +77,13 @@ public class SkeletonShooter : BaseStats
                 else if(hit == null && !isSearching)
                 {
                     anim.SetBool("isAttacking", false);
+                    rb.velocity = new Vector2(0, rb.velocity.y);
                     StartCoroutine(SearchPlayer());
                 }
 
                 break;
         }
-        anim.SetFloat("Speed", rb.velocity.x * transform.eulerAngles.y == 0 ? 1 : -1);
-
+        anim.SetFloat("Speed", rb.velocity.x * (transform.eulerAngles.y == 0 ? 1 : -1));
     }
 
     public void Shoot()
