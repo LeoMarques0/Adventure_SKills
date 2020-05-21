@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Photon.Pun;
 
 public class MenuManager : MonoBehaviour
 {
@@ -87,6 +89,12 @@ public class MenuManager : MonoBehaviour
         menuScreen.SetActive(false);
 
         game.SetActive(true);
+    }
+
+    public void ExitLobby()
+    {
+        PhotonNetwork.Disconnect();
+        SceneManager.LoadScene(0);
     }
 
     public void CloseGame()
