@@ -33,6 +33,9 @@ public class Player : BaseStats
     public int coins;
     public Sprite playerIcon;
 
+    public Pause pauseMenu;
+    public bool isPaused;
+
     public override void Awake()
     {
         base.Awake();
@@ -44,42 +47,58 @@ public class Player : BaseStats
         jumpForce = Mathf.Sqrt(-2 * gravity * jumpHeight);
 
         startScale = transform.lossyScale;
+
+        pauseMenu = FindObjectOfType<Pause>();
+        if (pauseMenu != null && photonView.IsMine)
+        {
+            pauseMenu.myPlayer = this;
+            pauseMenu.gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
     public virtual void Update()
     {
-        switch(state)
+        if (!isPaused)
         {
-            case BaseState.STANDARD:
+            switch (state)
+            {
+                case BaseState.STANDARD:
 
-                Walk();
-                Jump();
+                    Walk();
+                    Jump();
 
-                break;
+                    break;
 
-            case BaseState.HURT:
+                case BaseState.HURT:
 
-                gameObject.layer = 9;
+                    gameObject.layer = 9;
 
-                break;
+                    break;
 
-            case BaseState.ATTACKING:
+                case BaseState.ATTACKING:
 
-                rb.velocity = new Vector2(0, rb.velocity.y);
+                    rb.velocity = new Vector2(0, rb.velocity.y);
 
-                break;
+                    break;
+            }
+
+            CollisionsCheck();
+
+            health = Mathf.Clamp(health, 0, 100);
+
+            anim.SetFloat("Speed", Mathf.Abs(hor));
+            anim.SetBool("IsGrounded", isGrounded);
+
+            AnimatorStateInfo currentState = anim.GetCurrentAnimatorStateInfo(0);
+            anim.SetBool("IsAttacking", (currentState.IsName("Attack0") || currentState.IsName("Attack1") || currentState.IsName("AttackAir")));
         }
 
-        CollisionsCheck();
-
-        health = Mathf.Clamp(health, 0, 100);
-
-        anim.SetFloat("Speed", Mathf.Abs(hor));
-        anim.SetBool("IsGrounded", isGrounded);
-
-        AnimatorStateInfo currentState = anim.GetCurrentAnimatorStateInfo(0);
-        anim.SetBool("IsAttacking", (currentState.IsName("Attack0") || currentState.IsName("Attack1") || currentState.IsName("AttackAir")));
+        if(Input.GetKeyDown(KeyCode.Escape) && pauseMenu != null)
+        {
+            isPaused = !isPaused;
+            pauseMenu.gameObject.SetActive(isPaused);
+        }
     }
 
     void Walk()

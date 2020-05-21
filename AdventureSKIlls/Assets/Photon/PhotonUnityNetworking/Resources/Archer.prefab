@@ -640,6 +640,8 @@ MonoBehaviour:
   anim: {fileID: 0}
   coins: 0
   playerIcon: {fileID: 21300000, guid: 5854b419e2e746346ad123f06fb8a499, type: 3}
+  pauseMenu: {fileID: 0}
+  isPaused: 0
   bow: {fileID: 2097583343963218659}
 --- !u!50 &2510561620571254489
 Rigidbody2D:

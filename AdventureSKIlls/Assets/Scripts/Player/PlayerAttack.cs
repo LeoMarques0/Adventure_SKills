@@ -6,7 +6,7 @@ public class PlayerAttack : MonoBehaviour
 {
     public AudioSource hit;
     public Animator anim;
-    public BaseStats player;
+    public Player player;
     public int dmg;
 
     Transform parent;
@@ -51,7 +51,7 @@ public class PlayerAttack : MonoBehaviour
 
     public virtual void AttackInput()
     {
-        if (Input.GetButtonDown("Attack"))
+        if (Input.GetButtonDown("Attack") && !player.isPaused)
         {
             StopAllCoroutines();
             StartCoroutine(AttackDelay());

@@ -44,6 +44,11 @@ public class PlayerUI : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (main == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
         healthPos = playerTransform.position;
         healthPos.y += heightOffset;
 

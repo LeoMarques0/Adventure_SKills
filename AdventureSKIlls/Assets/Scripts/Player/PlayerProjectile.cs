@@ -12,7 +12,7 @@ public class PlayerProjectile : PlayerAttack
 
     public override void AttackInput()
     {
-        if (Input.GetButtonDown("Attack") && newShots.Count < maxProjectiles)
+        if (Input.GetButtonDown("Attack") && !player.isPaused && newShots.Count < maxProjectiles)
         {
             StopAllCoroutines();
             StartCoroutine(AttackDelay());
