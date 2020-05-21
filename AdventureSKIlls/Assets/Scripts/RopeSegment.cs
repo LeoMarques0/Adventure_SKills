@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class RopeSegment : MonoBehaviour
+public class RopeSegment : MonoBehaviourPun
 {
 
     HingeJoint2D hinge;
@@ -16,7 +17,13 @@ public class RopeSegment : MonoBehaviour
     {
         if(collision.tag == "Bullet")
         {
-            hinge.enabled = false;
+            photonView.RPC("DisableHinge", RpcTarget.AllBuffered);
         }
+    }
+
+    [PunRPC]
+    void DisableHinge()
+    {
+        hinge.enabled = false;
     }
 }

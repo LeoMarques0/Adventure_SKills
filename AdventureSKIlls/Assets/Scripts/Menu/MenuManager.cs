@@ -89,4 +89,9 @@ public class MenuManager : MonoBehaviour
         game.SetActive(true);
     }
 
+    public void CloseGame()
+    {
+        Application.Quit();
+    }
+
 }
