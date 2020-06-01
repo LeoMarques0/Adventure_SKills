@@ -51,7 +51,7 @@ public class PlayerAttack : MonoBehaviour
 
     public virtual void AttackInput()
     {
-        if (Input.GetButtonDown("Attack") && !player.isPaused)
+        if (PlayerInput.singleton.attackButton && !player.isPaused)
         {
             StopAllCoroutines();
             StartCoroutine(AttackDelay());

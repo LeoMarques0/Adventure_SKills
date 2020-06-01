@@ -8,6 +8,7 @@ public class Player : BaseStats
 
     Collider2D currentGround;
     PlayerAttack attacks;
+    PlayerInput playerInput;
     Vector2 startScale;
 
     public float spd, maxSpd;
@@ -42,6 +43,7 @@ public class Player : BaseStats
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         attacks = transform.GetComponentInChildren<PlayerAttack>();
+        playerInput = PlayerInput.singleton;
 
         gravity = Physics2D.gravity.y * rb.gravityScale;
         jumpForce = Mathf.Sqrt(-2 * gravity * jumpHeight);
@@ -113,7 +115,7 @@ public class Player : BaseStats
 
     public virtual void Jump()
     {
-        if(Input.GetButtonDown("Jump") && isGrounded)
+        if(playerInput.jumpButton && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);

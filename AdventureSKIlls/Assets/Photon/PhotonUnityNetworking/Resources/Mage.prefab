@@ -409,6 +409,8 @@ MonoBehaviour:
   anim: {fileID: 0}
   coins: 0
   playerIcon: {fileID: 21300000, guid: 545546e58de70f645b46d03c61943ce5, type: 3}
+  pauseMenu: {fileID: 0}
+  isPaused: 0
   abilityDelay: 10
   healAmount: 25
   magic: {fileID: 8172212586016789000}
@@ -2601,7 +2603,7 @@ MonoBehaviour:
   hit: {fileID: 0}
   anim: {fileID: 0}
   player: {fileID: 1604749345785362648}
-  dmg: 5
+  dmg: 3
   projectile: {fileID: 7392010170546076334, guid: 9cded2aed1901004eaae333f67683e29,
     type: 3}
   maxProjectiles: 3
