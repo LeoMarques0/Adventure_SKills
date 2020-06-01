@@ -26,6 +26,9 @@ public class BaseStats : MonoBehaviourPun
     public GameObject[] drops;
     public SpriteRenderer[] sprites;
 
+    public AudioSource damage;
+    public AudioClip[] PDamage;
+
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnLevelFinishedLoading;
@@ -46,11 +49,15 @@ public class BaseStats : MonoBehaviourPun
         {
             materials.Add(sprite.material);
         }
+
+        damage = GetComponent<AudioSource>();
     }
 
     public virtual void TakeDamage(float damageTaken, Collider2D col)
     {
         health -= damageTaken;
+        damage.clip = PDamage[Random.Range(0, 4)];
+
         if (health <= 0)
             Die();
     }

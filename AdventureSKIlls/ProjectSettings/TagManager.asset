@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Bullet
   - Espinhos
+  - Slime
+  - Skeleton
   layers:
   - Default
   - TransparentFX

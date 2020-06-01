@@ -82,19 +82,19 @@ public class PlayerAttack : MonoBehaviour
                     if (collisionStats.photonView.IsMine)
                     {
                         collisionStats.TakeDamage(dmg, GetComponent<Collider2D>());
-                        hit.Play();
+                        //hit.Play();
                     }
                 }
                 else if (collision.gameObject.layer == 12 && player.photonView.IsMine)
                 {
                     collision.GetComponent<BaseStats>().TakeDamage(dmg, GetComponent<Collider2D>());
-                    hit.Play();
+                    //hit.Play();
                 }
             }
             else if (collision.gameObject.layer == 8 || collision.gameObject.layer == 12)
             {
                 collision.GetComponent<BaseStats>().TakeDamage(dmg, GetComponent<Collider2D>());
-                hit.Play();
+                //hit.Play();
             }
         }
     }

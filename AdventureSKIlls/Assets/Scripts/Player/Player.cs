@@ -10,6 +10,8 @@ public class Player : BaseStats
     PlayerAttack attacks;
     PlayerInput playerInput;
     Vector2 startScale;
+    public AudioSource hit;
+    public AudioClip[] hitAir;
 
     public float spd, maxSpd;
 
@@ -155,6 +157,7 @@ public class Player : BaseStats
     public void EndAttack()
     {
         attacks.EndAttack();
+        hit.clip = hitAir[Random.Range(0,3)];
     }
 
     public override void TakeDamage(float damageTaken, Collider2D col)
@@ -173,6 +176,14 @@ public class Player : BaseStats
         yield return new WaitForSeconds(.1f);
         gameObject.layer = 8;
         state = BaseState.STANDARD;
+    }
+
+    public void OnAttack()
+    {
+        if(hit != null)
+        {
+            hit.Play();
+        }
     }
 
     private void OnDrawGizmos()
