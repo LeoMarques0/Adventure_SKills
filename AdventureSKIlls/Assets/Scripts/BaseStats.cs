@@ -16,7 +16,6 @@ public class BaseStats : MonoBehaviourPun
 
     [SerializeField]
     private GameObject healthUI;
-    private List<Material> materials = new List<Material>();
 
     [HideInInspector]
     public bool online;
@@ -25,6 +24,9 @@ public class BaseStats : MonoBehaviourPun
     public BaseState state = new BaseState();
     public GameObject[] drops;
     public SpriteRenderer[] sprites;
+    [HideInInspector]
+    public List<Material> materials = new List<Material>();
+
 
     private void OnEnable()
     {
@@ -109,7 +111,7 @@ public class BaseStats : MonoBehaviourPun
         }
     }
 
-    void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
+    public virtual void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
         SetHealthUI();
     }
