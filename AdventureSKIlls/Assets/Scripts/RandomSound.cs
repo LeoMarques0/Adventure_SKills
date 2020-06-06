@@ -21,7 +21,7 @@ public class RandomSound : MonoBehaviour
         }
         if (collision.CompareTag("Slime"))
         {
-            audioS.clip = audioClipArray[Random.Range(1, 6)];
+            audioS.clip = audioClipArray[Random.Range(1, audioClipArray.Length) ];
             audioS.PlayOneShot(audioS.clip);
         }
     }

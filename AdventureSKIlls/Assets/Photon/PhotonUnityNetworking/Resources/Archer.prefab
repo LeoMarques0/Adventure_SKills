@@ -623,6 +623,7 @@ MonoBehaviour:
   - {fileID: 1445837565632842182}
   - {fileID: 5370090961788831930}
   - {fileID: 485364433609380361}
+  materials: []
   damage: {fileID: 8556557933740818555}
   PDamage:
   - {fileID: 8300000, guid: dad86e09a25cb3a48a56e493fe289028, type: 3}

@@ -502,6 +502,7 @@ GameObject:
   - component: {fileID: 2643962684271217102}
   - component: {fileID: 8798193957573359234}
   - component: {fileID: 2270130733668804747}
+  - component: {fileID: 8531424632608870730}
   - component: {fileID: 7359817695222481305}
   - component: {fileID: 3925525678500101046}
   - component: {fileID: 7740454907825383645}
@@ -558,6 +559,27 @@ MonoBehaviour:
   anim: {fileID: 8898162683803160627}
   player: {fileID: 4375755609645675486}
   dmg: 5
+--- !u!114 &8531424632608870730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2170669062492584570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c081a91825c7744986e6d6347c1410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioS: {fileID: 3925525678500101046}
+  audioClipArray:
+  - {fileID: 8300000, guid: 5fed0373cac9068438c47b0e33144fb9, type: 3}
+  - {fileID: 8300000, guid: cf555d545e3f7f543895369db9fc23b5, type: 3}
+  - {fileID: 8300000, guid: 8dfbae9ca264dea40876508bf543ff06, type: 3}
+  - {fileID: 8300000, guid: dd2f9d459a09dfe4eaf8d4c11aaf8234, type: 3}
+  - {fileID: 8300000, guid: 66d2b9509dfdc2c40b5cc94b99a56262, type: 3}
+  - {fileID: 8300000, guid: 7ecbea4c15cbb4b41a217dd429925e0b, type: 3}
+  - {fileID: 8300000, guid: 57d91876c217d1843bbed810b0f69aa8, type: 3}
 --- !u!50 &7359817695222481305
 Rigidbody2D:
   serializedVersion: 4
@@ -1727,6 +1749,7 @@ MonoBehaviour:
   - {fileID: 8655837660987653553}
   - {fileID: 816312775994596279}
   - {fileID: 75220856154483494}
+  materials: []
   damage: {fileID: 1524679756700590975}
   PDamage:
   - {fileID: 8300000, guid: dad86e09a25cb3a48a56e493fe289028, type: 3}

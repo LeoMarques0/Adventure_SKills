@@ -59,6 +59,7 @@ public class BaseStats : MonoBehaviourPun
     {
         health -= damageTaken;
         damage.clip = PDamage[Random.Range(0, 4)];
+        damage.Play();
 
         if (health <= 0)
             Die();
