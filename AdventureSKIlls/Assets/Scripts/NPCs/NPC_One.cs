@@ -7,7 +7,9 @@ public class NPC_One : BaseStats
 {
 
     Animator anim;
+    public Animator lever;
     Vector2 openGatePos;
+
 
     public Transform gate;
     public Vector2 whereToOpenGate;
@@ -36,6 +38,7 @@ public class NPC_One : BaseStats
     public void StartAnimation()
     {
         anim.Play("Action");
+        lever.Play("LeverAnimation");
     }
     public void OpenGate()
     {
