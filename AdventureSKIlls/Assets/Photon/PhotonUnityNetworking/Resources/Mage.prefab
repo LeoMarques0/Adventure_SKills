@@ -537,7 +537,7 @@ MonoBehaviour:
   gravity: 0
   instantSpeed: 1
   groundOffset: {x: 0, y: -0.5}
-  groundCheckSize: {x: 0.9, y: 0.05}
+  groundCheckSize: {x: 0.55, y: 0.05}
   checkMask:
     serializedVersion: 2
     m_Bits: 16385
