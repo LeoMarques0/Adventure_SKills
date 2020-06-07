@@ -160,7 +160,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 6020216933268756628}
   m_Bounds:
-    m_Center: {x: 0, y: 0.0019990206, z: 0}
+    m_Center: {x: 0.00000011920929, y: 0.0019996166, z: 0}
     m_Extent: {x: 1.0749999, y: 0.548, z: 0}
   m_UseBatching: 1
 --- !u!1 &3262980921362738726
@@ -442,8 +442,8 @@ MonoBehaviour:
   - {fileID: 977106048039297739}
   - {fileID: 938474001641294397}
   m_Bounds:
-    m_Center: {x: -0.000015497208, y: 0.0020403862, z: 0}
-    m_Extent: {x: 3.9450002, y: 2.557959, z: 0}
+    m_Center: {x: -0.00000023841858, y: 0.0020399094, z: 0}
+    m_Extent: {x: 3.944999, y: 2.5579596, z: 0}
   m_UseBatching: 1
 --- !u!1 &8050623464341195193
 GameObject:
@@ -478,7 +478,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8050623464341195193}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.909, y: -3.666, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3095586577447737832}
@@ -556,6 +556,13 @@ MonoBehaviour:
   - {fileID: 6469317891898936388}
   - {fileID: 8480659660716480439}
   - {fileID: 1191899824224795654}
+  materials: []
+  damageTaken:
+  - {fileID: 8300000, guid: 7ecbea4c15cbb4b41a217dd429925e0b, type: 3}
+  - {fileID: 8300000, guid: cf555d545e3f7f543895369db9fc23b5, type: 3}
+  - {fileID: 8300000, guid: 8dfbae9ca264dea40876508bf543ff06, type: 3}
+  - {fileID: 8300000, guid: dd2f9d459a09dfe4eaf8d4c11aaf8234, type: 3}
+  - {fileID: 8300000, guid: 66d2b9509dfdc2c40b5cc94b99a56262, type: 3}
   spd: 3
   wallCheckOffset: {x: 1.15, y: 0}
   wallCheckSize: {x: 0.1, y: 1}

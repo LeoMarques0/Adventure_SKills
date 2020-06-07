@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2690874307356612613}
   - component: {fileID: 2690874307356612614}
   - component: {fileID: 2690874307356612615}
-  - component: {fileID: 2179769601962115973}
   - component: {fileID: 397368805905027933}
   m_Layer: 10
   m_Name: Arrow
@@ -149,25 +148,9 @@ MonoBehaviour:
   dmg: 4
   spd: 40
   rotatesWithVelocity: 1
---- !u!114 &2179769601962115973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2690874307356612608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37c081a91825c7744986e6d6347c1410, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioS: {fileID: 0}
-  audioClipArray:
-  - {fileID: 8300000, guid: 40696d5b569a1c245934e09f0871044a, type: 3}
-  - {fileID: 8300000, guid: 7ecbea4c15cbb4b41a217dd429925e0b, type: 3}
-  - {fileID: 8300000, guid: 8dfbae9ca264dea40876508bf543ff06, type: 3}
-  - {fileID: 8300000, guid: dd2f9d459a09dfe4eaf8d4c11aaf8234, type: 3}
-  - {fileID: 8300000, guid: cf555d545e3f7f543895369db9fc23b5, type: 3}
+  myCol: {fileID: 2690874307356612613}
+  mySprite: {fileID: 2690874307356612612}
+  myChildren: []
 --- !u!82 &397368805905027933
 AudioSource:
   m_ObjectHideFlags: 0

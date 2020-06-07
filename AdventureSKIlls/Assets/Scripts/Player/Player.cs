@@ -157,7 +157,8 @@ public class Player : BaseStats
     public void EndAttack()
     {
         attacks.EndAttack();
-        hit.clip = hitAir[Random.Range(0,3)];
+        if(hitAir.Length > 0)
+            hit.clip = hitAir[Random.Range(0,3)];
     }
 
     public override void TakeDamage(float damageTaken, Collider2D col)

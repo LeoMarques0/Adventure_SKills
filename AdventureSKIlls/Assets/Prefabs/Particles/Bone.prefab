@@ -51,6 +51,10 @@ MonoBehaviour:
   dmg: 10
   spd: 0
   rotatesWithVelocity: 0
+  myCol: {fileID: 5698670193898519154}
+  mySprite: {fileID: 0}
+  myChildren:
+  - {fileID: 1188893654831623087}
   xVel: 20
   yVel: 5
 --- !u!50 &536139264685697555

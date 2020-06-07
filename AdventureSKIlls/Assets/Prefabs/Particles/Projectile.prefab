@@ -4909,6 +4909,11 @@ MonoBehaviour:
   dmg: 3
   spd: 20
   rotatesWithVelocity: 0
+  myCol: {fileID: 2946226390271146098}
+  mySprite: {fileID: 0}
+  myChildren:
+  - {fileID: 9083218258856495579}
+  - {fileID: 6346140506346083664}
 --- !u!70 &2946226390271146098
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

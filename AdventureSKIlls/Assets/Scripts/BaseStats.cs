@@ -27,9 +27,7 @@ public class BaseStats : MonoBehaviourPun
     [HideInInspector]
     public List<Material> materials = new List<Material>();
 
-
-    public AudioSource damage;
-    public AudioClip[] PDamage;
+    public AudioClip[] damageTaken;
 
     private void OnEnable()
     {
@@ -51,15 +49,11 @@ public class BaseStats : MonoBehaviourPun
         {
             materials.Add(sprite.material);
         }
-
-        damage = GetComponent<AudioSource>();
     }
 
     public virtual void TakeDamage(float damageTaken, Collider2D col)
     {
         health -= damageTaken;
-        damage.clip = PDamage[Random.Range(0, 4)];
-        damage.Play();
 
         if (health <= 0)
             Die();
