@@ -8,6 +8,8 @@ public class EnemyAttack : MonoBehaviour
     private Transform parent = null;
     [SerializeField]
     private int dmg = 10;
+    [SerializeField]
+    private Vector2 knockbackDir = Vector2.zero;
 
     private Collider2D myCol;
     private AudioSource audioSource;
@@ -28,7 +30,8 @@ public class EnemyAttack : MonoBehaviour
             BaseStats collisionStats = collision.GetComponent<BaseStats>();
             if (collisionStats.photonView.IsMine)
             {
-                collisionStats.TakeDamage(dmg, myCol);
+                Vector2 localKnockbackDir = (transform.right * knockbackDir.x) + (transform.up * knockbackDir.y);
+                collisionStats.TakeDamage(dmg, localKnockbackDir, false);
                 audioSource.clip = collisionStats.damageTaken[Random.Range(0, collisionStats.damageTaken.Length)];
                 audioSource.Play();
             }

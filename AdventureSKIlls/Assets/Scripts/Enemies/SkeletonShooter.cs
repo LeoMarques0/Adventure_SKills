@@ -123,7 +123,7 @@ public class SkeletonShooter : BaseStats
         state = BaseState.STANDARD;
     }
 
-    public override void TakeDamage(float damageTaken, Collider2D col)
+    public override void TakeDamage(float damageTaken, Vector2 dir, bool localDir)
     {
         StartCoroutine(FlashSprite(.1f, 1));
         StartCoroutine(Hurt());

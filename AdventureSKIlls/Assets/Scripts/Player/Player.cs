@@ -161,19 +161,22 @@ public class Player : BaseStats
             hit.clip = hitAir[Random.Range(0,3)];
     }
 
-    public override void TakeDamage(float damageTaken, Collider2D col)
+    public override void TakeDamage(float damageTaken, Vector2 dir, bool localDir)
     {
-        StartCoroutine(Knockback(col));
+        StartCoroutine(Knockback(dir, localDir));
         StartCoroutine(FlashSprite(.1f, 1));
-        base.TakeDamage(damageTaken, col);
+        base.TakeDamage(damageTaken, dir, localDir);
     }
 
-    IEnumerator Knockback(Collider2D col)
+    IEnumerator Knockback(Vector2 dir, bool localDir)
     {
         state = BaseState.HURT;
         gameObject.layer = 9;
-        Vector2 knockback = (transform.position - col.transform.position).normalized * 10;
-        rb.velocity = new Vector2(knockback.x, rb.velocity.y);
+        if (!localDir)
+            rb.velocity = dir;
+        else
+            rb.velocity = (transform.right * dir.x) + (transform.up * dir.y);
+
         yield return new WaitForSeconds(.1f);
         gameObject.layer = 8;
         state = BaseState.STANDARD;
@@ -197,7 +200,7 @@ public class Player : BaseStats
     {
         if(collision.gameObject.layer == 12)
         {            
-            TakeDamage(20, collision);
+            TakeDamage(20, Vector2.left * 2, true);
         }
     }
 }

@@ -38,6 +38,9 @@ public class NPC_One : BaseStats
     public void StartAnimation()
     {
         anim.Play("Action");
+    }
+    public void PullLever()
+    {
         lever.Play("LeverAnimation");
     }
     public void OpenGate()

@@ -1495,6 +1495,7 @@ MonoBehaviour:
   hit: {fileID: 949765170976826909}
   anim: {fileID: 2510561620571254493}
   player: {fileID: 2510561620571254488}
+  knockbackDir: {x: 0, y: 0}
   dmg: 0
   projectile: {fileID: 2690874307356612608, guid: 9eb73b3e13241a545ab1bff45e975984,
     type: 3}

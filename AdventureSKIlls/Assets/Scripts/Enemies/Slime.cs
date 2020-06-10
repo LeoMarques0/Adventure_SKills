@@ -73,9 +73,9 @@ public class Slime : BaseStats
         }
     }
 
-    public override void TakeDamage(float damageTaken, Collider2D col)
+    public override void TakeDamage(float damageTaken, Vector2 dir, bool localDir)
     {
-        rb.velocity = (transform.position - col.transform.position).normalized * 10;
+        rb.velocity = dir;
         StartCoroutine(FlashSprite(.1f, 1));
         StartCoroutine(Hurt());
 

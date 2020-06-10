@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour
     public AudioSource hit;
     public Animator anim;
     public Player player;
+    public Vector2 knockbackDir;
     public int dmg;
 
     Transform parent;
@@ -76,6 +77,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (collision.transform != parent)
         {
+            Vector2 knockbackLocalDir = (transform.right * knockbackDir.x) + (transform.up * knockbackDir.y);
             if (player.online)
             {
                 if (collision.gameObject.layer == 8)
@@ -83,7 +85,7 @@ public class PlayerAttack : MonoBehaviour
                     BaseStats collisionStats = collision.GetComponent<BaseStats>();
                     if (collisionStats.photonView.IsMine)
                     {
-                        collisionStats.TakeDamage(dmg, myCol);
+                        collisionStats.TakeDamage(dmg, knockbackLocalDir, false);
                         hit.clip = collisionStats.damageTaken[Random.Range(0, collisionStats.damageTaken.Length)];
                         hit.Play();
                     }
@@ -91,7 +93,7 @@ public class PlayerAttack : MonoBehaviour
                 else if (collision.gameObject.layer == 12 && player.photonView.IsMine)
                 {
                     BaseStats collisionStats = collision.GetComponent<BaseStats>();
-                    collisionStats.TakeDamage(dmg, myCol);
+                    collisionStats.TakeDamage(dmg, knockbackLocalDir, false);
                     hit.clip = collisionStats.damageTaken[Random.Range(0, collisionStats.damageTaken.Length)];
                     hit.Play();
                 }
@@ -99,7 +101,7 @@ public class PlayerAttack : MonoBehaviour
             else if (collision.gameObject.layer == 8 || collision.gameObject.layer == 12)
             {
                 BaseStats collisionStats = collision.GetComponent<BaseStats>();
-                collisionStats.TakeDamage(dmg, myCol);
+                collisionStats.TakeDamage(dmg, knockbackLocalDir, false);
                 hit.clip = collisionStats.damageTaken[Random.Range(0, collisionStats.damageTaken.Length)];
                 hit.Play();
             }

@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
 
     public Transform parent;
     public float dmg, spd;
+    public Vector2 knockbackDir;
 
     Rigidbody2D rb;
     BaseStats main;
@@ -43,6 +44,7 @@ public class Projectile : MonoBehaviour
     {
         if (collision.transform != parent)
         {
+            Vector2 knockbackLocalDir = (transform.right * knockbackDir.x) + (transform.up * knockbackDir.y);
             if (main != null && main.online)
             {
                 if (collision.gameObject.layer == 8)
@@ -50,7 +52,7 @@ public class Projectile : MonoBehaviour
                     BaseStats colStats = collision.GetComponent<BaseStats>();
                     if (colStats.photonView.IsMine)
                     {
-                        colStats.TakeDamage(dmg, GetComponent<Collider2D>());
+                        colStats.TakeDamage(dmg, knockbackLocalDir, false);
                         audioSource.clip = colStats.damageTaken[Random.Range(0, colStats.damageTaken.Length)];
                         audioSource.Play();
                     }
@@ -58,7 +60,7 @@ public class Projectile : MonoBehaviour
                 else if (collision.gameObject.layer == 12 && main.photonView.IsMine)
                 {
                     BaseStats colStats = collision.GetComponent<BaseStats>();
-                    colStats.TakeDamage(dmg, GetComponent<Collider2D>());
+                    colStats.TakeDamage(dmg, knockbackLocalDir, false);
                     audioSource.clip = colStats.damageTaken[Random.Range(0, colStats.damageTaken.Length)];
                     audioSource.Play();
                 }
@@ -66,7 +68,7 @@ public class Projectile : MonoBehaviour
             else if (collision.gameObject.layer == 8 || (collision.gameObject.layer == 12 && parent.gameObject.layer != 12))
             {
                 BaseStats colStats = collision.GetComponent<BaseStats>();
-                colStats.TakeDamage(dmg, GetComponent<Collider2D>());
+                colStats.TakeDamage(dmg, knockbackLocalDir, false);
                 audioSource.clip = colStats.damageTaken[Random.Range(0, colStats.damageTaken.Length)];
                 audioSource.Play();
             }

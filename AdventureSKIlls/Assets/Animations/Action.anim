@@ -809,15 +809,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 1
         value: {x: 53.668964, y: 14.5, z: 0}
-        inSlope: {x: 0.060448684, y: 0, z: 0}
-        outSlope: {x: 0.060448684, y: 0, z: 0}
+        inSlope: {x: 0.060448688, y: 0, z: 0}
+        outSlope: {x: 0.060448688, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 1.9166666
-        value: {x: 70.84, y: 14.5, z: 0}
+        value: {x: 65.5, y: 14.5, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -3192,15 +3192,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 1
         value: 53.668964
-        inSlope: 0.060448684
-        outSlope: 0.060448684
+        inSlope: 0.060448688
+        outSlope: 0.060448688
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1.9166666
-        value: 70.84
+        value: 65.5
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -4159,6 +4159,13 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
+  - time: 2
+    functionName: PullLever
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 2.75
     functionName: OpenGate
     data: 

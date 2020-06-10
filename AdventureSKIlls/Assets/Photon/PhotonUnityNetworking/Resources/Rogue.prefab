@@ -558,6 +558,7 @@ MonoBehaviour:
   hit: {fileID: 3925525678500101046}
   anim: {fileID: 8898162683803160627}
   player: {fileID: 4375755609645675486}
+  knockbackDir: {x: 3, y: 0}
   dmg: 5
 --- !u!114 &8531424632608870730
 MonoBehaviour:
@@ -752,7 +753,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7465721738324649884}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -23758.87}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -23758.867}
 --- !u!1 &2212141510572133764
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,7 +916,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2371484988077231175}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.82400006}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.823}
 --- !u!1 &2414774154942534158
 GameObject:
   m_ObjectHideFlags: 0
@@ -3070,7 +3071,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4853853353235018941}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.001}
 --- !u!1 &8229663866641332059
 GameObject:
   m_ObjectHideFlags: 0

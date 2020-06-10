@@ -51,7 +51,7 @@ public class BaseStats : MonoBehaviourPun
         }
     }
 
-    public virtual void TakeDamage(float damageTaken, Collider2D col)
+    public virtual void TakeDamage(float damageTaken, Vector2 dir, bool localDir)
     {
         health -= damageTaken;
 
@@ -87,6 +87,9 @@ public class BaseStats : MonoBehaviourPun
 
     private void SetHealthUI()
     {
+        if (healthUI == null)
+            return;
+
         PlayerUI healthInstance = Instantiate(healthUI).GetComponent<PlayerUI>();
 
         healthInstance.SetParent(transform, photonView);

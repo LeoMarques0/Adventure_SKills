@@ -11,7 +11,7 @@ public class Spike : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            collision.GetComponent<BaseStats>().TakeDamage(dmg, collision);
+            collision.GetComponent<BaseStats>().TakeDamage(dmg, Vector2.zero, false);
         }
     }
 }

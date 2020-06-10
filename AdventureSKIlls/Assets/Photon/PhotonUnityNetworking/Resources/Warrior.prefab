@@ -916,6 +916,7 @@ MonoBehaviour:
   hit: {fileID: 2556142895752407792}
   anim: {fileID: 0}
   player: {fileID: 4264449879833204146}
+  knockbackDir: {x: 0, y: 0}
   dmg: 7
 --- !u!114 &4727784441278039589
 MonoBehaviour:
