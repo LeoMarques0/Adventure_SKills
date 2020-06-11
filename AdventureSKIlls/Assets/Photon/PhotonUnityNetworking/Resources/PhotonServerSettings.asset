@@ -25,12 +25,13 @@ MonoBehaviour:
     AuthMode: 0
     EnableLobbyStatistics: 0
     NetworkLogging: 1
-  DevRegion: sa
+  DevRegion: 
   PunLogging: 0
   EnableSupportLogger: 0
   RunInBackground: 1
   StartInOfflineMode: 0
   RpcList:
+  - ActivateRock
   - CallShotRPC
   - ClickRpc
   - DestroyRpc
@@ -45,7 +46,6 @@ MonoBehaviour:
   - StartChangeColumn
   - TakeDamageRPC
   - UpdateCoin
-  - ActivateRock
   DisableAutoOpenWizard: 1
   ShowSettings: 0
-  DevRegionSetOnce: 1
+  DevRegionSetOnce: 0
