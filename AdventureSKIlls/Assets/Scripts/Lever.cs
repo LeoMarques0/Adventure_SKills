@@ -30,7 +30,7 @@ public class Lever : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Bullet")
+        if(collision.tag == "Bullet" || collision.gameObject.layer == 10)
         {
             anim.SetBool("Activated", true);
             StartCoroutine(GateOpen());

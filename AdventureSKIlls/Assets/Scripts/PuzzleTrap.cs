@@ -14,31 +14,36 @@ public class PuzzleTrap : MonoBehaviour
     Collider2D[] hit;
     bool trapActive = false;
 
+    bool activated = true;
+
     // Update is called once per frame
     void Update()
     {
 
-        hit = Physics2D.OverlapBoxAll((Vector2)transform.position + checkOffset, checkSize, 0, playerMask);
-
-        if(hit.Length > 0)
+        if (activated)
         {
-            Thief thief = null;
-            foreach(Collider2D col in hit)
+            hit = Physics2D.OverlapBoxAll((Vector2)transform.position + checkOffset, checkSize, 0, playerMask);
+
+            if (hit.Length > 0)
             {
-                col.TryGetComponent(out thief);
-                if (thief == null)
-                    break;
-            }
+                Thief thief = null;
+                foreach (Collider2D col in hit)
+                {
+                    col.TryGetComponent(out thief);
+                    if (thief == null)
+                        break;
+                }
 
-            if (!trapActive && (thief == null || !thief.usingInvisibility))
-                ActivateTrap();
-            else if (trapActive && thief != null && thief.usingInvisibility)
-                DeactivateTrap();
-        }
-        else
-        {
-            if (trapActive)
-                DeactivateTrap();
+                if (!trapActive && (thief == null || !thief.usingInvisibility))
+                    ActivateTrap();
+                else if (trapActive && thief != null && thief.usingInvisibility)
+                    DeactivateTrap();
+            }
+            else
+            {
+                if (trapActive)
+                    DeactivateTrap();
+            }
         }
     }
 
@@ -58,6 +63,12 @@ public class PuzzleTrap : MonoBehaviour
         {
             go.SetActive(false);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 10)
+            activated = false;
     }
 
     private void OnDrawGizmosSelected()
