@@ -76,13 +76,17 @@ public class PlayerAttack : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform != parent)
-        {
+        {            
+            collision.TryGetComponent<BaseStats>(out BaseStats collisionStats);
+
+            if(collisionStats == null)
+                collision.transform.root.TryGetComponent<BaseStats>(out collisionStats);
+
             Vector2 knockbackLocalDir = (transform.right * knockbackDir.x) + (transform.up * knockbackDir.y);
             if (player.online)
             {
                 if (collision.gameObject.layer == 8)
                 {
-                    BaseStats collisionStats = collision.GetComponent<BaseStats>();
                     if (collisionStats.photonView.IsMine)
                     {
                         collisionStats.TakeDamage(dmg, knockbackLocalDir, false);
@@ -92,7 +96,6 @@ public class PlayerAttack : MonoBehaviour
                 }
                 else if (collision.gameObject.layer == 12 && player.photonView.IsMine)
                 {
-                    BaseStats collisionStats = collision.GetComponent<BaseStats>();
                     collisionStats.TakeDamage(dmg, knockbackLocalDir, false);
                     hit.clip = collisionStats.damageTaken[Random.Range(0, collisionStats.damageTaken.Length)];
                     hit.Play();
@@ -100,7 +103,6 @@ public class PlayerAttack : MonoBehaviour
             }
             else if (collision.gameObject.layer == 8 || collision.gameObject.layer == 12)
             {
-                BaseStats collisionStats = collision.GetComponent<BaseStats>();
                 collisionStats.TakeDamage(dmg, knockbackLocalDir, false);
                 hit.clip = collisionStats.damageTaken[Random.Range(0, collisionStats.damageTaken.Length)];
                 hit.Play();

@@ -13,7 +13,7 @@ public class StageManager : MonoBehaviourPun
     public Image[] playersIcon;
     public Text[] playersCoins;
 
-    Player myPlayer;
+    public Player myPlayer;
 
     // Start is called before the first frame update
     void Awake()

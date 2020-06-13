@@ -177,6 +177,12 @@ public class Boss : BaseStats
         }
     }
 
+    public override void TakeDamage(float damageTaken, Vector2 dir, bool localDir)
+    {
+        if(state == BaseState.STANDARD || state == BaseState.ATTACKING)
+            base.TakeDamage(damageTaken, dir, localDir);
+    }
+
     public override void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
         

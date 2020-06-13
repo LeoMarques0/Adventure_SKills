@@ -55,7 +55,7 @@ public class ArrowTrap : MonoBehaviour
     {
         foreach (Transform tr in arrowHole)
         {
-            Projectile newArrow = Instantiate(arrow, tr.position, Quaternion.Euler(0, 180, 0)).GetComponent<Projectile>();
+            Projectile newArrow = Instantiate(arrow, tr.position + Vector3.left * 1.25f, Quaternion.Euler(0, 180, 0)).GetComponent<Projectile>();
             newArrow.parent = transform;
         }
         yield return new WaitForSeconds(2f);
