@@ -10,16 +10,32 @@ public class BossTrigger : MonoBehaviour
     private GameObject bossHeathUI = null;
 
     Vector2 openGatePos;
+    Vector2 exitGatePos;
 
+    public CameraController camController;
     public StageManager stageManager;
     public Transform[] playersPos;
     public Transform gate;
-    public Vector2 whereToOpenGate;
+    public Transform exit;
+    public Vector2 whereToCloseGate;
+    public Vector2 whereToOpenExit;
+
+    bool exitOpen = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        openGatePos = (Vector2)gate.position + whereToOpenGate;
+        openGatePos = (Vector2)gate.position + whereToCloseGate;
+        exitGatePos = (Vector2)exit.position + whereToOpenExit;
+    }
+
+    private void Update()
+    {
+        if(boss.health <= 0 && !exitOpen)
+        {
+            StartCoroutine(GateOpen());
+            exitOpen = true;
+        }
     }
 
     IEnumerator GateClose()
@@ -27,6 +43,15 @@ public class BossTrigger : MonoBehaviour
         while ((Vector2)gate.position != openGatePos)
         {
             gate.position = Vector3.Lerp(gate.position, openGatePos, 1f * Time.deltaTime);
+            yield return null;
+        }
+    }
+
+    IEnumerator GateOpen()
+    {
+        while ((Vector2)exit.position != exitGatePos)
+        {
+            exit.position = Vector3.Lerp(exit.position, exitGatePos, 1f * Time.deltaTime);
             yield return null;
         }
     }
@@ -40,6 +65,8 @@ public class BossTrigger : MonoBehaviour
 
             stageManager.myPlayer.transform.position = playersPos[GameManager.singleton.playerCharacterIndex].position;
             bossHeathUI.SetActive(true);
+
+            camController.target = transform;
         }
     }
 }

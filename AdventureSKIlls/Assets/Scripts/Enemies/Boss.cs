@@ -179,8 +179,18 @@ public class Boss : BaseStats
 
     public override void TakeDamage(float damageTaken, Vector2 dir, bool localDir)
     {
-        if(state == BaseState.STANDARD || state == BaseState.ATTACKING)
+        if (state == BaseState.STANDARD || state == BaseState.ATTACKING)
+        {
             base.TakeDamage(damageTaken, dir, localDir);
+            StopCoroutine("FlashSprite");
+            StartCoroutine(FlashSprite(.1f, 5));
+        }
+    }
+
+    public override void Die()
+    {
+        base.Die();
+        anim.SetBool("Dead", true);
     }
 
     public override void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
