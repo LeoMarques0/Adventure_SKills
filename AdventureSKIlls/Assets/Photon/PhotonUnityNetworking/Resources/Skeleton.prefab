@@ -1262,7 +1262,9 @@ MonoBehaviour:
   maxHealth: 10
   health: 10
   state: 0
-  drops: []
+  drops:
+  - {fileID: 3378320294638726545, guid: 530cc0360cac7db4c95bb835c4ced459, type: 3}
+  - {fileID: 3378320294638726545, guid: 530cc0360cac7db4c95bb835c4ced459, type: 3}
   sprites:
   - {fileID: 7139513038307334869}
   - {fileID: 3711235550992825380}

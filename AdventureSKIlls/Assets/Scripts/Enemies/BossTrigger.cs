@@ -13,6 +13,8 @@ public class BossTrigger : MonoBehaviour
     Vector2 exitGatePos;
 
     public CameraController camController;
+    public Transform camPos;
+
     public StageManager stageManager;
     public Transform[] playersPos;
     public Transform gate;
@@ -66,7 +68,8 @@ public class BossTrigger : MonoBehaviour
             stageManager.myPlayer.transform.position = playersPos[GameManager.singleton.playerCharacterIndex].position;
             bossHeathUI.SetActive(true);
 
-            camController.target = transform;
+            camController.target = camPos;
+            camController.distanceFromTarget = -45;
         }
     }
 }

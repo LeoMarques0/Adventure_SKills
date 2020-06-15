@@ -112,10 +112,10 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 731
-  m_MinSize: {x: 678, y: 492}
+  m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 8851
+  controlID: 6712
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -137,10 +137,10 @@ MonoBehaviour:
     y: 0
     width: 1026
     height: 731
-  m_MinSize: {x: 402, y: 492}
+  m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 8857
+  controlID: 6713
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -162,10 +162,10 @@ MonoBehaviour:
     y: 0
     width: 1026
     height: 442
-  m_MinSize: {x: 402, y: 221}
-  m_MaxSize: {x: 8002, y: 4021}
+  m_MinSize: {x: 403, y: 221}
+  m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 8858
+  controlID: 6714
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -185,8 +185,8 @@ MonoBehaviour:
     y: 0
     width: 319
     height: 442
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -247,7 +247,7 @@ MonoBehaviour:
   - {fileID: 20}
   - {fileID: 21}
   m_Selected: 0
-  m_LastSelected: 1
+  m_LastSelected: 2
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_MinSize: {x: 276, y: 292}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 8852
+  controlID: 6671
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -292,8 +292,8 @@ MonoBehaviour:
     y: 0
     width: 510
     height: 439
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 22}
   m_Panes:
   - {fileID: 22}
@@ -444,9 +444,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: a80a0200
-      m_LastClickedID: 133800
-      m_ExpandedIDs: 7294fcff5097fcff48a9fcff9ea9fcfff2a9fcff54cffcff4edcfcff60eefcffb6eefcff0aeffcff6421fdff8627fdffb05efdff166bfdff6c6bfdffda6bfdff4890fdff1a9efdff22a4fdffc4dafdff8205feff7011feffca43feff084afeff8084feffd44dffff62fbffff1c480000aa4c00001c4f0000584f0000b24f000000500000e8510000fa510000305200005e5200006c52000072520000cc520000e2520000145300006053000084470100ce6a0100f2710100c072010050ab010066ab010094ab0100b8b2010086b301001cdf0100e2df010040e60100c0e601000ee7010004f3010048f3010022f401006cfa01003afb0100
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: be7bfaff3e7cfaff207ffaff84a9faffb4a9faffc2a9faffbeb1fafff6dcfaff2c20fbff7a53fbffb496fbfff8c4fbff00c8fbfffcfcfbff8438fcffbc3efcffba94fcffaadffcfff8e1fcff78e2fcff5ee5fcff0ce6fcff32e6fcff82e8fcff301afdff6e31fdffc863fdffd069fdff7e9ffdffaab0fdff04e3fdff0ae9fdff142ffeff6e40feffc872feffea78feff247cfeffde14ffff3415ffff8815ffffe247ffff004effff6c7fffff6ac4ffff62fbffff804f000026b500004ebc00001cbd000000ed000028f40000f6f40000d2060100d02b0100f8320100c6330100703d01005e5f01008666010054670100a4b70200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -506,9 +506,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 405.7313, y: 20.485592, z: -910.58514}
+    m_Target: {x: 54.751217, y: 15.343655, z: 0}
     speed: 2
-    m_Value: {x: 405.4591, y: 20.721163, z: -910.2957}
+    m_Value: {x: 54.751217, y: 15.343655, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -558,9 +558,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 76.87086
+    m_Target: 5.2096305
     speed: 2
-    m_Value: 80.49304
+    m_Value: 5.2096305
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -765,20 +765,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\leopm\Documents\GitHub\Adventure_SKills\AdventureSKIlls
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 104}
-    m_SelectedIDs: 545a0000
-    m_LastClickedID: 23124
-    m_ExpandedIDs: 00000000c24300003e5900004259000000ca9a3b
+    scrollPos: {x: 0, y: 152}
+    m_SelectedIDs: 5a5a0000
+    m_LastClickedID: 23130
+    m_ExpandedIDs: 00000000c24300004659000048590000985900005c5a0000645a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -806,7 +806,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c24300003e5900004259000000ca9a3b
+    m_ExpandedIDs: 00000000c243000046590000485900009859000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -916,7 +916,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -168998
+  m_LastSelectedObjectID: 201992
 --- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -954,7 +954,7 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 398
+  m_LastVerticalScrollValue: 0
 --- !u!114 &23
 MonoBehaviour:
   m_ObjectHideFlags: 52

@@ -20,7 +20,7 @@ public class PlayerProjectile : PlayerAttack
 
         for(int x = 0; x < newShots.Count; x++)
         {
-            if (newShots[x] == null)
+            if (newShots[x] == null || newShots[x].isActiveAndEnabled == false)
             {
                 newShots.Remove(newShots[x]);
                 x--;

@@ -555,7 +555,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   healOffset: {x: 0, y: 1}
-  healArea: {x: 10, y: 5}
+  healArea: {x: 12, y: 5}
 --- !u!95 &1474251455281659396
 Animator:
   serializedVersion: 3

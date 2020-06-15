@@ -91,5 +91,7 @@ public class Projectile : MonoBehaviour
             foreach (GameObject child in myChildren)
                 child.SetActive(false);
         }
+
+        this.enabled = false; ;
     }
 }

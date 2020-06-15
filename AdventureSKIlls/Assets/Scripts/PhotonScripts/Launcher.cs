@@ -47,7 +47,7 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     private void Update()
     {
-        if(SceneManager.GetActiveScene().buildIndex == 0)
+        if(SceneManager.GetActiveScene().buildIndex == 0 && maxPlayersText != null)
             maxPlayersText.text = maxPlayers.ToString();
     }
     #endregion
