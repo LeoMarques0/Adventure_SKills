@@ -8,6 +8,7 @@ TagManager:
   - Espinhos
   - Slime
   - Skeleton
+  - BossTrigger
   layers:
   - Default
   - TransparentFX
