@@ -3934,7 +3934,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &186731981
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34567,7 +34567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flamethrowers:
   - {fileID: 146246788}
-  checkSize: {x: 2, y: 3.5}
+  checkSize: {x: 4, y: 3.5}
   checkOffset: {x: 0, y: -3.83}
   playerMask:
     serializedVersion: 2
@@ -40764,6 +40764,7 @@ GameObject:
   - component: {fileID: 1085073462}
   - component: {fileID: 1085073461}
   - component: {fileID: 1085073463}
+  - component: {fileID: 1085073464}
   m_Layer: 12
   m_Name: Boss
   m_TagString: Untagged
@@ -40984,6 +40985,21 @@ MonoBehaviour:
   serializedString: 
   sharePosition: 0
   shareRotation: 0
+--- !u!114 &1085073464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085073457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8da349cf4f041984ea6e8b55925db309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scritpsToIgnore:
+  - {fileID: 1085073460}
+  - {fileID: 1085073464}
 --- !u!1001 &1088428616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -103100,7 +103116,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0.1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -130984,7 +131000,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0.1
       minScalar: 5
       maxCurve:
         serializedVersion: 2

@@ -64,9 +64,6 @@ public class BaseView : MonoBehaviour, IPunObservable
 
     private void Update()
     {
-        if (baseStats.health <= 0)
-            baseStats.Die();
-
         if(!baseStats.photonView.IsMine)
             UpdatePlayer();
     }

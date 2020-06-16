@@ -125,7 +125,6 @@ public class SkeletonShooter : BaseStats
 
     public override void TakeDamage(float damageTaken, Vector2 dir, bool localDir)
     {
-        StartCoroutine(FlashSprite(.1f, 1));
         StartCoroutine(Hurt());
 
         if (!online)
@@ -136,7 +135,7 @@ public class SkeletonShooter : BaseStats
         }
         else
         {
-            photonView.RPC("TakeDamageRPC", RpcTarget.AllBuffered, damageTaken);
+            photonView.RPC("TakeDamageRPC", RpcTarget.AllBuffered, damageTaken, dir, localDir);
         }
     }
 

@@ -39,6 +39,8 @@ public class Player : BaseStats
     public Pause pauseMenu;
     public bool isPaused;
 
+    public GameObject coin;
+
     public override void Awake()
     {
         base.Awake();
@@ -152,6 +154,12 @@ public class Player : BaseStats
         base.Die();
         rb.velocity = new Vector2(0, rb.velocity.y);
         anim.Play("Dying");
+        state = BaseState.DYING;
+
+        foreach (Material m in materials)
+        {
+            m.SetFloat("_FlashTransparency", 0);
+        }
     }
 
     public void EndAttack()
@@ -163,9 +171,11 @@ public class Player : BaseStats
 
     public override void TakeDamage(float damageTaken, Vector2 dir, bool localDir)
     {
-        StartCoroutine(Knockback(dir, localDir));
-        StartCoroutine(FlashSprite(.1f, 1));
-        base.TakeDamage(damageTaken, dir, localDir);
+        if (state != BaseState.HURT || state != BaseState.DYING)
+        {
+            StartCoroutine(Knockback(dir, localDir));
+            base.TakeDamage(damageTaken, dir, localDir);
+        }
     }
 
     IEnumerator Knockback(Vector2 dir, bool localDir)
@@ -178,8 +188,10 @@ public class Player : BaseStats
             rb.velocity = (transform.right * dir.x) + (transform.up * dir.y);
 
         yield return new WaitForSeconds(.1f);
+        print("passo os segundos");
         gameObject.layer = 8;
-        state = BaseState.STANDARD;
+        if (state != BaseState.DYING)
+            state = BaseState.STANDARD;
     }
 
     public void OnAttack()
@@ -187,6 +199,17 @@ public class Player : BaseStats
         if(hit != null)
         {
             hit.Play();
+        }
+    }
+
+    public override void DropItems()
+    {
+        for(int x = 0; x < coins; x++)
+        {
+            GameObject newDrop = Instantiate(coin, transform.position + (Vector3.up * .2f), Quaternion.identity);
+            Rigidbody2D dropRb = newDrop.GetComponent<Rigidbody2D>();
+            Vector2 dropDir = new Vector2(Random.Range(-5, 5), 10);
+            dropRb.AddForce(dropDir, ForceMode2D.Impulse);
         }
     }
 

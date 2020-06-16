@@ -548,6 +548,7 @@ MonoBehaviour:
   playerIcon: {fileID: 21300000, guid: 545546e58de70f645b46d03c61943ce5, type: 3}
   pauseMenu: {fileID: 0}
   isPaused: 0
+  coin: {fileID: 3378320294638726545, guid: 530cc0360cac7db4c95bb835c4ced459, type: 3}
   abilityDelay: 10
   healAmount: 25
   magic: {fileID: 8172212586016789000}

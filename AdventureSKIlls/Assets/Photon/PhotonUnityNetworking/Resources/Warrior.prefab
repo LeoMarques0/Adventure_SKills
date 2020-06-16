@@ -2604,6 +2604,7 @@ MonoBehaviour:
   playerIcon: {fileID: 21300000, guid: fb47ef574804cfb45bd728e0740ff496, type: 3}
   pauseMenu: {fileID: 0}
   isPaused: 0
+  coin: {fileID: 3378320294638726545, guid: 530cc0360cac7db4c95bb835c4ced459, type: 3}
   shield: {fileID: 4264449879550059069}
   minimumShieldSize: 0.1
 --- !u!95 &1123596777549467468

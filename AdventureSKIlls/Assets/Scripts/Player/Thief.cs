@@ -18,7 +18,7 @@ public class Thief : Player
 
     void Invisibility()
     {
-        if (Input.GetButtonDown("Ability"))
+        if (state == BaseState.STANDARD && Input.GetButtonDown("Ability"))
         {
             if (!usingInvisibility)
                 StartCoroutine(TurnInvisible());
@@ -43,9 +43,7 @@ public class Thief : Player
     }
 
     IEnumerator TurnInvisible()
-    {
-
-       
+    {     
 
         while (invisibilityBar > 0)
         {

@@ -148,6 +148,7 @@ MonoBehaviour:
   dmg: 4
   spd: 40
   knockbackDir: {x: 1, y: 0}
+  audioSource: {fileID: 397368805905027933}
   rotatesWithVelocity: 1
   myCol: {fileID: 2690874307356612613}
   mySprite: {fileID: 2690874307356612612}

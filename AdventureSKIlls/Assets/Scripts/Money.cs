@@ -20,14 +20,17 @@ public class Money : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Player collidedWith = collision.GetComponent<Player>();
-            if (collidedWith.photonView.IsMine)
+            if (collidedWith.health > 0)
             {
-                collision.GetComponent<Player>().coins++;
-                stageManager.CallUpdateCoin();
+                if (collidedWith.photonView.IsMine)
+                {
+                    collidedWith.coins++;
+                    stageManager.CallUpdateCoin();
+                }
+                collect.Play();
+                Destroy(transform.parent.gameObject, 5);
+                Destroy(gameObject);
             }
-            collect.Play();
-            Destroy(transform.parent.gameObject, 5);
-            Destroy(gameObject);
         }
     }
 }

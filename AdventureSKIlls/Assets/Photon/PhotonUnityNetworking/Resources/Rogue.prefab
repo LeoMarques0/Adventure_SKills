@@ -1780,6 +1780,7 @@ MonoBehaviour:
   playerIcon: {fileID: 21300000, guid: c3231559d9d489e4ba3db8e8bdd721d0, type: 3}
   pauseMenu: {fileID: 0}
   isPaused: 0
+  coin: {fileID: 3378320294638726545, guid: 530cc0360cac7db4c95bb835c4ced459, type: 3}
   usingInvisibility: 0
 --- !u!114 &4375755609645675484
 MonoBehaviour:

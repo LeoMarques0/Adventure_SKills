@@ -76,7 +76,6 @@ public class Slime : BaseStats
     public override void TakeDamage(float damageTaken, Vector2 dir, bool localDir)
     {
         rb.velocity = dir;
-        StartCoroutine(FlashSprite(.1f, 1));
         StartCoroutine(Hurt());
 
         if (!online)
@@ -87,7 +86,7 @@ public class Slime : BaseStats
         }
         else
         {
-            photonView.RPC("TakeDamageRPC", RpcTarget.AllBuffered, damageTaken);
+            photonView.RPC("TakeDamageRPC", RpcTarget.AllBuffered, damageTaken, dir, localDir);
         }
     }
 

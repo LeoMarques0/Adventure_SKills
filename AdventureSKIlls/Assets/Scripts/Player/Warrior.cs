@@ -21,7 +21,8 @@ public class Warrior : Player
     public override void Update()
     {
         base.Update();
-        Shield();
+        if(state == BaseState.STANDARD)
+            Shield();
     }
 
     void Shield()

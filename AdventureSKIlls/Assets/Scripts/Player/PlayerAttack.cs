@@ -45,7 +45,8 @@ public class PlayerAttack : MonoBehaviour
             canAttack = true;
             StopAllCoroutines();
             attackIndex = 0;
-            player.state = BaseState.STANDARD;
+            if(player.state == BaseState.ATTACKING)
+                player.state = BaseState.STANDARD;
         }
 
         anim.SetInteger("AttackIndex", attackIndex);

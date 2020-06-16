@@ -100,7 +100,6 @@ public class Boss : BaseStats
     {
         for (int i = 0; i < rocks.Length; i++)
         {
-            rocksRb[i].velocity = Vector2.zero;
             Vector2 spawnPosition = (Vector2)transform.position + spawnPoint + new Vector2(Random.Range(xPos.x, xPos.y), Random.Range(yPos.x, yPos.y));
             photonView.RPC("ActivateRock", RpcTarget.AllBuffered, i, spawnPosition);
             yield return new WaitForSeconds(.375f);
@@ -112,6 +111,7 @@ public class Boss : BaseStats
     [PunRPC]
     void ActivateRock(int i, Vector2 spawnPos)
     {
+        rocksRb[i].velocity = Vector2.zero;
         rocks[i].SetActive(true);
         rocks[i].transform.position = spawnPos;
         rocks[i].transform.eulerAngles = new Vector3(0, 0, Random.Range(0f, 360f));
@@ -181,9 +181,10 @@ public class Boss : BaseStats
     {
         if (state == BaseState.STANDARD || state == BaseState.ATTACKING)
         {
-            base.TakeDamage(damageTaken, dir, localDir);
-            StopCoroutine("FlashSprite");
-            StartCoroutine(FlashSprite(.1f, 5));
+            if (!online)
+                base.TakeDamage(damageTaken, dir, localDir);
+            else
+                photonView.RPC("TakeDamageRPC", RpcTarget.AllBuffered, damageTaken, dir, localDir);
         }
     }
 

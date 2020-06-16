@@ -22,7 +22,7 @@ public class BaseStats : MonoBehaviourPun
     public float maxHealth = 100;
     public float health = 100;
     public BaseState state = new BaseState();
-    public GameObject[] drops;
+    public List<GameObject> drops;
     public SpriteRenderer[] sprites;
     [HideInInspector]
     public List<Material> materials = new List<Material>();
@@ -53,6 +53,8 @@ public class BaseStats : MonoBehaviourPun
 
     public virtual void TakeDamage(float damageTaken, Vector2 dir, bool localDir)
     {
+        StartCoroutine(FlashSprite(.1f, 1));
+
         health -= damageTaken;
 
         if (health <= 0)
@@ -60,8 +62,10 @@ public class BaseStats : MonoBehaviourPun
     }
 
     [PunRPC]
-    public void TakeDamageRPC(float damageTaken)
+    public void TakeDamageRPC(float damageTaken, Vector2 dir, bool localDir)
     {
+        StartCoroutine(FlashSprite(.1f, 1));
+
         health -= damageTaken;
         if (health <= 0)
             Die();
@@ -78,7 +82,7 @@ public class BaseStats : MonoBehaviourPun
     {
         foreach (GameObject drop in drops)
         {
-            GameObject newDrop = Instantiate(drop, transform.position, Quaternion.identity);
+            GameObject newDrop = Instantiate(drop, transform.position + (Vector3.up * .2f), Quaternion.identity);
             Rigidbody2D dropRb = newDrop.GetComponent<Rigidbody2D>();
             Vector2 dropDir = new Vector2(Random.Range(-5, 5), 10);
             dropRb.AddForce(dropDir, ForceMode2D.Impulse);

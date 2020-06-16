@@ -11,7 +11,8 @@ public class Projectile : MonoBehaviour
 
     Rigidbody2D rb;
     BaseStats main;
-    AudioSource audioSource;
+    [SerializeField]
+    private AudioSource audioSource = null;
 
     [SerializeField]
     bool rotatesWithVelocity = false;
@@ -26,7 +27,6 @@ public class Projectile : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        audioSource = GetComponent<AudioSource>();
 
         rb.velocity = new Vector2(spd, 0) * transform.right;
         main = parent.GetComponent<BaseStats>();

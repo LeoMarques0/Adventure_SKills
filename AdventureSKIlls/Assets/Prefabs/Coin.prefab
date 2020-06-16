@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6396fe1d1e5b5974b8c66b7d12817c8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefab: {fileID: 3378320294638726545}
   collect: {fileID: 8877387366687315683}
 --- !u!58 &2218767499131788560
 CircleCollider2D:
