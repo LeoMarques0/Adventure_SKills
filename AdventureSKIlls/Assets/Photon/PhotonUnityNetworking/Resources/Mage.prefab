@@ -409,7 +409,6 @@ GameObject:
   - component: {fileID: 8555705473181101497}
   - component: {fileID: 8204855198646239212}
   - component: {fileID: 9198586775888897425}
-  - component: {fileID: 5384772370308080534}
   - component: {fileID: -4857077842935191564}
   - component: {fileID: 2043495476403000978}
   - component: {fileID: 6335219897246582999}
@@ -734,39 +733,6 @@ MonoBehaviour:
   - {fileID: 9198586775888897425}
   - {fileID: 8172212586016789000}
   photonView: {fileID: 0}
---- !u!114 &5384772370308080534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1604749345785362649}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PositionModel:
-    SynchronizeEnabled: 1
-    TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 3
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 10
-    ExtrapolateOption: 0
-    ExtrapolateSpeed: 1
-    ExtrapolateIncludingRoundTripTime: 1
-    ExtrapolateNumberOfStoredPositions: 1
-  m_RotationModel:
-    SynchronizeEnabled: 1
-    InterpolateOption: 0
-    InterpolateRotateTowardsSpeed: 180
-    InterpolateLerpSpeed: 5
-  m_ScaleModel:
-    SynchronizeEnabled: 0
-    InterpolateOption: 0
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 0
 --- !u!114 &-4857077842935191564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -798,8 +764,11 @@ MonoBehaviour:
     SynchronizeType: 1
     Name: AttackIndex
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: IsAttacking
+  - Type: 4
+    SynchronizeType: 1
+    Name: IsDead
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0

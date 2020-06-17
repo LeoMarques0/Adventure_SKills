@@ -45,7 +45,7 @@ public class PlayerAttack : MonoBehaviour
             canAttack = true;
             StopAllCoroutines();
             attackIndex = 0;
-            if(player.state == BaseState.ATTACKING)
+            if(player.state == BaseState.ATTACKING && player.health > 0)
                 player.state = BaseState.STANDARD;
         }
 

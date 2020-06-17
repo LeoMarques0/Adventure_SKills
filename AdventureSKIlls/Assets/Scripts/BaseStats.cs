@@ -64,11 +64,14 @@ public class BaseStats : MonoBehaviourPun
     [PunRPC]
     public void TakeDamageRPC(float damageTaken, Vector2 dir, bool localDir)
     {
-        StartCoroutine(FlashSprite(.1f, 1));
+        if (state != BaseState.DYING)
+        {
+            StartCoroutine(FlashSprite(.1f, 1));
 
-        health -= damageTaken;
-        if (health <= 0)
-            Die();
+            health -= damageTaken;
+            if (health <= 0)
+                Die();
+        }
     }
 
     public virtual void Die()

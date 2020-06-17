@@ -34567,7 +34567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flamethrowers:
   - {fileID: 146246788}
-  checkSize: {x: 4, y: 3.5}
+  checkSize: {x: 3, y: 3.5}
   checkOffset: {x: 0, y: -3.83}
   playerMask:
     serializedVersion: 2
@@ -37173,8 +37173,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flamethrowers:
   - {fileID: 1676660100}
-  checkSize: {x: 2.35, y: 6.21}
-  checkOffset: {x: 0.36, y: -4.99}
+  checkSize: {x: 3, y: 6.21}
+  checkOffset: {x: 0, y: -5}
   playerMask:
     serializedVersion: 2
     m_Bits: 256

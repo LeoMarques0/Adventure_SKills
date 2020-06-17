@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -83,6 +84,7 @@ public class Player : BaseStats
                     break;
 
                 case BaseState.ATTACKING:
+                case BaseState.DYING:
 
                     rb.velocity = new Vector2(0, rb.velocity.y);
 
@@ -151,15 +153,17 @@ public class Player : BaseStats
 
     public override void Die()
     {
-        base.Die();
+        StopAllCoroutines();
         rb.velocity = new Vector2(0, rb.velocity.y);
-        anim.Play("Dying");
+        anim.SetBool("IsDead", true);
         state = BaseState.DYING;
 
         foreach (Material m in materials)
         {
             m.SetFloat("_FlashTransparency", 0);
         }
+
+        photonView.RPC("DropPlayerItems", RpcTarget.AllBuffered, coins);
     }
 
     public void EndAttack()
@@ -171,7 +175,7 @@ public class Player : BaseStats
 
     public override void TakeDamage(float damageTaken, Vector2 dir, bool localDir)
     {
-        if (state != BaseState.HURT || state != BaseState.DYING)
+        if (state != BaseState.HURT && state != BaseState.DYING)
         {
             StartCoroutine(Knockback(dir, localDir));
             base.TakeDamage(damageTaken, dir, localDir);
@@ -188,9 +192,8 @@ public class Player : BaseStats
             rb.velocity = (transform.right * dir.x) + (transform.up * dir.y);
 
         yield return new WaitForSeconds(.1f);
-        print("passo os segundos");
         gameObject.layer = 8;
-        if (state != BaseState.DYING)
+        if (state != BaseState.DYING && health > 0)
             state = BaseState.STANDARD;
     }
 
@@ -202,15 +205,21 @@ public class Player : BaseStats
         }
     }
 
-    public override void DropItems()
+    [PunRPC]
+    public void DropPlayerItems(int coinsAmount)
     {
-        for(int x = 0; x < coins; x++)
+        state = BaseState.DYING;
+        health = 0;
+        for(int x = 0; x < coinsAmount; x++)
         {
             GameObject newDrop = Instantiate(coin, transform.position + (Vector3.up * .2f), Quaternion.identity);
             Rigidbody2D dropRb = newDrop.GetComponent<Rigidbody2D>();
             Vector2 dropDir = new Vector2(Random.Range(-5, 5), 10);
             dropRb.AddForce(dropDir, ForceMode2D.Impulse);
         }
+        coins = 0;
+
+        FindObjectOfType<StageManager>().CallUpdateCoin();
     }
 
     private void OnDrawGizmos()
