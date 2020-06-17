@@ -1874,6 +1874,7 @@ MonoBehaviour:
   scritpsToIgnore:
   - {fileID: 4375755609645675486}
   - {fileID: 6958190568102485902}
+  - {fileID: 2270130733668804747}
   photonView: {fileID: 0}
 --- !u!82 &1524679756700590975
 AudioSource:
@@ -1999,10 +2000,10 @@ MonoBehaviour:
     SynchronizeType: 1
     Name: IsGrounded
   - Type: 3
-    SynchronizeType: 1
+    SynchronizeType: 2
     Name: AttackIndex
   - Type: 4
-    SynchronizeType: 1
+    SynchronizeType: 2
     Name: IsAttacking
   - Type: 4
     SynchronizeType: 1

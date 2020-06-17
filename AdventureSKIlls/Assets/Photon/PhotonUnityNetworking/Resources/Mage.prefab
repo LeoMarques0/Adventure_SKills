@@ -761,7 +761,7 @@ MonoBehaviour:
     SynchronizeType: 1
     Name: IsGrounded
   - Type: 3
-    SynchronizeType: 1
+    SynchronizeType: 2
     Name: AttackIndex
   - Type: 4
     SynchronizeType: 1
