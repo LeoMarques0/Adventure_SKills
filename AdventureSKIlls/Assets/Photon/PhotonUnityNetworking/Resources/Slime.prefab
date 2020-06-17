@@ -544,7 +544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d03bd75a238ea4e4ea2c74fdda3b194f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthUI: {fileID: 6359717114156181365, guid: 61a6460f8500b6b48ac2f9169bfc2a7a,
+  healthUI: {fileID: 6359717114156181365, guid: bc03c9eaab1fd5c44a0067ab9d56a998,
     type: 3}
   online: 0
   maxHealth: 10
