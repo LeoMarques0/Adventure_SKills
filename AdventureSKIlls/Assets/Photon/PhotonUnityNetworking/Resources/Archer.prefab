@@ -868,11 +868,14 @@ MonoBehaviour:
     SynchronizeType: 1
     Name: IsGrounded
   - Type: 3
-    SynchronizeType: 1
+    SynchronizeType: 2
     Name: AttackIndex
   - Type: 4
     SynchronizeType: 0
     Name: IsAttacking
+  - Type: 4
+    SynchronizeType: 1
+    Name: IsDead
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
@@ -891,6 +894,7 @@ MonoBehaviour:
   scritpsToIgnore:
   - {fileID: 2510561620571254488}
   - {fileID: 6654259490614522416}
+  - {fileID: 2097583343963218659}
   photonView: {fileID: 0}
 --- !u!114 &-2897745023219369712
 MonoBehaviour:
