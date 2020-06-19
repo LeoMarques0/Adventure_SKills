@@ -37,6 +37,7 @@ MonoBehaviour:
   - DestroyRpc
   - DestroySpaceship
   - DisableHinge
+  - DropPlayerItems
   - Fire
   - ReadyUp
   - RespawnSpaceship
@@ -46,7 +47,7 @@ MonoBehaviour:
   - StartChangeColumn
   - TakeDamageRPC
   - UpdateCoin
-  - DropPlayerItems
+  - EndStage
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

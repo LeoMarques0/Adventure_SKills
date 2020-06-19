@@ -84,9 +84,14 @@ public class Player : BaseStats
                     break;
 
                 case BaseState.ATTACKING:
+
+                    rb.velocity = new Vector2(0, rb.velocity.y);
+
+                    break;
                 case BaseState.DYING:
 
                     rb.velocity = new Vector2(0, rb.velocity.y);
+                    gameObject.layer = 8;
 
                     break;
             }
@@ -153,17 +158,20 @@ public class Player : BaseStats
 
     public override void Die()
     {
-        StopAllCoroutines();
-        rb.velocity = new Vector2(0, rb.velocity.y);
-        anim.SetBool("IsDead", true);
-        state = BaseState.DYING;
-
-        foreach (Material m in materials)
+        if (photonView.IsMine)
         {
-            m.SetFloat("_FlashTransparency", 0);
-        }
+            StopAllCoroutines();
+            rb.velocity = new Vector2(0, rb.velocity.y);
+            anim.SetBool("IsDead", true);
+            state = BaseState.DYING;
 
-        photonView.RPC("DropPlayerItems", RpcTarget.AllBuffered, coins);
+            foreach (Material m in materials)
+            {
+                m.SetFloat("_FlashTransparency", 0);
+            }
+
+            photonView.RPC("DropPlayerItems", RpcTarget.AllBuffered, coins);
+        }
     }
 
     public void EndAttack()
