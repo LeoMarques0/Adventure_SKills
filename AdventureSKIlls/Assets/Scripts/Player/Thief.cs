@@ -5,7 +5,8 @@ using UnityEngine;
 public class Thief : Player
 {
 
-    float invisibilityBar = 100;
+    [HideInInspector]
+    public float invisibilityBar = 100, maxInvisibilityBar = 100;
 
     public bool usingInvisibility;
 
@@ -26,20 +27,17 @@ public class Thief : Player
             {
                 StopAllCoroutines();
 
-                foreach (SpriteRenderer sr in sprites)
-                {
-                    Color srColor = sr.color;
-
-                    srColor.a = 1;
-                    sr.color = srColor;
-                }
+                DisableTransparency();
 
                 usingInvisibility = false;
             }
         }
 
         if (!usingInvisibility)
+        {
             invisibilityBar += Time.deltaTime;
+            invisibilityBar = Mathf.Clamp(invisibilityBar, 0, maxInvisibilityBar);
+        }
     }
 
     IEnumerator TurnInvisible()
@@ -49,20 +47,36 @@ public class Thief : Player
         {
             usingInvisibility = true;
 
-            foreach (SpriteRenderer sr in sprites)
-            {
-                Color srColor = sr.color;
-
-                srColor = srColor - new Color(0, 0, 0, Time.deltaTime);
-                srColor.a = Mathf.Clamp(srColor.a, Mathf.Abs(rb.velocity.magnitude) < 1 ? 0 : .5f, 100);
-
-                sr.color = srColor;
-            }
+            ChangeTransparency();
 
             invisibilityBar -= 3 * Time.deltaTime;
             yield return null;
         }
 
         usingInvisibility = false;
+    }
+
+    public void ChangeTransparency()
+    {
+        foreach (SpriteRenderer sr in sprites)
+        {
+            Color srColor = sr.color;
+
+            srColor = srColor - new Color(0, 0, 0, Time.deltaTime);
+            srColor.a = Mathf.Clamp(srColor.a, Mathf.Abs(rb.velocity.magnitude) < 1 && state == BaseState.STANDARD ? 0 : .5f, 100);
+
+            sr.color = srColor;
+        }
+    }
+
+    public void DisableTransparency()
+    {
+        foreach (SpriteRenderer sr in sprites)
+        {
+            Color srColor = sr.color;
+
+            srColor.a = 1;
+            sr.color = srColor;
+        }
     }
 }

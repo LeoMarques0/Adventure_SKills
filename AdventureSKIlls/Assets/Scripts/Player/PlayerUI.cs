@@ -27,7 +27,7 @@ public class PlayerUI : MonoBehaviour
     {
         mainCam = Camera.main;
 
-        canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+        canvas = FindObjectOfType<Canvas>();
         transform.SetParent(canvas.transform);
     }
 
@@ -67,17 +67,17 @@ public class PlayerUI : MonoBehaviour
     public void SetParent(Transform _main, PhotonView _mainNetwork)
     {
         main = _main.GetComponent<BaseStats>();
+        playerTransform = _main.transform;
 
-        if (_mainNetwork != null && _main.tag == "Player")
+        if (_main.tag == "Player")
         {
             playerTransform = _mainNetwork.transform;
-            if(main.online)
+            if (_mainNetwork.Owner.NickName != "")
                 nameText.text = _mainNetwork.Owner.NickName;
-        }
-        else
-        {
-            playerTransform = _main;
-            nameText.text = "";
+            else if (_mainNetwork.IsMine)
+                nameText.text = "Player " + (RoomManager.singleton.playerIndex + 1);
+            else
+                nameText.text = "Player " + (RoomManager.singleton.GetPlayerIndex(_mainNetwork.Owner) + 1);
         }
         
         mainCam = FindObjectOfType<Camera>();

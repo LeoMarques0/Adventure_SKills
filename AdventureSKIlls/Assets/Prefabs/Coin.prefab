@@ -113,7 +113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6396fe1d1e5b5974b8c66b7d12817c8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3378320294638726545}
   collect: {fileID: 8877387366687315683}
 --- !u!58 &2218767499131788560
 CircleCollider2D:
@@ -214,7 +213,8 @@ AudioSource:
   m_GameObject: {fileID: 3378320294638726545}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: ffc41100f249b6d48ba60075a5c2538a,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 6b2581f6898fba748b5399e20dc14916, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

@@ -11,6 +11,10 @@ public class EnemyNetwork : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        if (!PhotonNetwork.InRoom)
+            return;
+
         if(!PhotonNetwork.IsMasterClient)
         {
             foreach (MonoBehaviour script in scritpsToIgnore)

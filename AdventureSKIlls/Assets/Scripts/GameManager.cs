@@ -13,11 +13,13 @@ public class GameManager : MonoBehaviour
     public int playerCharacterIndex;
 
     public int playerIndex;
+    public int coins;
 
     public GameObject currentPlayer;
 
-    // Start is called before the first frame update
-    void Start()
+    private List<string> upgrades = new List<string>();
+
+    private void Awake()
     {
         if (singleton == null)
             singleton = this;
@@ -43,5 +45,41 @@ public class GameManager : MonoBehaviour
     public void DeleteClass()
     {
         PhotonNetwork.Destroy(currentPlayer);
+    }
+
+    public void BuyUpgrade(string upgradeBought)
+    {
+        upgrades.Add(upgradeBought);
+    }
+
+    public void ApplyUpgrades()
+    {
+
+        Player currentStats = currentPlayer.GetComponent<Player>();
+
+        foreach (string upgrade in upgrades)
+        {
+            switch(upgrade)
+            {
+                case "HEALTH":
+
+                    currentStats.maxHealth += 5;
+                    currentStats.health += 5;
+
+                    break;
+
+                case "ATTACK":
+
+                    currentStats.additionalDamage += 1;
+
+                    break;
+
+                case "SPEED":
+
+                    currentStats.maxSpd += (currentStats.maxSpd * .1f);
+
+                    break;
+            }
+        }
     }
 }

@@ -45,10 +45,13 @@ public class Player : BaseStats
     public override void Awake()
     {
         base.Awake();
+
+        if (!PhotonNetwork.IsConnected)
+            PhotonNetwork.OfflineMode = true;
+
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         attacks = transform.GetComponentInChildren<PlayerAttack>();
-        playerInput = PlayerInput.singleton;
 
         gravity = Physics2D.gravity.y * rb.gravityScale;
         jumpForce = Mathf.Sqrt(-2 * gravity * jumpHeight);
@@ -61,6 +64,12 @@ public class Player : BaseStats
             pauseMenu.myPlayer = this;
             pauseMenu.gameObject.SetActive(false);
         }
+    }
+
+    private void Start()
+    {
+        playerInput = PlayerInput.singleton;
+        GameManager.singleton.ApplyUpgrades();
     }
 
     // Update is called once per frame
@@ -93,12 +102,15 @@ public class Player : BaseStats
                     rb.velocity = new Vector2(0, rb.velocity.y);
                     gameObject.layer = 8;
 
+                    if (health > 0)
+                        state = BaseState.STANDARD;
+
                     break;
             }
 
             CollisionsCheck();
 
-            health = Mathf.Clamp(health, 0, 100);
+            health = Mathf.Clamp(health, 0, maxHealth);
 
             anim.SetFloat("Speed", Mathf.Abs(hor));
             anim.SetBool("IsGrounded", isGrounded);
@@ -114,14 +126,30 @@ public class Player : BaseStats
         }
     }
 
+    public virtual void FixedUpdate()
+    {
+        switch (state)
+        {
+            case BaseState.STANDARD:
+
+                JumpPhysics();
+                WalkPhysics();
+
+                break;
+        }
+    }
+
     void Walk()
     {
         hor = Mathf.RoundToInt(Input.GetAxisRaw("Horizontal"));
 
-        rb.velocity = new Vector2(maxSpd * hor, rb.velocity.y);
-
         if(hor != 0)
             transform.eulerAngles = Vector3.up * (hor == 1 ? 0 : 180);
+    }
+
+    void WalkPhysics()
+    {
+        rb.velocity = new Vector2(maxSpd * hor, rb.velocity.y);
     }
 
     public virtual void Jump()
@@ -132,18 +160,21 @@ public class Player : BaseStats
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
 
+        anim.SetFloat("YSpeed", rb.velocity.y);
+
+    }
+
+    public virtual void JumpPhysics()
+    {
         if (rb.velocity.y < 0)
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * fallMultiplier * Time.deltaTime;
             isJumping = false;
         }
-        else if(rb.velocity.y > .5f)
+        else if (rb.velocity.y > .5f)
         {
             isJumping = true;
         }
-
-        anim.SetFloat("YSpeed", rb.velocity.y);
-
     }
 
     public virtual void CollisionsCheck()

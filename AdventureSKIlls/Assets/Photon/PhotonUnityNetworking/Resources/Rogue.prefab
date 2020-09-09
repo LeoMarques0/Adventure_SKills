@@ -611,7 +611,8 @@ AudioSource:
   m_GameObject: {fileID: 2170669062492584570}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: ffc41100f249b6d48ba60075a5c2538a,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1729,6 +1730,7 @@ MonoBehaviour:
   healthUI: {fileID: 6359717114156181365, guid: 61a6460f8500b6b48ac2f9169bfc2a7a,
     type: 3}
   online: 0
+  additionalDamage: 0
   maxHealth: 100
   health: 100
   state: 0
@@ -1752,6 +1754,7 @@ MonoBehaviour:
   - {fileID: 816312775994596279}
   - {fileID: 75220856154483494}
   materials: []
+  healthInstance: {fileID: 0}
   damageTaken:
   - {fileID: 8300000, guid: ef5a960fcf524494fbcb69fea8b034f7, type: 3}
   - {fileID: 8300000, guid: b2b46a6bcdd3e7a43b8ffbd56c8bb4d9, type: 3}
@@ -1782,6 +1785,8 @@ MonoBehaviour:
   pauseMenu: {fileID: 0}
   isPaused: 0
   coin: {fileID: 3378320294638726545, guid: 530cc0360cac7db4c95bb835c4ced459, type: 3}
+  invisibilityBar: 100
+  maxInvisibilityBar: 100
   usingInvisibility: 0
 --- !u!114 &4375755609645675484
 MonoBehaviour:
@@ -1853,7 +1858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stringToSend: 
   stringReceived: 
-  lerpTransformTime: 0
+  lerpTransformTime: 5
   lerpRotationTime: 0
   stringsToJson: []
   serializedString: 
@@ -1885,7 +1890,8 @@ AudioSource:
   m_GameObject: {fileID: 4375755609645675460}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: ffc41100f249b6d48ba60075a5c2538a,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.4

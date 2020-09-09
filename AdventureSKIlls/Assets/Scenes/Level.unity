@@ -27273,7 +27273,8 @@ AudioSource:
   m_GameObject: {fileID: 345089894}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: ffc41100f249b6d48ba60075a5c2538a,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: e3b0c8380e7150f42a7357dc9d4adccb, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -39107,6 +39108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthUI: {fileID: 0}
   online: 0
+  additionalDamage: 0
   maxHealth: 20
   health: 20
   state: 0
@@ -39114,6 +39116,7 @@ MonoBehaviour:
   sprites:
   - {fileID: 1027500528}
   materials: []
+  healthInstance: {fileID: 0}
   damageTaken:
   - {fileID: 8300000, guid: 5fed0373cac9068438c47b0e33144fb9, type: 3}
 --- !u!1 &1032521875
@@ -40845,6 +40848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthUI: {fileID: 0}
   online: 0
+  additionalDamage: 0
   maxHealth: 500
   health: 500
   state: 0
@@ -40909,6 +40913,7 @@ MonoBehaviour:
   - {fileID: 8732698960064096680}
   - {fileID: 4904473586707678536}
   materials: []
+  healthInstance: {fileID: 0}
   damageTaken:
   - {fileID: 8300000, guid: 40696d5b569a1c245934e09f0871044a, type: 3}
   skeleton: {fileID: 3876323513507843042, guid: 7e3da64db901af747bbbef868fadc0c5,
@@ -113913,6 +113918,7 @@ MonoBehaviour:
   target: {fileID: 0}
   distanceFromTarget: -20
   lerpT: 3
+  followOffset: {x: 0, y: 5, z: 0}
   confiner: {fileID: 299211734}
 --- !u!1001 &1454624404
 PrefabInstance:
@@ -119307,7 +119313,8 @@ AudioSource:
   m_GameObject: {fileID: 1668333149}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 8fd3504012972bd41aede8622bf32045,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 2cc96406837e41e4a8224f8471233157, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.05
@@ -139565,12 +139572,14 @@ MonoBehaviour:
   healthUI: {fileID: 6359717114156181365, guid: bc03c9eaab1fd5c44a0067ab9d56a998,
     type: 3}
   online: 0
+  additionalDamage: 0
   maxHealth: 100
   health: 0
   state: 0
   drops: []
   sprites: []
   materials: []
+  healthInstance: {fileID: 0}
   damageTaken: []
   lever: {fileID: 963001014}
   gate: {fileID: 300155248}

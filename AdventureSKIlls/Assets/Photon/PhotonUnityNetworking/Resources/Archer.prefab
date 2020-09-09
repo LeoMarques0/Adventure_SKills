@@ -600,6 +600,7 @@ MonoBehaviour:
   healthUI: {fileID: 6359717114156181365, guid: 61a6460f8500b6b48ac2f9169bfc2a7a,
     type: 3}
   online: 0
+  additionalDamage: 0
   maxHealth: 100
   health: 100
   state: 0
@@ -624,6 +625,7 @@ MonoBehaviour:
   - {fileID: 5370090961788831930}
   - {fileID: 485364433609380361}
   materials: []
+  healthInstance: {fileID: 0}
   damageTaken:
   - {fileID: 8300000, guid: ef5a960fcf524494fbcb69fea8b034f7, type: 3}
   - {fileID: 8300000, guid: b2b46a6bcdd3e7a43b8ffbd56c8bb4d9, type: 3}
@@ -708,7 +710,8 @@ AudioSource:
   m_GameObject: {fileID: 2510561620571254495}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: ffc41100f249b6d48ba60075a5c2538a,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.6
@@ -1514,7 +1517,8 @@ AudioSource:
   m_GameObject: {fileID: 3031736463527761860}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: ffc41100f249b6d48ba60075a5c2538a,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1

@@ -15,40 +15,33 @@ public enum ConnectAction
 
 public class Launcher : MonoBehaviourPunCallbacks
 {
-    #region Serialized Fields
-    [SerializeField]
-    private Text roomIDText = null;
-    [SerializeField]
-    private Text maxPlayersText = null;
-    #endregion
     #region Public Fields
+    public static Launcher singleton;
+
     public byte maxPlayers = 4;
+    public string roomID = "";
     public bool isPublic;
     #endregion
     #region Private Fields
     ConnectAction connectAction = new ConnectAction();
 
-    MenuManager menu;
-
+    [SerializeField]
     string gameVersion = "1";
-    string roomID = "";
+    private bool getInRoom = false;
     #endregion
 
     #region MonoBehaviour Callbacks
 
     private void Awake()
     {
+        if (singleton == null)
+            singleton = this;
+        else if (singleton != this)
+            Destroy(gameObject);
+
         PhotonNetwork.AutomaticallySyncScene = true;
 
-        menu = GetComponent<MenuManager>();
-
         DontDestroyOnLoad(gameObject);
-    }
-
-    private void Update()
-    {
-        if(SceneManager.GetActiveScene().buildIndex == 0 && maxPlayersText != null)
-            maxPlayersText.text = maxPlayers.ToString();
     }
     #endregion
 
@@ -67,7 +60,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         if(_roomID == string.Empty || _roomID.Length < 5)
         {
             print("O ID " + _roomID + " é invalido");
-            menu.LoadScreen(false);
+            FindObjectOfType<MenuManager>().LoadScreen(false);
         }
         else
         {
@@ -135,6 +128,16 @@ public class Launcher : MonoBehaviourPunCallbacks
         Debug.LogWarning("Desconectado. Causa: " + cause);
     }
 
+    public override void OnLeftRoom()
+    {
+        if(SceneManager.GetActiveScene().name == "Lobby")
+        {
+            LobbyManager.instance.photonView.RPC("SetActiveCarousel", RpcTarget.AllBuffered, false, RoomManager.singleton.playerIndex);
+            Destroy(RoomManager.singleton.gameObject);
+            SceneManager.LoadScene(0);
+        }
+    }
+
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
         Debug.Log("Falhou ao se conectar a uma sala... Criando Sala");
@@ -145,7 +148,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     public override void OnJoinRoomFailed(short returnCode, string message)
     {
         Debug.Log("Falhou ao encontrar a sala de ID " + roomID);
-        menu.LoadScreen(false);
+        FindObjectOfType<MenuManager>().LoadScreen(false);
     }
 
     public override void OnJoinedRoom()
@@ -156,6 +159,12 @@ public class Launcher : MonoBehaviourPunCallbacks
             PhotonNetwork.LoadLevel("Lobby");
         else
             FindObjectOfType<LobbyManager>().AssingCarousel();
+    }
+
+    public override void OnCreateRoomFailed(short returnCode, string message)
+    {
+        base.OnCreateRoomFailed(returnCode, message);
+        FindObjectOfType<MenuManager>().LoadScreen(false);
     }
     #endregion
 }

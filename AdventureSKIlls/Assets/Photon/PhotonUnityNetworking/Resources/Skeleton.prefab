@@ -1259,6 +1259,7 @@ MonoBehaviour:
   healthUI: {fileID: 6359717114156181365, guid: bc03c9eaab1fd5c44a0067ab9d56a998,
     type: 3}
   online: 0
+  additionalDamage: 0
   maxHealth: 10
   health: 10
   state: 0
@@ -1284,6 +1285,7 @@ MonoBehaviour:
   - {fileID: 825123203637699523}
   - {fileID: 4491148787637059792}
   materials: []
+  healthInstance: {fileID: 0}
   damageTaken:
   - {fileID: 8300000, guid: 40696d5b569a1c245934e09f0871044a, type: 3}
   playerMask:

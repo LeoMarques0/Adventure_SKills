@@ -9,13 +9,15 @@ public class Warrior : Player
     public float minimumShieldSize;
     float x;
 
-    float shieldHealth = 100, shieldScale;
+    [HideInInspector]
+    public float shieldHealth = 100, maxShieldHeath = 100, shieldScale;
     bool isShielding;
 
-    void Start()
+    private void OnEnable()
     {
+        shieldHealth = maxShieldHeath;
         shieldScale = shield.transform.localScale.x;
-        x = 1 - minimumShieldSize;        
+        x = 1 - minimumShieldSize;
     }
 
     public override void Update()
@@ -52,8 +54,11 @@ public class Warrior : Player
                 shieldHealth += 25 * Time.deltaTime;
         }
 
-        shield.transform.localScale = Vector3.one * (((shieldHealth/100) * x) + minimumShieldSize) * shieldScale;
-        Mathf.Clamp(shieldHealth, 0, 100);
+        shield.transform.localScale = Vector3.one * (((shieldHealth/maxShieldHeath) * x) + minimumShieldSize) * shieldScale;
+        Mathf.Clamp(shieldHealth, 0, maxShieldHeath);
+
+        if (shieldHealth == 0)
+            state = BaseState.HURT;
     }
 
 }

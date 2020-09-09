@@ -4,24 +4,34 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 
-public class LobbyManager : MonoBehaviour
+public class LobbyManager : MonoBehaviourPun
 {
 
     public Carousel[] carousels;
     public Button readyButton;
     public Text readyButtonText;
+    public Text roomId;
 
-    PhotonView photonView;
+    [HideInInspector]
+    public static LobbyManager instance;
+
     GameObject[] players;
 
     bool isChoosingClass = true;
     bool readyCountDown;
     Carousel myCarousel;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
-        photonView = GetComponent<PhotonView>();
+        if(instance == null)
+            instance = this;
+
+        if (roomId != null)
+            roomId.text = "ROOM ID: " + PhotonNetwork.CurrentRoom.Name;
+
         readyButton.onClick.AddListener(ChooseClass);
         if (PhotonNetwork.IsMasterClient)
         {
@@ -73,6 +83,8 @@ public class LobbyManager : MonoBehaviour
             readyCountDown = false;
             StopAllCoroutines();
         }
+
+        CheckActivePlayers();
     }
 
     void ChooseClass()
@@ -86,20 +98,36 @@ public class LobbyManager : MonoBehaviour
 
     public void AssingCarousel()
     {
+        if (PhotonNetwork.OfflineMode)
+        {
+            myCarousel = carousels[0];
+            SetActiveCarousel(true, 0);
+            players = GameManager.singleton.players;
+            return;
+        }
+
         for (int x = 0; x < carousels.Length; x++)
         {
-            if (x == GameManager.singleton.playerIndex)
+            if (x == RoomManager.singleton.playerIndex)
+            {
                 myCarousel = carousels[x];
+                photonView.RPC("SetActiveCarousel", RpcTarget.AllBuffered, true, x);
+            }
             else
             {
-                foreach(Button btn in carousels[x].arrowsBtns)
+                foreach (Button btn in carousels[x].arrowsBtns)
                 {
                     btn.interactable = false;
                 }
             }
         }
-        myCarousel = carousels[GameManager.singleton.playerIndex];
         players = GameManager.singleton.players;
+    }
+
+    [PunRPC]
+    private void SetActiveCarousel(bool value, int index)
+    {
+        carousels[index].transform.parent.gameObject.SetActive(value);
     }
 
     void ChangeCarouselIndex(int num)
@@ -151,6 +179,23 @@ public class LobbyManager : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
         if (PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.CurrentRoom.IsOpen = false;
             PhotonNetwork.LoadLevel("Level");
+        }
+    }
+
+    private void CheckActivePlayers()
+    {
+        if (PhotonNetwork.OfflineMode)
+            return;
+
+        for(int x = 0; x < PhotonNetwork.CurrentRoom.MaxPlayers; x++)
+        {
+            if (PhotonNetwork.CurrentRoom.CustomProperties["Player" + x] == null || !RoomManager.singleton.PlayerIsOnRoom((string)PhotonNetwork.CurrentRoom.CustomProperties["Player" + x]))
+                carousels[x].transform.parent.gameObject.SetActive(false);
+            else
+                carousels[x].transform.parent.gameObject.SetActive(true);
+        }
     }
 }

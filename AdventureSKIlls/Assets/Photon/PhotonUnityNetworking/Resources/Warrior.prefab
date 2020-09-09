@@ -947,7 +947,8 @@ AudioSource:
   m_GameObject: {fileID: 1123596777624804923}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: ffc41100f249b6d48ba60075a5c2538a,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -2547,6 +2548,7 @@ MonoBehaviour:
   healthUI: {fileID: 6359717114156181365, guid: 61a6460f8500b6b48ac2f9169bfc2a7a,
     type: 3}
   online: 0
+  additionalDamage: 0
   maxHealth: 100
   health: 100
   state: 0
@@ -2575,6 +2577,7 @@ MonoBehaviour:
   - {fileID: 6041918026104824008}
   - {fileID: 5619256714596969336}
   materials: []
+  healthInstance: {fileID: 0}
   damageTaken:
   - {fileID: 8300000, guid: ef5a960fcf524494fbcb69fea8b034f7, type: 3}
   - {fileID: 8300000, guid: b2b46a6bcdd3e7a43b8ffbd56c8bb4d9, type: 3}
@@ -2607,6 +2610,9 @@ MonoBehaviour:
   coin: {fileID: 3378320294638726545, guid: 530cc0360cac7db4c95bb835c4ced459, type: 3}
   shield: {fileID: 4264449879550059069}
   minimumShieldSize: 0.1
+  shieldHealth: 100
+  maxShieldHeath: 100
+  shieldScale: 0
 --- !u!95 &1123596777549467468
 Animator:
   serializedVersion: 3
@@ -2635,7 +2641,8 @@ AudioSource:
   m_GameObject: {fileID: 4264449879833204173}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: ffc41100f249b6d48ba60075a5c2538a,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.4
@@ -2736,7 +2743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObservedComponentsFoldoutOpen: 1
   Group: 0
-  prefixField: -1
+  prefixField: 0
   Synchronization: 1
   OwnershipTransfer: 0
   ObservedComponents:

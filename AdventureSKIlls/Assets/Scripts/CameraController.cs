@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour
     public Transform target;
     public float distanceFromTarget;
     public float lerpT;
+    public Vector3 followOffset;
 
     Vector3 followPos;
 
@@ -36,7 +37,7 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        followPos = target.position + (Vector3.forward * distanceFromTarget);
+        followPos = target.position + followOffset + (Vector3.forward * distanceFromTarget);
 
         if (confiner != null)
         {

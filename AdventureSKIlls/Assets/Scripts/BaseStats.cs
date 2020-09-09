@@ -19,6 +19,9 @@ public class BaseStats : MonoBehaviourPun
 
     [HideInInspector]
     public bool online;
+    [HideInInspector]
+    public float additionalDamage = 0;
+
     public float maxHealth = 100;
     public float health = 100;
     public BaseState state = new BaseState();
@@ -26,6 +29,8 @@ public class BaseStats : MonoBehaviourPun
     public SpriteRenderer[] sprites;
     [HideInInspector]
     public List<Material> materials = new List<Material>();
+    [HideInInspector]
+    public PlayerUI healthInstance;
 
     public AudioClip[] damageTaken;
 
@@ -97,7 +102,7 @@ public class BaseStats : MonoBehaviourPun
         if (healthUI == null)
             return;
 
-        PlayerUI healthInstance = Instantiate(healthUI).GetComponent<PlayerUI>();
+        healthInstance = Instantiate(healthUI).GetComponent<PlayerUI>();
 
         healthInstance.SetParent(transform, photonView);
     }

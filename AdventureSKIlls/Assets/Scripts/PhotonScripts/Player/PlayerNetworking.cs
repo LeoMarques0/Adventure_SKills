@@ -12,6 +12,12 @@ public class PlayerNetworking : MonoBehaviour
 
     public virtual void OnEnable()
     {
+        print("Check");
+        if (!PhotonNetwork.InRoom)
+        {
+            print("Got Here");
+            return;
+        }
         photonView = GetComponent<PhotonView>();
         if (!photonView.IsMine)
         {

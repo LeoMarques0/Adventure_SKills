@@ -62,7 +62,7 @@ public class BaseView : MonoBehaviour, IPunObservable
         baseStats.health = lastHealthSent;
     }
 
-    private void Update()
+    public virtual void Update()
     {
         if(!baseStats.photonView.IsMine)
             UpdatePlayer();
